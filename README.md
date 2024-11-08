@@ -1,2 +1,2 @@
-# ProyectoFinal_3Semestre
-Pojecto final para la amateria de 3° semestre
+# ProyectoFinal 3° Semestre
+### Pojecto final para la materia de 3° semestre
