@@ -3,3 +3,5 @@
 
 ## Integrantes:
 ### Daniel Limon Cervantes
+### Carlos Gonzalez Quintanar
+
