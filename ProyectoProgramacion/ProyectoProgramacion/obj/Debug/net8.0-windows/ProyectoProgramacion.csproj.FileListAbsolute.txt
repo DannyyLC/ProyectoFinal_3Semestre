@@ -1,0 +1,17 @@
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.exe
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.deps.json
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.runtimeconfig.json
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.dll
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.pdb
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.VistaUsuario.resources
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.csproj.GenerateResource.cache
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.GeneratedMSBuildEditorConfig.editorconfig
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.AssemblyInfoInputs.cache
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.AssemblyInfo.cs
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.csproj.CoreCompileInputs.cache
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.sourcelink.json
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.dll
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\refint\ProyectoProgramacion.dll
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.pdb
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.genruntimeconfig.cache
+\\wsl$\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ref\ProyectoProgramacion.dll
