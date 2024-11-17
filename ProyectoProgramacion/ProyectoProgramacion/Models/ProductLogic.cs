@@ -8,5 +8,6 @@ namespace ProyectoProgramacion.Models
 {
     internal class ProductLogic
     {
+
     }
 }
