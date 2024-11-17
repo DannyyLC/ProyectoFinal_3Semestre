@@ -1,6 +1,6 @@
-﻿namespace ProyectoProgramacion
+﻿namespace ProyectoProgramacion.Views
 {
-    partial class VistaUsuario
+    partial class UserMainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -50,7 +50,7 @@
             navBar.Size = new Size(1239, 78);
             navBar.TabIndex = 1;
             // 
-            // VistaUsuario
+            // UserMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -58,7 +58,7 @@
             ClientSize = new Size(1239, 638);
             Controls.Add(navBar);
             Controls.Add(panel1);
-            Name = "VistaUsuario";
+            Name = "UserMainForm";
             Text = "VistaUsuario";
             ResumeLayout(false);
         }

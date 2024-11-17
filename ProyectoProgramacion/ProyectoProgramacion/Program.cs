@@ -1,3 +1,5 @@
+using ProyectoProgramacion.Views;
+
 namespace ProyectoProgramacion
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace ProyectoProgramacion
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new VistaUsuario());
+            Application.Run(new UserMainForm());
         }
     }
 }
