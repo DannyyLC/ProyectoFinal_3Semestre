@@ -3,7 +3,7 @@
 ## Integrantes:
 ### Daniel Limon Cervantes
 ### Carlos Gonzalez Quintanar
-
+### Samuel Cevada Salinas
 
 ## Comandos Basicos de la terminal
 
