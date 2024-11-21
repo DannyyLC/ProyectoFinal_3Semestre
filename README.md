@@ -4,6 +4,7 @@
 ### Daniel Limon Cervantes
 ### Carlos Gonzalez Quintanar
 ### Samuel Cevada Salinas
+### Juan Antonio Alba Cardona
 
 ## Comandos Basicos de la terminal
 
