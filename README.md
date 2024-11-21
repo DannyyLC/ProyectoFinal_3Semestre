@@ -5,6 +5,7 @@
 ### Carlos Gonzalez Quintanar
 ### Samuel Cevada Salinas
 ### Juan Antonio Alba Cardona
+### Luis Manuel Ibrahim Gonzalez Sanchez
 
 ## Comandos Basicos de la terminal
 
