@@ -6,5 +6,10 @@ namespace ProyectoProgramacion.Views
         {
             InitializeComponent();
         }
+
+        private void customTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Text Changed");
+        }
     }
 }

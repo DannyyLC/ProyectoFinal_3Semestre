@@ -1,16 +1,11 @@
-﻿namespace ProyectoProgramacion.Views
+﻿using ProyectoProgramacion.Utlis;
+
+namespace ProyectoProgramacion.Views
 {
     partial class UserMainForm
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,50 +17,88 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            PanelHeader = new Panel();
+            panelSearchBox = new Panel();
+            logoPictureBox = new PictureBox();
             navBar = new Panel();
+            navBarFlowLayout = new FlowLayoutPanel();
+            PanelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
+            navBar.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // PanelHeader
             // 
-            panel1.BackColor = SystemColors.ControlLightLight;
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1239, 101);
-            panel1.TabIndex = 0;
+            PanelHeader.BackColor = Color.White;
+            PanelHeader.Controls.Add(panelSearchBox);
+            PanelHeader.Controls.Add(logoPictureBox);
+            PanelHeader.Dock = DockStyle.Top;
+            PanelHeader.Location = new Point(0, 0);
+            PanelHeader.Name = "PanelHeader";
+            PanelHeader.Size = new Size(1144, 114);
+            PanelHeader.TabIndex = 0;
+            // 
+            // panelSearchBox
+            // 
+            panelSearchBox.Location = new Point(294, 10);
+            panelSearchBox.Name = "panelSearchBox";
+            panelSearchBox.Size = new Size(689, 87);
+            panelSearchBox.TabIndex = 1;
+            // 
+            // logoPictureBox
+            // 
+            logoPictureBox.BackColor = Color.Transparent;
+            logoPictureBox.Location = new Point(10, 10);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(263, 87);
+            logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoPictureBox.TabIndex = 0;
+            logoPictureBox.TabStop = false;
             // 
             // navBar
             // 
-            navBar.BackColor = SystemColors.ButtonFace;
+            navBar.BackColor = Color.WhiteSmoke;
+            navBar.Controls.Add(navBarFlowLayout);
             navBar.Dock = DockStyle.Top;
-            navBar.Location = new Point(0, 101);
+            navBar.Location = new Point(0, 114);
             navBar.Name = "navBar";
-            navBar.Size = new Size(1239, 78);
+            navBar.Size = new Size(1144, 50);
             navBar.TabIndex = 1;
+            // 
+            // navBarFlowLayout
+            // 
+            navBarFlowLayout.Dock = DockStyle.Fill;
+            navBarFlowLayout.Location = new Point(0, 0);
+            navBarFlowLayout.Name = "navBarFlowLayout";
+            navBarFlowLayout.Padding = new Padding(20, 10, 0, 0);
+            navBarFlowLayout.Size = new Size(1144, 50);
+            navBarFlowLayout.TabIndex = 0;
             // 
             // UserMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1239, 638);
+            BackColor = Color.White;
+            ClientSize = new Size(1144, 599);
             Controls.Add(navBar);
-            Controls.Add(panel1);
+            Controls.Add(PanelHeader);
             Name = "UserMainForm";
             Text = "VistaUsuario";
+            PanelHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
+            navBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel PanelHeader;
         private Panel navBar;
+        private FlowLayoutPanel navBarFlowLayout; // Contenedor para botones de navegación
+        private Panel panelSearchBox;
+        private PictureBox logoPictureBox;
     }
 }
+
