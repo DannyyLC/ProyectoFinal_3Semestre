@@ -34,3 +34,4 @@
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.pdb
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.genruntimeconfig.cache
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ref\ProyectoProgramacion.dll
+\\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Properties.Resources.resources
