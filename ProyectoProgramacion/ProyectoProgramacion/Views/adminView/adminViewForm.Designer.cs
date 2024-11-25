@@ -34,7 +34,7 @@
             tableLayoutPanelLateral = new TableLayoutPanel();
             pictureBoxLogo = new PictureBox();
             label1 = new Label();
-            btnSignOff = new RoundedButton();
+            btnSignOff = new RoundedButton(Color.Firebrick);
             tableLayoutPanelResultados = new TableLayoutPanel();
             labelTituloResultados = new Label();
             pictureBoxGrafica = new PictureBox();
@@ -44,8 +44,8 @@
             label2 = new Label();
             labelR1 = new Label();
             tableLayoutPanelListado = new TableLayoutPanel();
-            btnAgregarProducto = new RoundedButton();
-            btnEliminarProducto = new RoundedButton();
+            btnAgregarProducto = new RoundedButton(Color.White);
+            btnEliminarProducto = new RoundedButton(Color.White);
             labelListado = new Label();
             dataGridViewListado = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
@@ -96,11 +96,13 @@
             tableLayoutPanelLateral.Location = new Point(0, 0);
             tableLayoutPanelLateral.Margin = new Padding(0, 0, 3, 0);
             tableLayoutPanelLateral.Name = "tableLayoutPanelLateral";
-            tableLayoutPanelLateral.RowCount = 3;
+            tableLayoutPanelLateral.RowCount = 4;
             tableLayoutPanelPrincipal.SetRowSpan(tableLayoutPanelLateral, 2);
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelLateral.Size = new Size(198, 715);
             tableLayoutPanelLateral.TabIndex = 0;
             // 
@@ -112,7 +114,7 @@
             pictureBoxLogo.Image = Properties.Resources.Kicks__Final__2024_11_23_20_56_34;
             pictureBoxLogo.Location = new Point(3, 3);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(192, 65);
+            pictureBoxLogo.Size = new Size(192, 63);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -122,9 +124,9 @@
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 71);
+            label1.Location = new Point(3, 69);
             label1.Name = "label1";
-            label1.Size = new Size(192, 71);
+            label1.Size = new Size(192, 69);
             label1.TabIndex = 1;
             label1.Text = "Administrador";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -138,7 +140,7 @@
             btnSignOff.FlatStyle = FlatStyle.Flat;
             btnSignOff.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSignOff.ForeColor = Color.White;
-            btnSignOff.Location = new Point(24, 145);
+            btnSignOff.Location = new Point(24, 141);
             btnSignOff.Name = "btnSignOff";
             btnSignOff.Size = new Size(150, 50);
             btnSignOff.TabIndex = 2;
@@ -444,7 +446,6 @@
         private TableLayoutPanel tableLayoutPanelListado;
         private RoundedButton btnAgregarProducto;
         private RoundedButton btnEliminarProducto;
-        private RoundedButton btnSignOff;
         private Label labelListado;
         private DataGridView dataGridViewListado;
         private DataGridViewTextBoxColumn ID;
@@ -455,5 +456,6 @@
         private DataGridViewTextBoxColumn Colores;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
+        private RoundedButton btnSignOff;
     }
 }
