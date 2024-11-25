@@ -20,6 +20,7 @@
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.runtimeconfig.json
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.dll
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\bin\Debug\net8.0-windows\ProyectoProgramacion.pdb
+\\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Properties.Resources.resources
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Utlis.CustomTextBox.resources
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Utlis.FullCustomTextBox.resources
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Views.UserMainForm.resources
@@ -34,4 +35,3 @@
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.pdb
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.genruntimeconfig.cache
 \\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ref\ProyectoProgramacion.dll
-\\wsl.localhost\Ubuntu\home\dannylimon\College\ProyectoFinal_3Semestre\ProyectoProgramacion\ProyectoProgramacion\obj\Debug\net8.0-windows\ProyectoProgramacion.Properties.Resources.resources

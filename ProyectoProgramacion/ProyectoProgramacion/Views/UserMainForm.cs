@@ -1,3 +1,6 @@
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace ProyectoProgramacion.Views
 {
     public partial class UserMainForm : Form
@@ -7,9 +10,11 @@ namespace ProyectoProgramacion.Views
             InitializeComponent();
         }
 
-        private void customTextBox1__TextChanged(object sender, EventArgs e)
+        private void UserMainForm_Layout(object sender, LayoutEventArgs e)
         {
-            MessageBox.Show("Text Changed");
+            SearchBox.PerformLayout();
+            SearchBox.Invalidate();
         }
     }
 }
+
