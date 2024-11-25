@@ -34,7 +34,6 @@
             tableLayoutPanelLateral = new TableLayoutPanel();
             pictureBoxLogo = new PictureBox();
             label1 = new Label();
-            btnSignOff = new RoundedButton(Color.Firebrick);
             tableLayoutPanelResultados = new TableLayoutPanel();
             labelTituloResultados = new Label();
             pictureBoxGrafica = new PictureBox();
@@ -44,8 +43,6 @@
             label2 = new Label();
             labelR1 = new Label();
             tableLayoutPanelListado = new TableLayoutPanel();
-            btnAgregarProducto = new RoundedButton(Color.White);
-            btnEliminarProducto = new RoundedButton(Color.White);
             labelListado = new Label();
             dataGridViewListado = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
@@ -56,6 +53,10 @@
             Colores = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
+            labelHora = new Label();
+            btnSignOff = new RoundedButton(Color.Firebrick);
+            btnAgregarProducto = new RoundedButton(Color.White);
+            btnEliminarProducto = new RoundedButton(Color.White);
             tableLayoutPanelPrincipal.SuspendLayout();
             tableLayoutPanelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -155,6 +156,7 @@
             tableLayoutPanelResultados.Controls.Add(labelTituloResultados, 0, 0);
             tableLayoutPanelResultados.Controls.Add(pictureBoxGrafica, 0, 1);
             tableLayoutPanelResultados.Controls.Add(tableLayoutPanelResumen, 1, 1);
+            tableLayoutPanelResultados.Controls.Add(labelHora, 1, 0);
             tableLayoutPanelResultados.Dock = DockStyle.Fill;
             tableLayoutPanelResultados.Location = new Point(204, 3);
             tableLayoutPanelResultados.Margin = new Padding(3, 3, 8, 3);
@@ -169,9 +171,8 @@
             // 
             labelTituloResultados.Anchor = AnchorStyles.Top;
             labelTituloResultados.AutoSize = true;
-            tableLayoutPanelResultados.SetColumnSpan(labelTituloResultados, 2);
             labelTituloResultados.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTituloResultados.Location = new Point(227, 0);
+            labelTituloResultados.Location = new Point(114, 0);
             labelTituloResultados.Name = "labelTituloResultados";
             labelTituloResultados.Padding = new Padding(0, 15, 355, 0);
             labelTituloResultados.Size = new Size(674, 52);
@@ -406,6 +407,27 @@
             Stock.Name = "Stock";
             Stock.ReadOnly = true;
             // 
+            // labelHora
+            // 
+            labelHora.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelHora.AutoSize = true;
+            labelHora.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelHora.Location = new Point(1032, 0);
+            labelHora.Name = "labelHora";
+            labelHora.Size = new Size(94, 25);
+            labelHora.TabIndex = 3;
+            labelHora.Text = "labelHora";
+            labelHora.TextAlign = ContentAlignment.TopRight;
+            
+            System.Windows.Forms.Timer timerHora = new System.Windows.Forms.Timer();
+            DateTime fechaHoy = DateTime.Today;
+            timerHora.Interval = 1000; // Intervalo de 1 segundo
+            timerHora.Tick += (s, e) =>
+            {
+                labelHora.Text = $"Fecha: {fechaHoy.ToString("dd/MM/yyyy")}\nHora: {DateTime.Now.ToString("HH:mm:ss")}"; // Actualiza la hora en formato 24 horas
+            };
+            timerHora.Start();
+            // 
             // adminViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -457,5 +479,6 @@
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
         private RoundedButton btnSignOff;
+        private Label labelHora;
     }
 }
