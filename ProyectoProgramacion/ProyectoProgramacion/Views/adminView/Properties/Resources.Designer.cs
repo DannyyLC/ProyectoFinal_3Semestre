@@ -79,5 +79,15 @@ namespace adminView.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shoe__Final__2024_11_23_20_57_53__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Shoe (Final) 2024-11-23 20_57_53 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

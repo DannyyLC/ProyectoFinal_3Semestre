@@ -30,18 +30,18 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tableLayoutPanelPrincipal = new TableLayoutPanel();
             tableLayoutPanelLateral = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
             pictureBoxLogo = new PictureBox();
             label1 = new Label();
             tableLayoutPanelResultados = new TableLayoutPanel();
             labelTituloResultados = new Label();
             pictureBoxGrafica = new PictureBox();
-            tableLayoutPanelResumen = new TableLayoutPanel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            labelR1 = new Label();
+            labelHora = new Label();
+            roundedTableLayoutPanel1 = new RoundedTableLayoutPanel();
+            labelResumen = new Label();
             tableLayoutPanelListado = new TableLayoutPanel();
             labelListado = new Label();
             dataGridViewListado = new DataGridView();
@@ -53,16 +53,17 @@
             Colores = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
-            labelHora = new Label();
+            roundedTableLayoutPanel1 = new RoundedTableLayoutPanel();
             btnSignOff = new RoundedButton(Color.Firebrick);
             btnAgregarProducto = new RoundedButton(Color.White);
             btnEliminarProducto = new RoundedButton(Color.White);
             tableLayoutPanelPrincipal.SuspendLayout();
             tableLayoutPanelLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             tableLayoutPanelResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGrafica).BeginInit();
-            tableLayoutPanelResumen.SuspendLayout();
+            roundedTableLayoutPanel1.SuspendLayout();
             tableLayoutPanelListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListado).BeginInit();
             SuspendLayout();
@@ -90,6 +91,7 @@
             tableLayoutPanelLateral.BackColor = Color.LightBlue;
             tableLayoutPanelLateral.ColumnCount = 1;
             tableLayoutPanelLateral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelLateral.Controls.Add(pictureBox1, 0, 3);
             tableLayoutPanelLateral.Controls.Add(pictureBoxLogo, 0, 0);
             tableLayoutPanelLateral.Controls.Add(label1, 0, 1);
             tableLayoutPanelLateral.Controls.Add(btnSignOff, 0, 2);
@@ -101,11 +103,23 @@
             tableLayoutPanelPrincipal.SetRowSpan(tableLayoutPanelLateral, 2);
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
-            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tableLayoutPanelLateral.Size = new Size(198, 715);
             tableLayoutPanelLateral.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Bottom;
+            pictureBox1.BackColor = Color.LightBlue;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.Shoe__Final__2024_11_23_20_57_53__1_;
+            pictureBox1.Location = new Point(3, 512);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(192, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // pictureBoxLogo
             // 
@@ -115,7 +129,7 @@
             pictureBoxLogo.Image = Properties.Resources.Kicks__Final__2024_11_23_20_56_34;
             pictureBoxLogo.Location = new Point(3, 3);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(192, 63);
+            pictureBoxLogo.Size = new Size(192, 65);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 0;
             pictureBoxLogo.TabStop = false;
@@ -124,10 +138,11 @@
             // 
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 69);
+            label1.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(3, 71);
             label1.Name = "label1";
-            label1.Size = new Size(192, 69);
+            label1.Size = new Size(192, 71);
             label1.TabIndex = 1;
             label1.Text = "Administrador";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -141,7 +156,7 @@
             btnSignOff.FlatStyle = FlatStyle.Flat;
             btnSignOff.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSignOff.ForeColor = Color.White;
-            btnSignOff.Location = new Point(24, 141);
+            btnSignOff.Location = new Point(24, 145);
             btnSignOff.Name = "btnSignOff";
             btnSignOff.Size = new Size(150, 50);
             btnSignOff.TabIndex = 2;
@@ -155,8 +170,8 @@
             tableLayoutPanelResultados.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanelResultados.Controls.Add(labelTituloResultados, 0, 0);
             tableLayoutPanelResultados.Controls.Add(pictureBoxGrafica, 0, 1);
-            tableLayoutPanelResultados.Controls.Add(tableLayoutPanelResumen, 1, 1);
             tableLayoutPanelResultados.Controls.Add(labelHora, 1, 0);
+            tableLayoutPanelResultados.Controls.Add(roundedTableLayoutPanel1, 1, 1);
             tableLayoutPanelResultados.Dock = DockStyle.Fill;
             tableLayoutPanelResultados.Location = new Point(204, 3);
             tableLayoutPanelResultados.Margin = new Padding(3, 3, 8, 3);
@@ -171,11 +186,12 @@
             // 
             labelTituloResultados.Anchor = AnchorStyles.Top;
             labelTituloResultados.AutoSize = true;
-            labelTituloResultados.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTituloResultados.Location = new Point(114, 0);
+            labelTituloResultados.Font = new Font("Tahoma", 24F, FontStyle.Bold);
+            labelTituloResultados.ForeColor = Color.Black;
+            labelTituloResultados.Location = new Point(251, 0);
             labelTituloResultados.Name = "labelTituloResultados";
-            labelTituloResultados.Padding = new Padding(0, 15, 355, 0);
-            labelTituloResultados.Size = new Size(674, 52);
+            labelTituloResultados.Padding = new Padding(0, 15, 60, 0);
+            labelTituloResultados.Size = new Size(400, 52);
             labelTituloResultados.TabIndex = 0;
             labelTituloResultados.Text = "Resultados de venta";
             // 
@@ -192,70 +208,49 @@
             pictureBoxGrafica.TabIndex = 1;
             pictureBoxGrafica.TabStop = false;
             // 
-            // tableLayoutPanelResumen
+            // labelHora
             // 
-            tableLayoutPanelResumen.BackColor = Color.LightBlue;
-            tableLayoutPanelResumen.ColumnCount = 1;
-            tableLayoutPanelResumen.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanelResumen.Controls.Add(label4, 0, 3);
-            tableLayoutPanelResumen.Controls.Add(label3, 0, 2);
-            tableLayoutPanelResumen.Controls.Add(label2, 0, 0);
-            tableLayoutPanelResumen.Controls.Add(labelR1, 0, 1);
-            tableLayoutPanelResumen.Dock = DockStyle.Fill;
-            tableLayoutPanelResumen.Location = new Point(906, 55);
-            tableLayoutPanelResumen.Margin = new Padding(3, 3, 10, 3);
-            tableLayoutPanelResumen.Name = "tableLayoutPanelResumen";
-            tableLayoutPanelResumen.RowCount = 4;
-            tableLayoutPanelResumen.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanelResumen.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanelResumen.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanelResumen.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanelResumen.Size = new Size(213, 293);
-            tableLayoutPanelResumen.TabIndex = 2;
+            labelHora.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelHora.AutoSize = true;
+            labelHora.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelHora.ForeColor = Color.Black;
+            labelHora.Location = new Point(1071, 0);
+            labelHora.Name = "labelHora";
+            labelHora.Size = new Size(55, 19);
+            labelHora.TabIndex = 3;
+            labelHora.Text = "Fecha:";
+            labelHora.TextAlign = ContentAlignment.TopRight;
             // 
-            // label4
+            // roundedTableLayoutPanel1
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(61, 245);
-            label4.Name = "label4";
-            label4.Size = new Size(91, 21);
-            label4.TabIndex = 3;
-            label4.Text = "Placeholder";
+            roundedTableLayoutPanel1.BackColor = Color.LightBlue;
+            roundedTableLayoutPanel1.BorderRadius = 20;
+            roundedTableLayoutPanel1.ColumnCount = 1;
+            roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            roundedTableLayoutPanel1.Controls.Add(labelResumen, 0, 0);
+            roundedTableLayoutPanel1.Dock = DockStyle.Fill;
+            roundedTableLayoutPanel1.ForeColor = Color.LightBlue;
+            roundedTableLayoutPanel1.Location = new Point(906, 55);
+            roundedTableLayoutPanel1.Name = "roundedTableLayoutPanel1";
+            roundedTableLayoutPanel1.RowCount = 4;
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            roundedTableLayoutPanel1.Size = new Size(220, 293);
+            roundedTableLayoutPanel1.TabIndex = 4;
             // 
-            // label3
+            // labelResumen
             // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(61, 172);
-            label3.Name = "label3";
-            label3.Size = new Size(91, 21);
-            label3.TabIndex = 2;
-            label3.Text = "Placeholder";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(47, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(118, 32);
-            label2.TabIndex = 0;
-            label2.Text = "Resumen";
-            // 
-            // labelR1
-            // 
-            labelR1.Anchor = AnchorStyles.None;
-            labelR1.AutoSize = true;
-            labelR1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelR1.Location = new Point(61, 99);
-            labelR1.Name = "labelR1";
-            labelR1.Size = new Size(91, 21);
-            labelR1.TabIndex = 1;
-            labelR1.Text = "Placeholder";
+            labelResumen.Anchor = AnchorStyles.None;
+            labelResumen.AutoSize = true;
+            labelResumen.Font = new Font("Tahoma", 24F, FontStyle.Bold);
+            labelResumen.ForeColor = Color.Black;
+            labelResumen.Location = new Point(27, 17);
+            labelResumen.Name = "labelResumen";
+            labelResumen.Size = new Size(165, 39);
+            labelResumen.TabIndex = 0;
+            labelResumen.Text = "Resumen";
             // 
             // tableLayoutPanelListado
             // 
@@ -315,12 +310,13 @@
             // 
             labelListado.Anchor = AnchorStyles.None;
             labelListado.AutoSize = true;
-            labelListado.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelListado.Font = new Font("Tahoma", 24F, FontStyle.Bold);
+            labelListado.ForeColor = Color.Black;
             labelListado.ImageAlign = ContentAlignment.TopCenter;
-            labelListado.Location = new Point(125, 6);
+            labelListado.Location = new Point(118, 9);
             labelListado.Name = "labelListado";
             labelListado.Padding = new Padding(150, 0, 0, 10);
-            labelListado.Size = new Size(486, 55);
+            labelListado.Size = new Size(500, 49);
             labelListado.TabIndex = 2;
             labelListado.Text = "Listado de productos";
             labelListado.TextAlign = ContentAlignment.TopCenter;
@@ -333,7 +329,7 @@
             dataGridViewListado.BackgroundColor = Color.LightBlue;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -345,7 +341,7 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = Color.Transparent;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
@@ -354,6 +350,8 @@
             dataGridViewListado.Location = new Point(3, 71);
             dataGridViewListado.Name = "dataGridViewListado";
             dataGridViewListado.ReadOnly = true;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewListado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewListado.Size = new Size(1099, 266);
             dataGridViewListado.TabIndex = 3;
             // 
@@ -407,44 +405,25 @@
             Stock.Name = "Stock";
             Stock.ReadOnly = true;
             // 
-            // labelHora
-            // 
-            labelHora.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            labelHora.AutoSize = true;
-            labelHora.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelHora.Location = new Point(1032, 0);
-            labelHora.Name = "labelHora";
-            labelHora.Size = new Size(94, 25);
-            labelHora.TabIndex = 3;
-            labelHora.Text = "labelHora";
-            labelHora.TextAlign = ContentAlignment.TopRight;
-            
-            System.Windows.Forms.Timer timerHora = new System.Windows.Forms.Timer();
-            DateTime fechaHoy = DateTime.Today;
-            timerHora.Interval = 1000; // Intervalo de 1 segundo
-            timerHora.Tick += (s, e) =>
-            {
-                labelHora.Text = $"Fecha: {fechaHoy.ToString("dd/MM/yyyy")}\nHora: {DateTime.Now.ToString("HH:mm:ss")}"; // Actualiza la hora en formato 24 horas
-            };
-            timerHora.Start();
-            // 
             // adminViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1341, 715);
             Controls.Add(tableLayoutPanelPrincipal);
+            ForeColor = Color.Transparent;
             Name = "adminViewForm";
             Text = "Form1";
             tableLayoutPanelPrincipal.ResumeLayout(false);
             tableLayoutPanelLateral.ResumeLayout(false);
             tableLayoutPanelLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             tableLayoutPanelResultados.ResumeLayout(false);
             tableLayoutPanelResultados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGrafica).EndInit();
-            tableLayoutPanelResumen.ResumeLayout(false);
-            tableLayoutPanelResumen.PerformLayout();
+            roundedTableLayoutPanel1.ResumeLayout(false);
+            roundedTableLayoutPanel1.PerformLayout();
             tableLayoutPanelListado.ResumeLayout(false);
             tableLayoutPanelListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListado).EndInit();
@@ -460,11 +439,6 @@
         private TableLayoutPanel tableLayoutPanelResultados;
         private Label labelTituloResultados;
         private PictureBox pictureBoxGrafica;
-        private TableLayoutPanel tableLayoutPanelResumen;
-        private Label label2;
-        private Label labelR1;
-        private Label label4;
-        private Label label3;
         private TableLayoutPanel tableLayoutPanelListado;
         private RoundedButton btnAgregarProducto;
         private RoundedButton btnEliminarProducto;
@@ -480,5 +454,8 @@
         private DataGridViewTextBoxColumn Stock;
         private RoundedButton btnSignOff;
         private Label labelHora;
+        private RoundedTableLayoutPanel roundedTableLayoutPanel1;
+        private PictureBox pictureBox1;
+        private Label labelResumen;
     }
 }

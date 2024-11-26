@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -11,6 +12,9 @@ namespace adminView
         private float scale = 1.0f; // Escala del botón (1.0 = tamaño original)
         private bool isShrinking = true; // Controla si el botón está reduciéndose o regresando a su tamaño original
         private Color BorderColor;
+
+        [Category("Appearance")]
+
 
         public RoundedButton(Color BorderColor)
         {
