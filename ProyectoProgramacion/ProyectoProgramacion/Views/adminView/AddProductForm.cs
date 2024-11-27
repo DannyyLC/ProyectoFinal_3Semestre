@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace adminView
 {
-    public partial class Form1 : Form
+    public partial class AddProductForm : Form
     {
-        public Form1()
+        public AddProductForm()
         {
             InitializeComponent();
         }

@@ -17,6 +17,8 @@ namespace adminView
             };
             timerHora.Start();
 
+            AddProductForm productForm = new AddProductForm();
+            productForm.ShowDialog();
         }
     }
 }

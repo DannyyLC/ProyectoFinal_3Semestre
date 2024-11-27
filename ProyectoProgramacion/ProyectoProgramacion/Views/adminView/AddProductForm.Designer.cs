@@ -1,6 +1,6 @@
 ﻿namespace adminView
 {
-    partial class Form1
+    partial class AddProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,312 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            tableLayoutPanel1 = new TableLayoutPanel();
+            pictureBoxTitulo = new PictureBox();
+            labelTitulo = new Label();
+            labelID = new Label();
+            labelNombre = new Label();
+            labelDescripcion = new Label();
+            labelImagen = new Label();
+            labelMarca = new Label();
+            labelColores = new Label();
+            labelPrecio = new Label();
+            labelStock = new Label();
+            textBoxID = new TextBox();
+            textBoxNombre = new TextBox();
+            textBoxDescripcion = new TextBox();
+            textBoxMarca = new TextBox();
+            textBoxColores = new TextBox();
+            textBoxPrecio = new TextBox();
+            textBoxStock = new TextBox();
+            buttonGuardar = new Button();
+            buttonCargarImagen = new Button();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTitulo).BeginInit();
+            SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.White;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel1.Controls.Add(pictureBoxTitulo, 0, 0);
+            tableLayoutPanel1.Controls.Add(labelTitulo, 0, 1);
+            tableLayoutPanel1.Controls.Add(labelID, 0, 2);
+            tableLayoutPanel1.Controls.Add(labelNombre, 0, 3);
+            tableLayoutPanel1.Controls.Add(labelDescripcion, 0, 4);
+            tableLayoutPanel1.Controls.Add(labelImagen, 0, 5);
+            tableLayoutPanel1.Controls.Add(labelMarca, 0, 6);
+            tableLayoutPanel1.Controls.Add(labelColores, 0, 7);
+            tableLayoutPanel1.Controls.Add(labelPrecio, 0, 8);
+            tableLayoutPanel1.Controls.Add(labelStock, 0, 9);
+            tableLayoutPanel1.Controls.Add(textBoxID, 1, 2);
+            tableLayoutPanel1.Controls.Add(textBoxNombre, 1, 3);
+            tableLayoutPanel1.Controls.Add(textBoxDescripcion, 1, 4);
+            tableLayoutPanel1.Controls.Add(textBoxMarca, 1, 6);
+            tableLayoutPanel1.Controls.Add(textBoxColores, 1, 7);
+            tableLayoutPanel1.Controls.Add(textBoxPrecio, 1, 8);
+            tableLayoutPanel1.Controls.Add(textBoxStock, 1, 9);
+            tableLayoutPanel1.Controls.Add(buttonGuardar, 0, 10);
+            tableLayoutPanel1.Controls.Add(buttonCargarImagen, 1, 5);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 11;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.Size = new Size(462, 656);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pictureBoxTitulo
+            // 
+            pictureBoxTitulo.Anchor = AnchorStyles.Top;
+            tableLayoutPanel1.SetColumnSpan(pictureBoxTitulo, 2);
+            pictureBoxTitulo.Image = Properties.Resources.Kicks__Final__2024_11_23_20_56_34;
+            pictureBoxTitulo.Location = new Point(145, 3);
+            pictureBoxTitulo.Name = "pictureBoxTitulo";
+            pictureBoxTitulo.Size = new Size(171, 50);
+            pictureBoxTitulo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTitulo.TabIndex = 0;
+            pictureBoxTitulo.TabStop = false;
+            // 
+            // labelTitulo
+            // 
+            labelTitulo.Anchor = AnchorStyles.None;
+            labelTitulo.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(labelTitulo, 2);
+            labelTitulo.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTitulo.Location = new Point(142, 78);
+            labelTitulo.Name = "labelTitulo";
+            labelTitulo.Size = new Size(178, 25);
+            labelTitulo.TabIndex = 1;
+            labelTitulo.Text = "Nuevo producto";
+            // 
+            // labelID
+            // 
+            labelID.Anchor = AnchorStyles.Right;
+            labelID.AutoSize = true;
+            labelID.Font = new Font("Tahoma", 14.25F);
+            labelID.Location = new Point(33, 135);
+            labelID.Name = "labelID";
+            labelID.Padding = new Padding(0, 0, 72, 0);
+            labelID.Size = new Size(102, 23);
+            labelID.TabIndex = 2;
+            labelID.Text = "ID";
+            // 
+            // labelNombre
+            // 
+            labelNombre.Anchor = AnchorStyles.Right;
+            labelNombre.AutoSize = true;
+            labelNombre.Font = new Font("Tahoma", 14.25F);
+            labelNombre.Location = new Point(30, 194);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Padding = new Padding(0, 0, 28, 0);
+            labelNombre.Size = new Size(105, 23);
+            labelNombre.TabIndex = 3;
+            labelNombre.Text = "Nombre";
+            // 
+            // labelDescripcion
+            // 
+            labelDescripcion.Anchor = AnchorStyles.Right;
+            labelDescripcion.AutoSize = true;
+            labelDescripcion.Font = new Font("Tahoma", 14.25F);
+            labelDescripcion.Location = new Point(29, 253);
+            labelDescripcion.Name = "labelDescripcion";
+            labelDescripcion.Size = new Size(106, 23);
+            labelDescripcion.TabIndex = 4;
+            labelDescripcion.Text = "Descripción";
+            // 
+            // labelImagen
+            // 
+            labelImagen.Anchor = AnchorStyles.Right;
+            labelImagen.AutoSize = true;
+            labelImagen.Font = new Font("Tahoma", 14.25F);
+            labelImagen.Location = new Point(31, 312);
+            labelImagen.Name = "labelImagen";
+            labelImagen.Padding = new Padding(0, 0, 29, 0);
+            labelImagen.Size = new Size(104, 23);
+            labelImagen.TabIndex = 5;
+            labelImagen.Text = "Imagen";
+            // 
+            // labelMarca
+            // 
+            labelMarca.Anchor = AnchorStyles.Right;
+            labelMarca.AutoSize = true;
+            labelMarca.Font = new Font("Tahoma", 14.25F);
+            labelMarca.Location = new Point(28, 371);
+            labelMarca.Name = "labelMarca";
+            labelMarca.Padding = new Padding(0, 0, 46, 0);
+            labelMarca.Size = new Size(107, 23);
+            labelMarca.TabIndex = 6;
+            labelMarca.Text = "Marca";
+            // 
+            // labelColores
+            // 
+            labelColores.Anchor = AnchorStyles.Right;
+            labelColores.AutoSize = true;
+            labelColores.Font = new Font("Tahoma", 14.25F);
+            labelColores.Location = new Point(29, 430);
+            labelColores.Name = "labelColores";
+            labelColores.Padding = new Padding(0, 0, 36, 0);
+            labelColores.Size = new Size(106, 23);
+            labelColores.TabIndex = 7;
+            labelColores.Text = "Colores";
+            // 
+            // labelPrecio
+            // 
+            labelPrecio.Anchor = AnchorStyles.Right;
+            labelPrecio.AutoSize = true;
+            labelPrecio.Font = new Font("Tahoma", 14.25F);
+            labelPrecio.Location = new Point(29, 489);
+            labelPrecio.Name = "labelPrecio";
+            labelPrecio.Padding = new Padding(0, 0, 46, 0);
+            labelPrecio.Size = new Size(106, 23);
+            labelPrecio.TabIndex = 8;
+            labelPrecio.Text = "Precio";
+            // 
+            // labelStock
+            // 
+            labelStock.Anchor = AnchorStyles.Right;
+            labelStock.AutoSize = true;
+            labelStock.Font = new Font("Tahoma", 14.25F);
+            labelStock.Location = new Point(30, 548);
+            labelStock.Name = "labelStock";
+            labelStock.Padding = new Padding(0, 0, 50, 0);
+            labelStock.Size = new Size(105, 23);
+            labelStock.TabIndex = 9;
+            labelStock.Text = "Stock";
+            // 
+            // textBoxID
+            // 
+            textBoxID.Anchor = AnchorStyles.Left;
+            textBoxID.Font = new Font("Tahoma", 14.25F);
+            textBoxID.Location = new Point(141, 131);
+            textBoxID.Name = "textBoxID";
+            textBoxID.Size = new Size(311, 30);
+            textBoxID.TabIndex = 10;
+            // 
+            // textBoxNombre
+            // 
+            textBoxNombre.Anchor = AnchorStyles.Left;
+            textBoxNombre.Font = new Font("Tahoma", 14.25F);
+            textBoxNombre.Location = new Point(141, 190);
+            textBoxNombre.Name = "textBoxNombre";
+            textBoxNombre.Size = new Size(311, 30);
+            textBoxNombre.TabIndex = 11;
+            // 
+            // textBoxDescripcion
+            // 
+            textBoxDescripcion.Anchor = AnchorStyles.Left;
+            textBoxDescripcion.Font = new Font("Tahoma", 14.25F);
+            textBoxDescripcion.Location = new Point(141, 249);
+            textBoxDescripcion.Name = "textBoxDescripcion";
+            textBoxDescripcion.Size = new Size(311, 30);
+            textBoxDescripcion.TabIndex = 12;
+            // 
+            // textBoxMarca
+            // 
+            textBoxMarca.Anchor = AnchorStyles.Left;
+            textBoxMarca.Font = new Font("Tahoma", 14.25F);
+            textBoxMarca.Location = new Point(141, 367);
+            textBoxMarca.Name = "textBoxMarca";
+            textBoxMarca.Size = new Size(311, 30);
+            textBoxMarca.TabIndex = 14;
+            // 
+            // textBoxColores
+            // 
+            textBoxColores.Anchor = AnchorStyles.Left;
+            textBoxColores.Font = new Font("Tahoma", 14.25F);
+            textBoxColores.Location = new Point(141, 426);
+            textBoxColores.Name = "textBoxColores";
+            textBoxColores.Size = new Size(311, 30);
+            textBoxColores.TabIndex = 15;
+            // 
+            // textBoxPrecio
+            // 
+            textBoxPrecio.Anchor = AnchorStyles.Left;
+            textBoxPrecio.Font = new Font("Tahoma", 14.25F);
+            textBoxPrecio.Location = new Point(141, 485);
+            textBoxPrecio.Name = "textBoxPrecio";
+            textBoxPrecio.Size = new Size(311, 30);
+            textBoxPrecio.TabIndex = 16;
+            // 
+            // textBoxStock
+            // 
+            textBoxStock.Anchor = AnchorStyles.Left;
+            textBoxStock.Font = new Font("Tahoma", 14.25F);
+            textBoxStock.Location = new Point(141, 544);
+            textBoxStock.Name = "textBoxStock";
+            textBoxStock.Size = new Size(311, 30);
+            textBoxStock.TabIndex = 17;
+            // 
+            // buttonGuardar
+            // 
+            buttonGuardar.Anchor = AnchorStyles.None;
+            tableLayoutPanel1.SetColumnSpan(buttonGuardar, 2);
+            buttonGuardar.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonGuardar.Location = new Point(174, 604);
+            buttonGuardar.Name = "buttonGuardar";
+            buttonGuardar.Size = new Size(114, 36);
+            buttonGuardar.TabIndex = 18;
+            buttonGuardar.Text = "Guardar";
+            buttonGuardar.UseVisualStyleBackColor = true;
+            // 
+            // buttonCargarImagen
+            // 
+            buttonCargarImagen.Anchor = AnchorStyles.None;
+            buttonCargarImagen.Location = new Point(144, 307);
+            buttonCargarImagen.Name = "buttonCargarImagen";
+            buttonCargarImagen.Size = new Size(311, 33);
+            buttonCargarImagen.TabIndex = 19;
+            buttonCargarImagen.Text = "button1";
+            buttonCargarImagen.UseVisualStyleBackColor = true;
+            // 
+            // AddProductForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(462, 656);
+            Controls.Add(tableLayoutPanel1);
+            Name = "AddProductForm";
+            Text = "Form1";
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTitulo).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private TableLayoutPanel tableLayoutPanel1;
+        private PictureBox pictureBoxTitulo;
+        private Label labelTitulo;
+        private Label labelID;
+        private Label labelNombre;
+        private Label labelDescripcion;
+        private Label labelImagen;
+        private Label labelMarca;
+        private Label labelColores;
+        private Label labelPrecio;
+        private Label labelStock;
+        private TextBox textBoxID;
+        private TextBox textBoxNombre;
+        private TextBox textBoxDescripcion;
+        private TextBox textBoxMarca;
+        private TextBox textBoxColores;
+        private TextBox textBoxPrecio;
+        private TextBox textBoxStock;
+        private Button buttonGuardar;
+        private Button buttonCargarImagen;
     }
 }
