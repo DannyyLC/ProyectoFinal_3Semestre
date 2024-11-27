@@ -63,6 +63,26 @@ namespace adminView.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diseño_final {
+            get {
+                object obj = ResourceManager.GetObject("diseño_final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grafica_barras {
+            get {
+                object obj = ResourceManager.GetObject("grafica_barras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgplaceholder {
             get {
                 object obj = ResourceManager.GetObject("imgplaceholder", resourceCulture);

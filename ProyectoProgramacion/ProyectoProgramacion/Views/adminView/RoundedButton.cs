@@ -16,7 +16,7 @@ namespace adminView
         [Category("Appearance")]
 
 
-        public RoundedButton(Color BorderColor)
+        public RoundedButton()
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
             this.FlatStyle = FlatStyle.Flat;

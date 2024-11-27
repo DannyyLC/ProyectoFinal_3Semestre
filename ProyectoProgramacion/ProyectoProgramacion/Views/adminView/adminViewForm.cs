@@ -2,7 +2,7 @@ namespace adminView
 {
     public partial class adminViewForm : Form
     {
-
+        private AddProductForm productForm = new AddProductForm();
         public adminViewForm()
         {
 
@@ -17,8 +17,12 @@ namespace adminView
             };
             timerHora.Start();
 
-            AddProductForm productForm = new AddProductForm();
-            productForm.ShowDialog();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            productForm.StartPosition = FormStartPosition.CenterParent;
+            productForm.ShowDialog(this);
         }
     }
 }

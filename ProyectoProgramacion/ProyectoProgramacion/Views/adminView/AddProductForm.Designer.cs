@@ -292,11 +292,12 @@
             // buttonCargarImagen
             // 
             buttonCargarImagen.Anchor = AnchorStyles.None;
+            buttonCargarImagen.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonCargarImagen.Location = new Point(144, 307);
             buttonCargarImagen.Name = "buttonCargarImagen";
             buttonCargarImagen.Size = new Size(311, 33);
             buttonCargarImagen.TabIndex = 19;
-            buttonCargarImagen.Text = "button1";
+            buttonCargarImagen.Text = "Agregar imagen";
             buttonCargarImagen.UseVisualStyleBackColor = true;
             // 
             // AddProductForm

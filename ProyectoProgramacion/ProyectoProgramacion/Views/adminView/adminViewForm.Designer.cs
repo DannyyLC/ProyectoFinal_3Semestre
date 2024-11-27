@@ -36,6 +36,7 @@
             pictureBox1 = new PictureBox();
             pictureBoxLogo = new PictureBox();
             label1 = new Label();
+            btnSignOff = new RoundedButton();
             tableLayoutPanelResultados = new TableLayoutPanel();
             labelTituloResultados = new Label();
             pictureBoxGrafica = new PictureBox();
@@ -53,10 +54,8 @@
             Colores = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
-            roundedTableLayoutPanel1 = new RoundedTableLayoutPanel();
-            btnSignOff = new RoundedButton(Color.Firebrick);
-            btnAgregarProducto = new RoundedButton(Color.White);
-            btnEliminarProducto = new RoundedButton(Color.White);
+            btnAddProduct = new RoundedButton();
+            btnDeleteProduct = new RoundedButton();
             tableLayoutPanelPrincipal.SuspendLayout();
             tableLayoutPanelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -149,18 +148,18 @@
             // 
             // btnSignOff
             // 
-            btnSignOff.Anchor = AnchorStyles.Top;
+            btnSignOff.Anchor = AnchorStyles.None;
             btnSignOff.BackColor = Color.Firebrick;
-            btnSignOff.BorderRadius = 30;
+            btnSignOff.BorderRadius = 20;
             btnSignOff.FlatAppearance.BorderSize = 0;
             btnSignOff.FlatStyle = FlatStyle.Flat;
-            btnSignOff.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSignOff.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSignOff.ForeColor = Color.White;
-            btnSignOff.Location = new Point(24, 145);
+            btnSignOff.Location = new Point(3, 145);
             btnSignOff.Name = "btnSignOff";
-            btnSignOff.Size = new Size(150, 50);
-            btnSignOff.TabIndex = 2;
-            btnSignOff.Text = "Cerrar Sesión";
+            btnSignOff.Size = new Size(192, 65);
+            btnSignOff.TabIndex = 4;
+            btnSignOff.Text = "Cerrar sesión";
             btnSignOff.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanelResultados
@@ -199,10 +198,10 @@
             // 
             pictureBoxGrafica.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBoxGrafica.Dock = DockStyle.Fill;
-            pictureBoxGrafica.Image = Properties.Resources.imgplaceholder;
+            pictureBoxGrafica.Image = Properties.Resources.diseño_final;
             pictureBoxGrafica.Location = new Point(3, 55);
             pictureBoxGrafica.Name = "pictureBoxGrafica";
-            pictureBoxGrafica.Padding = new Padding(30, 30, 30, 10);
+            pictureBoxGrafica.Padding = new Padding(30, 15, 30, 5);
             pictureBoxGrafica.Size = new Size(897, 293);
             pictureBoxGrafica.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxGrafica.TabIndex = 1;
@@ -258,10 +257,10 @@
             tableLayoutPanelListado.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.6666641F));
             tableLayoutPanelListado.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanelListado.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanelListado.Controls.Add(btnAgregarProducto, 1, 0);
-            tableLayoutPanelListado.Controls.Add(btnEliminarProducto, 2, 0);
             tableLayoutPanelListado.Controls.Add(labelListado, 0, 0);
             tableLayoutPanelListado.Controls.Add(dataGridViewListado, 0, 1);
+            tableLayoutPanelListado.Controls.Add(btnAddProduct, 1, 0);
+            tableLayoutPanelListado.Controls.Add(btnDeleteProduct, 2, 0);
             tableLayoutPanelListado.Dock = DockStyle.Fill;
             tableLayoutPanelListado.Location = new Point(221, 360);
             tableLayoutPanelListado.Margin = new Padding(20, 3, 15, 15);
@@ -271,40 +270,6 @@
             tableLayoutPanelListado.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
             tableLayoutPanelListado.Size = new Size(1105, 340);
             tableLayoutPanelListado.TabIndex = 2;
-            // 
-            // btnAgregarProducto
-            // 
-            btnAgregarProducto.BackColor = Color.DarkSlateGray;
-            btnAgregarProducto.BorderRadius = 20;
-            btnAgregarProducto.Dock = DockStyle.Fill;
-            btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            btnAgregarProducto.FlatStyle = FlatStyle.Flat;
-            btnAgregarProducto.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregarProducto.ForeColor = Color.White;
-            btnAgregarProducto.Location = new Point(756, 20);
-            btnAgregarProducto.Margin = new Padding(20);
-            btnAgregarProducto.Name = "btnAgregarProducto";
-            btnAgregarProducto.Size = new Size(144, 28);
-            btnAgregarProducto.TabIndex = 0;
-            btnAgregarProducto.Text = "Agregar Producto";
-            btnAgregarProducto.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarProducto
-            // 
-            btnEliminarProducto.BackColor = Color.Firebrick;
-            btnEliminarProducto.BorderRadius = 20;
-            btnEliminarProducto.Dock = DockStyle.Fill;
-            btnEliminarProducto.FlatAppearance.BorderSize = 0;
-            btnEliminarProducto.FlatStyle = FlatStyle.Flat;
-            btnEliminarProducto.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarProducto.ForeColor = Color.White;
-            btnEliminarProducto.Location = new Point(940, 20);
-            btnEliminarProducto.Margin = new Padding(20);
-            btnEliminarProducto.Name = "btnEliminarProducto";
-            btnEliminarProducto.Size = new Size(145, 28);
-            btnEliminarProducto.TabIndex = 1;
-            btnEliminarProducto.Text = "Eliminar Producto";
-            btnEliminarProducto.UseVisualStyleBackColor = false;
             // 
             // labelListado
             // 
@@ -405,6 +370,39 @@
             Stock.Name = "Stock";
             Stock.ReadOnly = true;
             // 
+            // btnAddProduct
+            // 
+            btnAddProduct.Anchor = AnchorStyles.None;
+            btnAddProduct.BackColor = Color.DarkSlateGray;
+            btnAddProduct.BorderRadius = 20;
+            btnAddProduct.FlatAppearance.BorderSize = 0;
+            btnAddProduct.FlatStyle = FlatStyle.Flat;
+            btnAddProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddProduct.ForeColor = Color.White;
+            btnAddProduct.Location = new Point(739, 3);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(178, 62);
+            btnAddProduct.TabIndex = 4;
+            btnAddProduct.Text = "Agregar Producto";
+            btnAddProduct.UseVisualStyleBackColor = false;
+            btnAddProduct.Click += btnAddProduct_Click;
+            // 
+            // btnDeleteProduct
+            // 
+            btnDeleteProduct.Anchor = AnchorStyles.None;
+            btnDeleteProduct.BackColor = Color.Firebrick;
+            btnDeleteProduct.BorderRadius = 20;
+            btnDeleteProduct.FlatAppearance.BorderSize = 0;
+            btnDeleteProduct.FlatStyle = FlatStyle.Flat;
+            btnDeleteProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDeleteProduct.ForeColor = Color.White;
+            btnDeleteProduct.Location = new Point(923, 3);
+            btnDeleteProduct.Name = "btnDeleteProduct";
+            btnDeleteProduct.Size = new Size(179, 62);
+            btnDeleteProduct.TabIndex = 5;
+            btnDeleteProduct.Text = "Eliminar Producto";
+            btnDeleteProduct.UseVisualStyleBackColor = false;
+            // 
             // adminViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -440,8 +438,6 @@
         private Label labelTituloResultados;
         private PictureBox pictureBoxGrafica;
         private TableLayoutPanel tableLayoutPanelListado;
-        private RoundedButton btnAgregarProducto;
-        private RoundedButton btnEliminarProducto;
         private Label labelListado;
         private DataGridView dataGridViewListado;
         private DataGridViewTextBoxColumn ID;
@@ -452,10 +448,12 @@
         private DataGridViewTextBoxColumn Colores;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
-        private RoundedButton btnSignOff;
         private Label labelHora;
         private RoundedTableLayoutPanel roundedTableLayoutPanel1;
         private PictureBox pictureBox1;
         private Label labelResumen;
+        private RoundedButton btnAddProduct;
+        private RoundedButton btnDeleteProduct;
+        private RoundedButton btnSignOff;
     }
 }
