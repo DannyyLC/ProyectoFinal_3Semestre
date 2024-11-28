@@ -411,7 +411,7 @@
             Controls.Add(tableLayoutPanelPrincipal);
             ForeColor = Color.Transparent;
             Name = "adminViewForm";
-            Text = "Form1";
+            Text = "Vista de administrador";
             tableLayoutPanelPrincipal.ResumeLayout(false);
             tableLayoutPanelLateral.ResumeLayout(false);
             tableLayoutPanelLateral.PerformLayout();

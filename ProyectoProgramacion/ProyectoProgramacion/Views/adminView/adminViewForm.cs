@@ -17,6 +17,8 @@ namespace adminView
             };
             timerHora.Start();
 
+            DbManager dbManager = new DbManager();
+
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -24,5 +26,6 @@ namespace adminView
             productForm.StartPosition = FormStartPosition.CenterParent;
             productForm.ShowDialog(this);
         }
+
     }
 }

@@ -307,7 +307,7 @@
             ClientSize = new Size(462, 656);
             Controls.Add(tableLayoutPanel1);
             Name = "AddProductForm";
-            Text = "Form1";
+            Text = "Agregar Producto";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTitulo).EndInit();
