@@ -51,7 +51,11 @@
             pictureBoxGrafica = new PictureBox();
             labelHora = new Label();
             roundedTableLayoutPanel1 = new RoundedTableLayoutPanel();
+            labelNumeroPedidosDato = new Label();
+            labelVentasTotalesDato = new Label();
             labelResumen = new Label();
+            labelVentasTotales = new Label();
+            labelNumeroPedidos = new Label();
             tableLayoutPanelListado = new TableLayoutPanel();
             labelListado = new Label();
             dataGridViewListado = new DataGridView();
@@ -171,6 +175,7 @@
             btnSignOff.TabIndex = 4;
             btnSignOff.Text = "Cerrar sesión";
             btnSignOff.UseVisualStyleBackColor = false;
+            btnSignOff.Click += btnSignOff_Click;
             // 
             // tableLayoutPanelResultados
             // 
@@ -234,32 +239,85 @@
             // 
             roundedTableLayoutPanel1.BackColor = Color.LightBlue;
             roundedTableLayoutPanel1.BorderRadius = 20;
-            roundedTableLayoutPanel1.ColumnCount = 1;
-            roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            roundedTableLayoutPanel1.ColumnCount = 2;
+            roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            roundedTableLayoutPanel1.Controls.Add(labelNumeroPedidosDato, 1, 2);
+            roundedTableLayoutPanel1.Controls.Add(labelVentasTotalesDato, 1, 1);
             roundedTableLayoutPanel1.Controls.Add(labelResumen, 0, 0);
+            roundedTableLayoutPanel1.Controls.Add(labelVentasTotales, 0, 1);
+            roundedTableLayoutPanel1.Controls.Add(labelNumeroPedidos, 0, 2);
             roundedTableLayoutPanel1.Dock = DockStyle.Fill;
             roundedTableLayoutPanel1.ForeColor = Color.LightBlue;
             roundedTableLayoutPanel1.Location = new Point(906, 55);
             roundedTableLayoutPanel1.Name = "roundedTableLayoutPanel1";
-            roundedTableLayoutPanel1.RowCount = 4;
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            roundedTableLayoutPanel1.RowCount = 3;
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             roundedTableLayoutPanel1.Size = new Size(220, 293);
             roundedTableLayoutPanel1.TabIndex = 4;
+            // 
+            // labelNumeroPedidosDato
+            // 
+            labelNumeroPedidosDato.Anchor = AnchorStyles.None;
+            labelNumeroPedidosDato.AutoSize = true;
+            labelNumeroPedidosDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelNumeroPedidosDato.ForeColor = Color.Black;
+            labelNumeroPedidosDato.Location = new Point(120, 222);
+            labelNumeroPedidosDato.Name = "labelNumeroPedidosDato";
+            labelNumeroPedidosDato.Size = new Size(89, 23);
+            labelNumeroPedidosDato.TabIndex = 4;
+            labelNumeroPedidosDato.Text = "Placehold";
+            // 
+            // labelVentasTotalesDato
+            // 
+            labelVentasTotalesDato.Anchor = AnchorStyles.None;
+            labelVentasTotalesDato.AutoSize = true;
+            labelVentasTotalesDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelVentasTotalesDato.ForeColor = Color.Black;
+            labelVentasTotalesDato.Location = new Point(120, 105);
+            labelVentasTotalesDato.Name = "labelVentasTotalesDato";
+            labelVentasTotalesDato.Size = new Size(89, 23);
+            labelVentasTotalesDato.TabIndex = 3;
+            labelVentasTotalesDato.Text = "Placehold";
             // 
             // labelResumen
             // 
             labelResumen.Anchor = AnchorStyles.None;
             labelResumen.AutoSize = true;
+            roundedTableLayoutPanel1.SetColumnSpan(labelResumen, 2);
             labelResumen.Font = new Font("Tahoma", 24F, FontStyle.Bold);
             labelResumen.ForeColor = Color.Black;
-            labelResumen.Location = new Point(27, 17);
+            labelResumen.Location = new Point(27, 9);
             labelResumen.Name = "labelResumen";
             labelResumen.Size = new Size(165, 39);
             labelResumen.TabIndex = 0;
             labelResumen.Text = "Resumen";
+            // 
+            // labelVentasTotales
+            // 
+            labelVentasTotales.Anchor = AnchorStyles.None;
+            labelVentasTotales.AutoSize = true;
+            labelVentasTotales.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelVentasTotales.ForeColor = Color.Black;
+            labelVentasTotales.Location = new Point(19, 93);
+            labelVentasTotales.Name = "labelVentasTotales";
+            labelVentasTotales.Size = new Size(72, 46);
+            labelVentasTotales.TabIndex = 1;
+            labelVentasTotales.Text = "Ventas totales:";
+            // 
+            // labelNumeroPedidos
+            // 
+            labelNumeroPedidos.Anchor = AnchorStyles.None;
+            labelNumeroPedidos.AutoSize = true;
+            labelNumeroPedidos.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelNumeroPedidos.ForeColor = Color.Black;
+            labelNumeroPedidos.Location = new Point(3, 211);
+            labelNumeroPedidos.Name = "labelNumeroPedidos";
+            labelNumeroPedidos.Size = new Size(104, 46);
+            labelNumeroPedidos.TabIndex = 2;
+            labelNumeroPedidos.Text = "Numero de pedidos:";
             // 
             // tableLayoutPanelListado
             // 
@@ -327,6 +385,7 @@
             dataGridViewCellStyle12.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
             dataGridViewListado.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewListado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewListado.Size = new Size(1099, 266);
             dataGridViewListado.TabIndex = 3;
             // 
@@ -362,6 +421,7 @@
             btnDeleteProduct.TabIndex = 5;
             btnDeleteProduct.Text = "Eliminar Producto";
             btnDeleteProduct.UseVisualStyleBackColor = false;
+            btnDeleteProduct.Click += btnDeleteProduct_Click;
             // 
             // ID
             // 
@@ -499,6 +559,10 @@
         private RoundedButton btnAddProduct;
         private RoundedButton btnDeleteProduct;
         private RoundedButton btnSignOff;
+        private Label labelVentasTotales;
+        private Label labelNumeroPedidos;
+        private Label labelNumeroPedidosDato;
+        private Label labelVentasTotalesDato;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripción;

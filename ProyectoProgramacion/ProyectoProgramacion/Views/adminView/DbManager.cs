@@ -9,6 +9,9 @@ using System.Runtime.Intrinsics.Arm;
 using Mysqlx.Crud;
 using Microsoft.VisualBasic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.VisualBasic.Devices;
+using System.Drawing;
+using System.Text.RegularExpressions;
 
 
 namespace adminView
@@ -29,7 +32,6 @@ namespace adminView
             {
                 connection = new MySqlConnection(cadena);
                 connection.Open();
-                MessageBox.Show("Conexión establecida exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -42,7 +44,39 @@ namespace adminView
             if (connection != null && connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
-                MessageBox.Show("Conexión cerrada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public void DeleteProduct(int id)
+        {
+            string query = $"DELETE from productos WHERE id = {id};";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(query + "\nError: " + ex.Message);
+                this.Disconnect();
+            }
+        }
+
+        public void InsertProduct(int id,string nombre,string descripcion,string imagen,string marca,string colores,string tallas,int precio,int stock)
+        {
+            string query = $"INSERT INTO productos (id, nombre, descripcion, imagen, marca, colores, tallas, precio, stock) VALUES (" +
+                $"{id}, '{nombre}', '{descripcion}', '{imagen}', '{marca}', '{colores}', '{tallas}', {precio}, {stock})";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(query + "\nError: " + ex.Message);
+                this.Disconnect();
             }
         }
 
