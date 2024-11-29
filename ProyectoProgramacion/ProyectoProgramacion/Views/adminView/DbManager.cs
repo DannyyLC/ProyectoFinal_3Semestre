@@ -63,14 +63,25 @@ namespace adminView
             }
         }
 
-        public void InsertProduct(int id,string nombre,string descripcion,string imagen,string marca,string colores,string tallas,int precio,int stock)
+        public void InsertProduct(int id, string nombre, string descripcion, string imagen, string marca, string colores, string tallas, int precio, int stock)
         {
-            string query = $"INSERT INTO productos (id, nombre, descripcion, imagen, marca, colores, tallas, precio, stock) VALUES (" +
-                $"{id}, '{nombre}', '{descripcion}', '{imagen}', '{marca}', '{colores}', '{tallas}', {precio}, {stock})";
+            string query = "INSERT INTO productos (id, nombre, descripcion, imagen, marca, colores, tallas, precio, stock) " +
+                           "VALUES (@id, @nombre, @descripcion, @imagen, @marca, @colores, @tallas, @precio, @stock)";
 
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                // Agregar parámetros
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@imagen", imagen);
+                cmd.Parameters.AddWithValue("@marca", marca);
+                cmd.Parameters.AddWithValue("@colores", colores);
+                cmd.Parameters.AddWithValue("@tallas", tallas);
+                cmd.Parameters.AddWithValue("@precio", precio);
+                cmd.Parameters.AddWithValue("@stock", stock);
+
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

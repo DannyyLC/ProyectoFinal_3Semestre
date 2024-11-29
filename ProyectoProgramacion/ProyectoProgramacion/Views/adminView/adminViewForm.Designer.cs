@@ -457,6 +457,7 @@
             // Imagen
             // 
             dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             Imagen.DefaultCellStyle = dataGridViewCellStyle5;
             Imagen.FillWeight = 27.2108841F;
             Imagen.HeaderText = "Imagen";

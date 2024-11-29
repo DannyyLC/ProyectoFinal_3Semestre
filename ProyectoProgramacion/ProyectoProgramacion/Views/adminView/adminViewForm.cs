@@ -50,11 +50,17 @@ namespace adminView
                                        product.Tallas, product.Precio, product.Stock);
             }
 
+            //Funcion que añade espacios en blanco a la ruta para que se ajuste al tamaño
+            foreach (DataGridViewRow row in dataGridViewListado.Rows)
+            {
+                string content = row.Cells["Imagen"].Value.ToString();
+                row.Cells["Imagen"].Value = InsertBreaks(content, 30); // Cada cuanto queremos que se inserte un espacio en blanco
+            }
+
         }
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-
             // Verifica si hay una fila seleccionada
             if (dataGridViewListado.SelectedRows.Count > 0)
             {
@@ -63,12 +69,27 @@ namespace adminView
 
                 // Obtén el valor de la primera celda
                 var id = filaSeleccionada.Cells[0].Value;
+                var nombreProducto = filaSeleccionada.Cells[1].Value; // Suponiendo que el nombre está en la columna 1
 
-                // Enviar el id a borrar a la funcion delete product
-                dbManager.DeleteProduct(Convert.ToInt32(id));
+                // Mostrar un cuadro de diálogo para confirmar la eliminación
+                DialogResult result = MessageBox.Show(
+                    $"¿Estás seguro de que deseas eliminar el producto '{nombreProducto}' con ID {id}?",
+                    "Confirmación de eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
-                //Recargamos el datagridview
-                this.cargarDataGrid();
+                // Si el usuario confirma, se procede a eliminar
+                if (result == DialogResult.Yes)
+                {
+                    // Enviar el id a borrar a la función delete product
+                    dbManager.DeleteProduct(Convert.ToInt32(id));
+
+                    // Recargar el DataGridView
+                    this.cargarDataGrid();
+
+                    MessageBox.Show("Producto eliminado exitosamente.");
+                }
             }
             else
             {
@@ -76,9 +97,19 @@ namespace adminView
             }
         }
 
+
         private void btnSignOff_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public string InsertBreaks(string input, int maxLength)
+        {
+            for (int i = maxLength; i < input.Length; i += maxLength)
+            {
+                input = input.Insert(i, " "); // Inserta un espacio como punto de quiebre
+            }
+            return input;
         }
     }
 }
