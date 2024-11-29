@@ -42,6 +42,7 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             tableLayoutPanelPrincipal = new TableLayoutPanel();
             tableLayoutPanelLateral = new TableLayoutPanel();
+            labelEslogan = new Label();
             pictureBox1 = new PictureBox();
             pictureBoxLogo = new PictureBox();
             label1 = new Label();
@@ -59,8 +60,6 @@
             tableLayoutPanelListado = new TableLayoutPanel();
             labelListado = new Label();
             dataGridViewListado = new DataGridView();
-            btnAddProduct = new RoundedButton();
-            btnDeleteProduct = new RoundedButton();
             ID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripción = new DataGridViewTextBoxColumn();
@@ -70,6 +69,10 @@
             Tallas = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
+            btnAddProduct = new RoundedButton();
+            btnDeleteProduct = new RoundedButton();
+            labelStock = new Label();
+            labelStockDato = new Label();
             tableLayoutPanelPrincipal.SuspendLayout();
             tableLayoutPanelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -104,7 +107,8 @@
             tableLayoutPanelLateral.BackColor = Color.LightBlue;
             tableLayoutPanelLateral.ColumnCount = 1;
             tableLayoutPanelLateral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanelLateral.Controls.Add(pictureBox1, 0, 3);
+            tableLayoutPanelLateral.Controls.Add(labelEslogan, 0, 3);
+            tableLayoutPanelLateral.Controls.Add(pictureBox1, 0, 4);
             tableLayoutPanelLateral.Controls.Add(pictureBoxLogo, 0, 0);
             tableLayoutPanelLateral.Controls.Add(label1, 0, 1);
             tableLayoutPanelLateral.Controls.Add(btnSignOff, 0, 2);
@@ -112,14 +116,28 @@
             tableLayoutPanelLateral.Location = new Point(0, 0);
             tableLayoutPanelLateral.Margin = new Padding(0, 0, 3, 0);
             tableLayoutPanelLateral.Name = "tableLayoutPanelLateral";
-            tableLayoutPanelLateral.RowCount = 4;
+            tableLayoutPanelLateral.RowCount = 5;
             tableLayoutPanelPrincipal.SetRowSpan(tableLayoutPanelLateral, 2);
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 41.81818F));
+            tableLayoutPanelLateral.RowStyles.Add(new RowStyle(SizeType.Percent, 28.39161F));
             tableLayoutPanelLateral.Size = new Size(198, 715);
             tableLayoutPanelLateral.TabIndex = 0;
+            // 
+            // labelEslogan
+            // 
+            labelEslogan.Anchor = AnchorStyles.Bottom;
+            labelEslogan.AutoSize = true;
+            labelEslogan.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelEslogan.ForeColor = Color.Black;
+            labelEslogan.Location = new Point(27, 465);
+            labelEslogan.Name = "labelEslogan";
+            labelEslogan.Size = new Size(144, 46);
+            labelEslogan.TabIndex = 5;
+            labelEslogan.Text = "Kickstart your future";
+            labelEslogan.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -127,9 +145,10 @@
             pictureBox1.BackColor = Color.LightBlue;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.Shoe__Final__2024_11_23_20_57_53__1_;
-            pictureBox1.Location = new Point(3, 512);
+            pictureBox1.Location = new Point(3, 514);
+            pictureBox1.Margin = new Padding(3, 0, 3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(192, 200);
+            pictureBox1.Size = new Size(192, 198);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -242,6 +261,8 @@
             roundedTableLayoutPanel1.ColumnCount = 2;
             roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            roundedTableLayoutPanel1.Controls.Add(labelStockDato, 1, 3);
+            roundedTableLayoutPanel1.Controls.Add(labelStock, 0, 3);
             roundedTableLayoutPanel1.Controls.Add(labelNumeroPedidosDato, 1, 2);
             roundedTableLayoutPanel1.Controls.Add(labelVentasTotalesDato, 1, 1);
             roundedTableLayoutPanel1.Controls.Add(labelResumen, 0, 0);
@@ -251,10 +272,11 @@
             roundedTableLayoutPanel1.ForeColor = Color.LightBlue;
             roundedTableLayoutPanel1.Location = new Point(906, 55);
             roundedTableLayoutPanel1.Name = "roundedTableLayoutPanel1";
-            roundedTableLayoutPanel1.RowCount = 3;
+            roundedTableLayoutPanel1.RowCount = 4;
             roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 27F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 27F));
+            roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
             roundedTableLayoutPanel1.Size = new Size(220, 293);
             roundedTableLayoutPanel1.TabIndex = 4;
             // 
@@ -264,7 +286,7 @@
             labelNumeroPedidosDato.AutoSize = true;
             labelNumeroPedidosDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelNumeroPedidosDato.ForeColor = Color.Black;
-            labelNumeroPedidosDato.Location = new Point(120, 222);
+            labelNumeroPedidosDato.Location = new Point(120, 165);
             labelNumeroPedidosDato.Name = "labelNumeroPedidosDato";
             labelNumeroPedidosDato.Size = new Size(89, 23);
             labelNumeroPedidosDato.TabIndex = 4;
@@ -276,7 +298,7 @@
             labelVentasTotalesDato.AutoSize = true;
             labelVentasTotalesDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelVentasTotalesDato.ForeColor = Color.Black;
-            labelVentasTotalesDato.Location = new Point(120, 105);
+            labelVentasTotalesDato.Location = new Point(120, 86);
             labelVentasTotalesDato.Name = "labelVentasTotalesDato";
             labelVentasTotalesDato.Size = new Size(89, 23);
             labelVentasTotalesDato.TabIndex = 3;
@@ -301,7 +323,7 @@
             labelVentasTotales.AutoSize = true;
             labelVentasTotales.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelVentasTotales.ForeColor = Color.Black;
-            labelVentasTotales.Location = new Point(19, 93);
+            labelVentasTotales.Location = new Point(19, 74);
             labelVentasTotales.Name = "labelVentasTotales";
             labelVentasTotales.Size = new Size(72, 46);
             labelVentasTotales.TabIndex = 1;
@@ -313,11 +335,12 @@
             labelNumeroPedidos.AutoSize = true;
             labelNumeroPedidos.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelNumeroPedidos.ForeColor = Color.Black;
-            labelNumeroPedidos.Location = new Point(3, 211);
+            labelNumeroPedidos.Location = new Point(3, 153);
             labelNumeroPedidos.Name = "labelNumeroPedidos";
             labelNumeroPedidos.Size = new Size(104, 46);
             labelNumeroPedidos.TabIndex = 2;
             labelNumeroPedidos.Text = "Numero de pedidos:";
+            labelNumeroPedidos.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanelListado
             // 
@@ -388,40 +411,6 @@
             dataGridViewListado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewListado.Size = new Size(1099, 266);
             dataGridViewListado.TabIndex = 3;
-            // 
-            // btnAddProduct
-            // 
-            btnAddProduct.Anchor = AnchorStyles.None;
-            btnAddProduct.BackColor = Color.DarkSlateGray;
-            btnAddProduct.BorderRadius = 20;
-            btnAddProduct.FlatAppearance.BorderSize = 0;
-            btnAddProduct.FlatStyle = FlatStyle.Flat;
-            btnAddProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddProduct.ForeColor = Color.White;
-            btnAddProduct.Location = new Point(739, 3);
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(178, 62);
-            btnAddProduct.TabIndex = 4;
-            btnAddProduct.Text = "Agregar Producto";
-            btnAddProduct.UseVisualStyleBackColor = false;
-            btnAddProduct.Click += btnAddProduct_Click;
-            // 
-            // btnDeleteProduct
-            // 
-            btnDeleteProduct.Anchor = AnchorStyles.None;
-            btnDeleteProduct.BackColor = Color.Firebrick;
-            btnDeleteProduct.BorderRadius = 20;
-            btnDeleteProduct.FlatAppearance.BorderSize = 0;
-            btnDeleteProduct.FlatStyle = FlatStyle.Flat;
-            btnDeleteProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteProduct.ForeColor = Color.White;
-            btnDeleteProduct.Location = new Point(923, 3);
-            btnDeleteProduct.Name = "btnDeleteProduct";
-            btnDeleteProduct.Size = new Size(179, 62);
-            btnDeleteProduct.TabIndex = 5;
-            btnDeleteProduct.Text = "Eliminar Producto";
-            btnDeleteProduct.UseVisualStyleBackColor = false;
-            btnDeleteProduct.Click += btnDeleteProduct_Click;
             // 
             // ID
             // 
@@ -516,6 +505,65 @@
             Stock.ReadOnly = true;
             Stock.Width = 75;
             // 
+            // btnAddProduct
+            // 
+            btnAddProduct.Anchor = AnchorStyles.None;
+            btnAddProduct.BackColor = Color.DarkSlateGray;
+            btnAddProduct.BorderRadius = 20;
+            btnAddProduct.FlatAppearance.BorderSize = 0;
+            btnAddProduct.FlatStyle = FlatStyle.Flat;
+            btnAddProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddProduct.ForeColor = Color.White;
+            btnAddProduct.Location = new Point(739, 3);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(178, 62);
+            btnAddProduct.TabIndex = 4;
+            btnAddProduct.Text = "Agregar Producto";
+            btnAddProduct.UseVisualStyleBackColor = false;
+            btnAddProduct.Click += btnAddProduct_Click;
+            // 
+            // btnDeleteProduct
+            // 
+            btnDeleteProduct.Anchor = AnchorStyles.None;
+            btnDeleteProduct.BackColor = Color.Firebrick;
+            btnDeleteProduct.BorderRadius = 20;
+            btnDeleteProduct.FlatAppearance.BorderSize = 0;
+            btnDeleteProduct.FlatStyle = FlatStyle.Flat;
+            btnDeleteProduct.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDeleteProduct.ForeColor = Color.White;
+            btnDeleteProduct.Location = new Point(923, 3);
+            btnDeleteProduct.Name = "btnDeleteProduct";
+            btnDeleteProduct.Size = new Size(179, 62);
+            btnDeleteProduct.TabIndex = 5;
+            btnDeleteProduct.Text = "Eliminar Producto";
+            btnDeleteProduct.UseVisualStyleBackColor = false;
+            btnDeleteProduct.Click += btnDeleteProduct_Click;
+            // 
+            // labelStock
+            // 
+            labelStock.Anchor = AnchorStyles.None;
+            labelStock.AutoSize = true;
+            labelStock.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelStock.ForeColor = Color.Black;
+            labelStock.Location = new Point(4, 231);
+            labelStock.Name = "labelStock";
+            labelStock.Size = new Size(102, 46);
+            labelStock.TabIndex = 5;
+            labelStock.Text = "Stock de la tienda:";
+            labelStock.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labelStockDato
+            // 
+            labelStockDato.Anchor = AnchorStyles.None;
+            labelStockDato.AutoSize = true;
+            labelStockDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelStockDato.ForeColor = Color.Black;
+            labelStockDato.Location = new Point(120, 243);
+            labelStockDato.Name = "labelStockDato";
+            labelStockDato.Size = new Size(89, 23);
+            labelStockDato.TabIndex = 6;
+            labelStockDato.Text = "Placehold";
+            // 
             // adminViewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -573,5 +621,8 @@
         private DataGridViewTextBoxColumn Tallas;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
+        private Label labelEslogan;
+        private Label labelStockDato;
+        private Label labelStock;
     }
 }

@@ -27,6 +27,7 @@ namespace adminView
             dataGridViewListado.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dataGridViewListado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+            actualizarResumen();
             cargarDataGrid();
         }
 
@@ -110,6 +111,15 @@ namespace adminView
                 input = input.Insert(i, " "); // Inserta un espacio como punto de quiebre
             }
             return input;
+        }
+
+        private void actualizarResumen()
+        {
+            List<string> data = dbManager.GetSummaryData();
+
+            labelVentasTotalesDato.Text = data[0];
+            labelNumeroPedidosDato.Text = data[1];
+            labelStockDato.Text = data[2];
         }
     }
 }

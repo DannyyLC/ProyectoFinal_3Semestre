@@ -129,5 +129,74 @@ namespace adminView
             }
             return products;
         }
+
+        public List<string> GetSummaryData()
+        {
+            List<string> data = new List<string>();
+            int totalStock = 0;
+            int totalPrice = 0;
+            int totalCount = 0;
+
+            try
+            {
+                string query = "SELECT SUM(stock) AS totalStock FROM productos";
+                MySqlCommand command = new MySqlCommand(query, this.connection);
+
+                // Ejecutar la consulta y obtener el resultado
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    totalStock = Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al calcular la suma de stock: " + ex.Message);
+                this.Disconnect();
+            }
+
+
+            try
+            {
+                string query = "SELECT SUM(precio) AS totalPrice FROM pedidos";
+                MySqlCommand command = new MySqlCommand(query, this.connection);
+
+                // Ejecutar la consulta y obtener el resultado
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    totalPrice = Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al calcular la suma de price: " + ex.Message);
+                this.Disconnect();
+            }
+
+            try
+            {
+                string query = "SELECT COUNT(*) FROM pedidos";
+                MySqlCommand command = new MySqlCommand(query, this.connection);
+
+                // Ejecutar la consulta y obtener el resultado
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    totalCount = Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al calcular la suma de price: " + ex.Message);
+                this.Disconnect();
+            }
+
+            data.Add(totalPrice.ToString());
+            data.Add(totalCount.ToString());
+            data.Add(totalStock.ToString());
+
+            return data;
+        }
     }
 }
