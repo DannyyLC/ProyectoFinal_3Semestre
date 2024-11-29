@@ -20,6 +20,7 @@ namespace ProyectoProgramacion.Views
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             HeaderTableLayoutPanel = new TableLayoutPanel();
             panelSearchBox = new Panel();
             LoupePicture = new PictureBox();
@@ -33,6 +34,18 @@ namespace ProyectoProgramacion.Views
             btnNovedades = new CustomeButton();
             btnDescuento = new CustomeButton();
             btnNike = new CustomeButton();
+            FooterPanel = new Panel();
+            lblTime = new Label();
+            LeftPanel = new Panel();
+            RightPanel = new Panel();
+            FlowLayoutProducts = new FlowLayoutPanel();
+            Timer = new System.Windows.Forms.Timer(components);
+            UserMenu = new Panel();
+            LogOutPanel = new Panel();
+            lblLogout = new Label();
+            LogoutPicture = new PictureBox();
+            ExitMenuPicture = new PictureBox();
+            MenuUser = new Label();
             HeaderTableLayoutPanel.SuspendLayout();
             panelSearchBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LoupePicture).BeginInit();
@@ -40,6 +53,11 @@ namespace ProyectoProgramacion.Views
             ((System.ComponentModel.ISupportInitialize)CartPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
             NavBarTableLayoutPanel.SuspendLayout();
+            FooterPanel.SuspendLayout();
+            UserMenu.SuspendLayout();
+            LogOutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoutPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExitMenuPicture).BeginInit();
             SuspendLayout();
             // 
             // HeaderTableLayoutPanel
@@ -58,7 +76,7 @@ namespace ProyectoProgramacion.Views
             HeaderTableLayoutPanel.Name = "HeaderTableLayoutPanel";
             HeaderTableLayoutPanel.RowCount = 1;
             HeaderTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            HeaderTableLayoutPanel.Size = new Size(1312, 104);
+            HeaderTableLayoutPanel.Size = new Size(1275, 104);
             HeaderTableLayoutPanel.TabIndex = 2;
             // 
             // panelSearchBox
@@ -67,22 +85,24 @@ namespace ProyectoProgramacion.Views
             panelSearchBox.Controls.Add(LoupePicture);
             panelSearchBox.Controls.Add(SearchBox);
             panelSearchBox.Dock = DockStyle.Fill;
-            panelSearchBox.Location = new Point(323, 3);
+            panelSearchBox.Location = new Point(314, 3);
             panelSearchBox.Name = "panelSearchBox";
-            panelSearchBox.Size = new Size(789, 98);
+            panelSearchBox.Size = new Size(766, 98);
             panelSearchBox.TabIndex = 1;
             // 
             // LoupePicture
             // 
             LoupePicture.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             LoupePicture.BackColor = SystemColors.Window;
+            LoupePicture.Cursor = Cursors.Hand;
             LoupePicture.Image = Properties.Resources.loupe;
-            LoupePicture.Location = new Point(705, 23);
+            LoupePicture.Location = new Point(700, 25);
             LoupePicture.Name = "LoupePicture";
             LoupePicture.Size = new Size(46, 43);
             LoupePicture.SizeMode = PictureBoxSizeMode.Zoom;
             LoupePicture.TabIndex = 0;
             LoupePicture.TabStop = false;
+            LoupePicture.Click += LoupePicture_Click;
             // 
             // SearchBox
             // 
@@ -102,7 +122,7 @@ namespace ProyectoProgramacion.Views
             SearchBox.PasswordChar = false;
             SearchBox.PlaceholderColor = Color.DarkGray;
             SearchBox.PlaceholderText = "Buscar por marca, modelo, etc.";
-            SearchBox.Size = new Size(780, 64);
+            SearchBox.Size = new Size(757, 64);
             SearchBox.TabIndex = 0;
             SearchBox.Texts = "";
             SearchBox.UnderlinedStyle = false;
@@ -112,25 +132,27 @@ namespace ProyectoProgramacion.Views
             AccountPicture.Anchor = AnchorStyles.None;
             AccountPicture.Cursor = Cursors.Hand;
             AccountPicture.Image = Properties.Resources.user;
-            AccountPicture.Location = new Point(1230, 22);
+            AccountPicture.Location = new Point(1195, 22);
             AccountPicture.Name = "AccountPicture";
             AccountPicture.Size = new Size(70, 59);
             AccountPicture.SizeMode = PictureBoxSizeMode.Zoom;
             AccountPicture.TabIndex = 0;
             AccountPicture.TabStop = false;
+            AccountPicture.Click += AccountPicture_Click;
             // 
             // CartPicture
             // 
             CartPicture.Anchor = AnchorStyles.None;
             CartPicture.Cursor = Cursors.Hand;
             CartPicture.Image = Properties.Resources.shopping_cart;
-            CartPicture.Location = new Point(1127, 22);
+            CartPicture.Location = new Point(1094, 22);
             CartPicture.Name = "CartPicture";
             CartPicture.Padding = new Padding(2);
             CartPicture.Size = new Size(80, 59);
             CartPicture.SizeMode = PictureBoxSizeMode.Zoom;
             CartPicture.TabIndex = 0;
             CartPicture.TabStop = false;
+            CartPicture.Click += CartPicture_Click;
             // 
             // LogoPicture
             // 
@@ -138,14 +160,14 @@ namespace ProyectoProgramacion.Views
             LogoPicture.Location = new Point(3, 3);
             LogoPicture.Margin = new Padding(3, 3, 15, 3);
             LogoPicture.Name = "LogoPicture";
-            LogoPicture.Size = new Size(298, 95);
+            LogoPicture.Size = new Size(293, 95);
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
             // 
             // NavBarTableLayoutPanel
             // 
-            NavBarTableLayoutPanel.BackColor = Color.WhiteSmoke;
+            NavBarTableLayoutPanel.BackColor = Color.Gainsboro;
             NavBarTableLayoutPanel.ColumnCount = 7;
             NavBarTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24F));
             NavBarTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
@@ -165,7 +187,7 @@ namespace ProyectoProgramacion.Views
             NavBarTableLayoutPanel.Name = "NavBarTableLayoutPanel";
             NavBarTableLayoutPanel.RowCount = 1;
             NavBarTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            NavBarTableLayoutPanel.Size = new Size(1312, 64);
+            NavBarTableLayoutPanel.Size = new Size(1275, 64);
             NavBarTableLayoutPanel.TabIndex = 3;
             // 
             // btnJordan
@@ -175,13 +197,14 @@ namespace ProyectoProgramacion.Views
             btnJordan.BorderColor = Color.PaleVioletRed;
             btnJordan.BorderRadius = 0;
             btnJordan.BorderSize = 0;
+            btnJordan.Cursor = Cursors.Hand;
             btnJordan.Dock = DockStyle.Fill;
             btnJordan.FlatAppearance.BorderSize = 0;
             btnJordan.FlatStyle = FlatStyle.Flat;
             btnJordan.ForeColor = Color.Black;
-            btnJordan.Location = new Point(421, 3);
+            btnJordan.Location = new Point(411, 3);
             btnJordan.Name = "btnJordan";
-            btnJordan.Size = new Size(125, 58);
+            btnJordan.Size = new Size(121, 58);
             btnJordan.TabIndex = 1;
             btnJordan.Text = "Jordan";
             btnJordan.TextColor = Color.Black;
@@ -194,13 +217,14 @@ namespace ProyectoProgramacion.Views
             btnAdidas.BorderColor = Color.PaleVioletRed;
             btnAdidas.BorderRadius = 0;
             btnAdidas.BorderSize = 0;
+            btnAdidas.Cursor = Cursors.Hand;
             btnAdidas.Dock = DockStyle.Fill;
             btnAdidas.FlatAppearance.BorderSize = 0;
             btnAdidas.FlatStyle = FlatStyle.Flat;
             btnAdidas.ForeColor = Color.Black;
-            btnAdidas.Location = new Point(552, 3);
+            btnAdidas.Location = new Point(538, 3);
             btnAdidas.Name = "btnAdidas";
-            btnAdidas.Size = new Size(112, 58);
+            btnAdidas.Size = new Size(108, 58);
             btnAdidas.TabIndex = 2;
             btnAdidas.Text = "Adidas";
             btnAdidas.TextColor = Color.Black;
@@ -213,13 +237,14 @@ namespace ProyectoProgramacion.Views
             btnNovedades.BorderColor = Color.PaleVioletRed;
             btnNovedades.BorderRadius = 0;
             btnNovedades.BorderSize = 0;
+            btnNovedades.Cursor = Cursors.Hand;
             btnNovedades.Dock = DockStyle.Fill;
             btnNovedades.FlatAppearance.BorderSize = 0;
             btnNovedades.FlatStyle = FlatStyle.Flat;
             btnNovedades.ForeColor = Color.Black;
-            btnNovedades.Location = new Point(670, 3);
+            btnNovedades.Location = new Point(652, 3);
             btnNovedades.Name = "btnNovedades";
-            btnNovedades.Size = new Size(151, 58);
+            btnNovedades.Size = new Size(147, 58);
             btnNovedades.TabIndex = 3;
             btnNovedades.Text = "Novedades";
             btnNovedades.TextColor = Color.Black;
@@ -232,13 +257,14 @@ namespace ProyectoProgramacion.Views
             btnDescuento.BorderColor = Color.PaleVioletRed;
             btnDescuento.BorderRadius = 0;
             btnDescuento.BorderSize = 0;
+            btnDescuento.Cursor = Cursors.Hand;
             btnDescuento.Dock = DockStyle.Fill;
             btnDescuento.FlatAppearance.BorderSize = 0;
             btnDescuento.FlatStyle = FlatStyle.Flat;
             btnDescuento.ForeColor = Color.FromArgb(208, 17, 16);
-            btnDescuento.Location = new Point(827, 3);
+            btnDescuento.Location = new Point(805, 3);
             btnDescuento.Name = "btnDescuento";
-            btnDescuento.Size = new Size(164, 58);
+            btnDescuento.Size = new Size(159, 58);
             btnDescuento.TabIndex = 4;
             btnDescuento.Text = "Descuentos";
             btnDescuento.TextColor = Color.FromArgb(208, 17, 16);
@@ -251,24 +277,157 @@ namespace ProyectoProgramacion.Views
             btnNike.BorderColor = Color.PaleVioletRed;
             btnNike.BorderRadius = 0;
             btnNike.BorderSize = 0;
+            btnNike.Cursor = Cursors.Hand;
             btnNike.Dock = DockStyle.Fill;
             btnNike.FlatAppearance.BorderSize = 0;
             btnNike.FlatStyle = FlatStyle.Flat;
             btnNike.ForeColor = Color.Black;
-            btnNike.Location = new Point(317, 3);
+            btnNike.Location = new Point(309, 3);
             btnNike.Name = "btnNike";
-            btnNike.Size = new Size(98, 58);
+            btnNike.Size = new Size(96, 58);
             btnNike.TabIndex = 0;
             btnNike.Text = "Nike";
             btnNike.TextColor = Color.Black;
             btnNike.UseVisualStyleBackColor = false;
             // 
+            // FooterPanel
+            // 
+            FooterPanel.BackColor = Color.Gainsboro;
+            FooterPanel.Controls.Add(lblTime);
+            FooterPanel.Dock = DockStyle.Bottom;
+            FooterPanel.Location = new Point(0, 627);
+            FooterPanel.Name = "FooterPanel";
+            FooterPanel.Size = new Size(1275, 29);
+            FooterPanel.TabIndex = 4;
+            // 
+            // lblTime
+            // 
+            lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTime.Location = new Point(1162, 3);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(45, 21);
+            lblTime.TabIndex = 0;
+            lblTime.Text = "Hora";
+            // 
+            // LeftPanel
+            // 
+            LeftPanel.BackColor = Color.Transparent;
+            LeftPanel.Dock = DockStyle.Left;
+            LeftPanel.Location = new Point(0, 168);
+            LeftPanel.Name = "LeftPanel";
+            LeftPanel.Size = new Size(162, 459);
+            LeftPanel.TabIndex = 5;
+            // 
+            // RightPanel
+            // 
+            RightPanel.BackColor = Color.Transparent;
+            RightPanel.Dock = DockStyle.Right;
+            RightPanel.Location = new Point(1113, 168);
+            RightPanel.Name = "RightPanel";
+            RightPanel.Size = new Size(162, 459);
+            RightPanel.TabIndex = 6;
+            // 
+            // FlowLayoutProducts
+            // 
+            FlowLayoutProducts.AutoScroll = true;
+            FlowLayoutProducts.BackColor = Color.Transparent;
+            FlowLayoutProducts.Dock = DockStyle.Fill;
+            FlowLayoutProducts.Location = new Point(162, 168);
+            FlowLayoutProducts.Name = "FlowLayoutProducts";
+            FlowLayoutProducts.Size = new Size(951, 459);
+            FlowLayoutProducts.TabIndex = 7;
+            // 
+            // Timer
+            // 
+            Timer.Enabled = true;
+            Timer.Interval = 1000;
+            Timer.Tick += Timer_Tick;
+            // 
+            // UserMenu
+            // 
+            UserMenu.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UserMenu.BackColor = Color.WhiteSmoke;
+            UserMenu.Controls.Add(LogOutPanel);
+            UserMenu.Controls.Add(ExitMenuPicture);
+            UserMenu.Controls.Add(MenuUser);
+            UserMenu.Location = new Point(1014, 0);
+            UserMenu.Name = "UserMenu";
+            UserMenu.Size = new Size(261, 190);
+            UserMenu.TabIndex = 8;
+            UserMenu.Visible = false;
+            // 
+            // LogOutPanel
+            // 
+            LogOutPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            LogOutPanel.Controls.Add(lblLogout);
+            LogOutPanel.Controls.Add(LogoutPicture);
+            LogOutPanel.Location = new Point(5, 113);
+            LogOutPanel.Name = "LogOutPanel";
+            LogOutPanel.Size = new Size(201, 42);
+            LogOutPanel.TabIndex = 2;
+            // 
+            // lblLogout
+            // 
+            lblLogout.AutoSize = true;
+            lblLogout.Cursor = Cursors.Hand;
+            lblLogout.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogout.Location = new Point(40, 6);
+            lblLogout.Name = "lblLogout";
+            lblLogout.Size = new Size(103, 28);
+            lblLogout.TabIndex = 1;
+            lblLogout.Text = "Log Out";
+            lblLogout.Click += lblLogout_Click;
+            // 
+            // LogoutPicture
+            // 
+            LogoutPicture.Cursor = Cursors.Hand;
+            LogoutPicture.Dock = DockStyle.Left;
+            LogoutPicture.Image = Properties.Resources.logout;
+            LogoutPicture.Location = new Point(0, 0);
+            LogoutPicture.Name = "LogoutPicture";
+            LogoutPicture.Size = new Size(34, 42);
+            LogoutPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            LogoutPicture.TabIndex = 0;
+            LogoutPicture.TabStop = false;
+            LogoutPicture.Click += LogoutPicture_Click;
+            // 
+            // ExitMenuPicture
+            // 
+            ExitMenuPicture.Cursor = Cursors.Hand;
+            ExitMenuPicture.Image = Properties.Resources.close;
+            ExitMenuPicture.Location = new Point(5, 6);
+            ExitMenuPicture.Name = "ExitMenuPicture";
+            ExitMenuPicture.Size = new Size(32, 27);
+            ExitMenuPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            ExitMenuPicture.TabIndex = 1;
+            ExitMenuPicture.TabStop = false;
+            ExitMenuPicture.Click += ExitMenuPicture_Click;
+            // 
+            // MenuUser
+            // 
+            MenuUser.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            MenuUser.AutoSize = true;
+            MenuUser.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MenuUser.Location = new Point(3, 70);
+            MenuUser.Name = "MenuUser";
+            MenuUser.Size = new Size(203, 22);
+            MenuUser.TabIndex = 0;
+            MenuUser.Text = "Nombre de el usuario";
+            // 
             // UserMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.White;
-            ClientSize = new Size(1312, 640);
+            ClientSize = new Size(1275, 656);
+            Controls.Add(UserMenu);
+            Controls.Add(FlowLayoutProducts);
+            Controls.Add(RightPanel);
+            Controls.Add(LeftPanel);
+            Controls.Add(FooterPanel);
             Controls.Add(NavBarTableLayoutPanel);
             Controls.Add(HeaderTableLayoutPanel);
             Name = "UserMainForm";
@@ -281,6 +440,14 @@ namespace ProyectoProgramacion.Views
             ((System.ComponentModel.ISupportInitialize)CartPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
             NavBarTableLayoutPanel.ResumeLayout(false);
+            FooterPanel.ResumeLayout(false);
+            FooterPanel.PerformLayout();
+            UserMenu.ResumeLayout(false);
+            UserMenu.PerformLayout();
+            LogOutPanel.ResumeLayout(false);
+            LogOutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoutPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExitMenuPicture).EndInit();
             ResumeLayout(false);
         }
 
@@ -298,6 +465,18 @@ namespace ProyectoProgramacion.Views
         private CustomeButton btnAdidas;
         private CustomeButton btnNovedades;
         private CustomeButton btnDescuento;
+        private Panel FooterPanel;
+        private Panel LeftPanel;
+        private Panel RightPanel;
+        private FlowLayoutPanel FlowLayoutProducts;
+        private Label lblTime;
+        private System.Windows.Forms.Timer Timer;
+        private Panel UserMenu;
+        private Label MenuUser;
+        private PictureBox ExitMenuPicture;
+        private Panel LogOutPanel;
+        private Label lblLogout;
+        private PictureBox LogoutPicture;
     }
 }
 
