@@ -46,6 +46,7 @@
             ProductPicture.Size = new Size(300, 367);
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
+            ProductPicture.Click += ProductPicture_Click;
             // 
             // MarcaLabel
             // 

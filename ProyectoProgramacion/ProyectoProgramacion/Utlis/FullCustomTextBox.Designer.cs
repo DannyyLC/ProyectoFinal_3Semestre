@@ -53,7 +53,6 @@
             Padding = new Padding(7);
             Size = new Size(321, 92);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

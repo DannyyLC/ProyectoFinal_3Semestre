@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ProyectoProgramacion.Views
 {
@@ -52,11 +53,30 @@ namespace ProyectoProgramacion.Views
         private void LogoutPicture_Click(object sender, EventArgs e)
         {
             // Logica para Log Out
+            this.Close();
+            this.Dispose();
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
         {
             // Logica para Log Out
+            this.Close();
+            this.Dispose();
+        }
+
+        private void btnNike_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDescuento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureRegresar_Click(object sender, EventArgs e)
+        {
+            ProductView.Visible = false;
         }
     }
 }

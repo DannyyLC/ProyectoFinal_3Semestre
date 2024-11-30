@@ -36,8 +36,6 @@ namespace ProyectoProgramacion.Views
             btnNike = new CustomeButton();
             FooterPanel = new Panel();
             lblTime = new Label();
-            LeftPanel = new Panel();
-            RightPanel = new Panel();
             FlowLayoutProducts = new FlowLayoutPanel();
             Timer = new System.Windows.Forms.Timer(components);
             UserMenu = new Panel();
@@ -46,6 +44,17 @@ namespace ProyectoProgramacion.Views
             LogoutPicture = new PictureBox();
             ExitMenuPicture = new PictureBox();
             MenuUser = new Label();
+            ProductView = new Panel();
+            ProductPanel = new Panel();
+            PictureRegresar = new PictureBox();
+            ProductPicture = new PictureBox();
+            ProductButtonsPanel = new Panel();
+            btnComprarYa = new CustomeButton();
+            btnAgregarCarrito = new CustomeButton();
+            ProductDescriptionPanel = new Panel();
+            ProductDescription = new RichTextBox();
+            ProductMarca = new Label();
+            ProductModel = new Label();
             HeaderTableLayoutPanel.SuspendLayout();
             panelSearchBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LoupePicture).BeginInit();
@@ -58,6 +67,12 @@ namespace ProyectoProgramacion.Views
             LogOutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ExitMenuPicture).BeginInit();
+            ProductView.SuspendLayout();
+            ProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PictureRegresar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ProductPicture).BeginInit();
+            ProductButtonsPanel.SuspendLayout();
+            ProductDescriptionPanel.SuspendLayout();
             SuspendLayout();
             // 
             // HeaderTableLayoutPanel
@@ -76,7 +91,7 @@ namespace ProyectoProgramacion.Views
             HeaderTableLayoutPanel.Name = "HeaderTableLayoutPanel";
             HeaderTableLayoutPanel.RowCount = 1;
             HeaderTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            HeaderTableLayoutPanel.Size = new Size(1275, 104);
+            HeaderTableLayoutPanel.Size = new Size(1283, 104);
             HeaderTableLayoutPanel.TabIndex = 2;
             // 
             // panelSearchBox
@@ -85,9 +100,9 @@ namespace ProyectoProgramacion.Views
             panelSearchBox.Controls.Add(LoupePicture);
             panelSearchBox.Controls.Add(SearchBox);
             panelSearchBox.Dock = DockStyle.Fill;
-            panelSearchBox.Location = new Point(314, 3);
+            panelSearchBox.Location = new Point(315, 3);
             panelSearchBox.Name = "panelSearchBox";
-            panelSearchBox.Size = new Size(766, 98);
+            panelSearchBox.Size = new Size(771, 98);
             panelSearchBox.TabIndex = 1;
             // 
             // LoupePicture
@@ -96,7 +111,7 @@ namespace ProyectoProgramacion.Views
             LoupePicture.BackColor = SystemColors.Window;
             LoupePicture.Cursor = Cursors.Hand;
             LoupePicture.Image = Properties.Resources.loupe;
-            LoupePicture.Location = new Point(700, 25);
+            LoupePicture.Location = new Point(705, 25);
             LoupePicture.Name = "LoupePicture";
             LoupePicture.Size = new Size(46, 43);
             LoupePicture.SizeMode = PictureBoxSizeMode.Zoom;
@@ -122,7 +137,7 @@ namespace ProyectoProgramacion.Views
             SearchBox.PasswordChar = false;
             SearchBox.PlaceholderColor = Color.DarkGray;
             SearchBox.PlaceholderText = "Buscar por marca, modelo, etc.";
-            SearchBox.Size = new Size(757, 64);
+            SearchBox.Size = new Size(762, 64);
             SearchBox.TabIndex = 0;
             SearchBox.Texts = "";
             SearchBox.UnderlinedStyle = false;
@@ -132,7 +147,7 @@ namespace ProyectoProgramacion.Views
             AccountPicture.Anchor = AnchorStyles.None;
             AccountPicture.Cursor = Cursors.Hand;
             AccountPicture.Image = Properties.Resources.user;
-            AccountPicture.Location = new Point(1195, 22);
+            AccountPicture.Location = new Point(1202, 22);
             AccountPicture.Name = "AccountPicture";
             AccountPicture.Size = new Size(70, 59);
             AccountPicture.SizeMode = PictureBoxSizeMode.Zoom;
@@ -145,7 +160,7 @@ namespace ProyectoProgramacion.Views
             CartPicture.Anchor = AnchorStyles.None;
             CartPicture.Cursor = Cursors.Hand;
             CartPicture.Image = Properties.Resources.shopping_cart;
-            CartPicture.Location = new Point(1094, 22);
+            CartPicture.Location = new Point(1100, 22);
             CartPicture.Name = "CartPicture";
             CartPicture.Padding = new Padding(2);
             CartPicture.Size = new Size(80, 59);
@@ -157,8 +172,8 @@ namespace ProyectoProgramacion.Views
             // LogoPicture
             // 
             LogoPicture.Image = Properties.Resources.Kicks__600_x_100_;
-            LogoPicture.Location = new Point(3, 3);
-            LogoPicture.Margin = new Padding(3, 3, 15, 3);
+            LogoPicture.Location = new Point(0, 0);
+            LogoPicture.Margin = new Padding(0);
             LogoPicture.Name = "LogoPicture";
             LogoPicture.Size = new Size(293, 95);
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
@@ -187,7 +202,7 @@ namespace ProyectoProgramacion.Views
             NavBarTableLayoutPanel.Name = "NavBarTableLayoutPanel";
             NavBarTableLayoutPanel.RowCount = 1;
             NavBarTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            NavBarTableLayoutPanel.Size = new Size(1275, 64);
+            NavBarTableLayoutPanel.Size = new Size(1283, 64);
             NavBarTableLayoutPanel.TabIndex = 3;
             // 
             // btnJordan
@@ -202,9 +217,9 @@ namespace ProyectoProgramacion.Views
             btnJordan.FlatAppearance.BorderSize = 0;
             btnJordan.FlatStyle = FlatStyle.Flat;
             btnJordan.ForeColor = Color.Black;
-            btnJordan.Location = new Point(411, 3);
+            btnJordan.Location = new Point(412, 3);
             btnJordan.Name = "btnJordan";
-            btnJordan.Size = new Size(121, 58);
+            btnJordan.Size = new Size(122, 58);
             btnJordan.TabIndex = 1;
             btnJordan.Text = "Jordan";
             btnJordan.TextColor = Color.Black;
@@ -222,9 +237,9 @@ namespace ProyectoProgramacion.Views
             btnAdidas.FlatAppearance.BorderSize = 0;
             btnAdidas.FlatStyle = FlatStyle.Flat;
             btnAdidas.ForeColor = Color.Black;
-            btnAdidas.Location = new Point(538, 3);
+            btnAdidas.Location = new Point(540, 3);
             btnAdidas.Name = "btnAdidas";
-            btnAdidas.Size = new Size(108, 58);
+            btnAdidas.Size = new Size(109, 58);
             btnAdidas.TabIndex = 2;
             btnAdidas.Text = "Adidas";
             btnAdidas.TextColor = Color.Black;
@@ -242,7 +257,7 @@ namespace ProyectoProgramacion.Views
             btnNovedades.FlatAppearance.BorderSize = 0;
             btnNovedades.FlatStyle = FlatStyle.Flat;
             btnNovedades.ForeColor = Color.Black;
-            btnNovedades.Location = new Point(652, 3);
+            btnNovedades.Location = new Point(655, 3);
             btnNovedades.Name = "btnNovedades";
             btnNovedades.Size = new Size(147, 58);
             btnNovedades.TabIndex = 3;
@@ -262,13 +277,14 @@ namespace ProyectoProgramacion.Views
             btnDescuento.FlatAppearance.BorderSize = 0;
             btnDescuento.FlatStyle = FlatStyle.Flat;
             btnDescuento.ForeColor = Color.FromArgb(208, 17, 16);
-            btnDescuento.Location = new Point(805, 3);
+            btnDescuento.Location = new Point(808, 3);
             btnDescuento.Name = "btnDescuento";
-            btnDescuento.Size = new Size(159, 58);
+            btnDescuento.Size = new Size(160, 58);
             btnDescuento.TabIndex = 4;
             btnDescuento.Text = "Descuentos";
             btnDescuento.TextColor = Color.FromArgb(208, 17, 16);
             btnDescuento.UseVisualStyleBackColor = false;
+            btnDescuento.Click += btnDescuento_Click;
             // 
             // btnNike
             // 
@@ -282,22 +298,23 @@ namespace ProyectoProgramacion.Views
             btnNike.FlatAppearance.BorderSize = 0;
             btnNike.FlatStyle = FlatStyle.Flat;
             btnNike.ForeColor = Color.Black;
-            btnNike.Location = new Point(309, 3);
+            btnNike.Location = new Point(310, 3);
             btnNike.Name = "btnNike";
             btnNike.Size = new Size(96, 58);
             btnNike.TabIndex = 0;
             btnNike.Text = "Nike";
             btnNike.TextColor = Color.Black;
             btnNike.UseVisualStyleBackColor = false;
+            btnNike.Click += btnNike_Click;
             // 
             // FooterPanel
             // 
             FooterPanel.BackColor = Color.Gainsboro;
             FooterPanel.Controls.Add(lblTime);
             FooterPanel.Dock = DockStyle.Bottom;
-            FooterPanel.Location = new Point(0, 627);
+            FooterPanel.Location = new Point(0, 674);
             FooterPanel.Name = "FooterPanel";
-            FooterPanel.Size = new Size(1275, 29);
+            FooterPanel.Size = new Size(1283, 29);
             FooterPanel.TabIndex = 4;
             // 
             // lblTime
@@ -305,38 +322,20 @@ namespace ProyectoProgramacion.Views
             lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(1162, 3);
+            lblTime.Location = new Point(1170, 3);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(45, 21);
             lblTime.TabIndex = 0;
             lblTime.Text = "Hora";
             // 
-            // LeftPanel
-            // 
-            LeftPanel.BackColor = Color.Transparent;
-            LeftPanel.Dock = DockStyle.Left;
-            LeftPanel.Location = new Point(0, 168);
-            LeftPanel.Name = "LeftPanel";
-            LeftPanel.Size = new Size(162, 459);
-            LeftPanel.TabIndex = 5;
-            // 
-            // RightPanel
-            // 
-            RightPanel.BackColor = Color.Transparent;
-            RightPanel.Dock = DockStyle.Right;
-            RightPanel.Location = new Point(1113, 168);
-            RightPanel.Name = "RightPanel";
-            RightPanel.Size = new Size(162, 459);
-            RightPanel.TabIndex = 6;
-            // 
             // FlowLayoutProducts
             // 
+            FlowLayoutProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             FlowLayoutProducts.AutoScroll = true;
-            FlowLayoutProducts.BackColor = Color.Transparent;
-            FlowLayoutProducts.Dock = DockStyle.Fill;
+            FlowLayoutProducts.BackColor = SystemColors.Window;
             FlowLayoutProducts.Location = new Point(162, 168);
             FlowLayoutProducts.Name = "FlowLayoutProducts";
-            FlowLayoutProducts.Size = new Size(951, 459);
+            FlowLayoutProducts.Size = new Size(938, 621);
             FlowLayoutProducts.TabIndex = 7;
             // 
             // Timer
@@ -352,7 +351,7 @@ namespace ProyectoProgramacion.Views
             UserMenu.Controls.Add(LogOutPanel);
             UserMenu.Controls.Add(ExitMenuPicture);
             UserMenu.Controls.Add(MenuUser);
-            UserMenu.Location = new Point(1014, 0);
+            UserMenu.Location = new Point(1038, 0);
             UserMenu.Name = "UserMenu";
             UserMenu.Size = new Size(261, 190);
             UserMenu.TabIndex = 8;
@@ -416,18 +415,153 @@ namespace ProyectoProgramacion.Views
             MenuUser.TabIndex = 0;
             MenuUser.Text = "Nombre de el usuario";
             // 
+            // ProductView
+            // 
+            ProductView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ProductView.Controls.Add(ProductPanel);
+            ProductView.Controls.Add(ProductButtonsPanel);
+            ProductView.Controls.Add(ProductDescriptionPanel);
+            ProductView.Location = new Point(0, 227);
+            ProductView.Name = "ProductView";
+            ProductView.Size = new Size(1262, 447);
+            ProductView.TabIndex = 9;
+            ProductView.Visible = false;
+            // 
+            // ProductPanel
+            // 
+            ProductPanel.Controls.Add(PictureRegresar);
+            ProductPanel.Controls.Add(ProductPicture);
+            ProductPanel.Dock = DockStyle.Fill;
+            ProductPanel.Location = new Point(0, 0);
+            ProductPanel.Name = "ProductPanel";
+            ProductPanel.Size = new Size(752, 358);
+            ProductPanel.TabIndex = 2;
+            // 
+            // PictureRegresar
+            // 
+            PictureRegresar.Location = new Point(12, 16);
+            PictureRegresar.Name = "PictureRegresar";
+            PictureRegresar.Size = new Size(51, 38);
+            PictureRegresar.SizeMode = PictureBoxSizeMode.Zoom;
+            PictureRegresar.TabIndex = 1;
+            PictureRegresar.TabStop = false;
+            PictureRegresar.Click += PictureRegresar_Click;
+            // 
+            // ProductPicture
+            // 
+            ProductPicture.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ProductPicture.Location = new Point(69, 28);
+            ProductPicture.Name = "ProductPicture";
+            ProductPicture.Size = new Size(647, 324);
+            ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            ProductPicture.TabIndex = 0;
+            ProductPicture.TabStop = false;
+            // 
+            // ProductButtonsPanel
+            // 
+            ProductButtonsPanel.BackColor = Color.Transparent;
+            ProductButtonsPanel.Controls.Add(btnComprarYa);
+            ProductButtonsPanel.Controls.Add(btnAgregarCarrito);
+            ProductButtonsPanel.Dock = DockStyle.Bottom;
+            ProductButtonsPanel.Location = new Point(0, 358);
+            ProductButtonsPanel.Name = "ProductButtonsPanel";
+            ProductButtonsPanel.Size = new Size(752, 89);
+            ProductButtonsPanel.TabIndex = 1;
+            // 
+            // btnComprarYa
+            // 
+            btnComprarYa.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnComprarYa.BackColor = SystemColors.InactiveCaptionText;
+            btnComprarYa.BackgroundClor = SystemColors.InactiveCaptionText;
+            btnComprarYa.BorderColor = Color.PaleVioletRed;
+            btnComprarYa.BorderRadius = 40;
+            btnComprarYa.BorderSize = 0;
+            btnComprarYa.FlatAppearance.BorderSize = 0;
+            btnComprarYa.FlatStyle = FlatStyle.Flat;
+            btnComprarYa.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnComprarYa.ForeColor = SystemColors.ControlLightLight;
+            btnComprarYa.Location = new Point(443, 18);
+            btnComprarYa.Name = "btnComprarYa";
+            btnComprarYa.Size = new Size(237, 58);
+            btnComprarYa.TabIndex = 1;
+            btnComprarYa.Text = "Comprar Ya";
+            btnComprarYa.TextColor = SystemColors.ControlLightLight;
+            btnComprarYa.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarCarrito
+            // 
+            btnAgregarCarrito.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAgregarCarrito.BackColor = Color.FromArgb(208, 17, 16);
+            btnAgregarCarrito.BackgroundClor = Color.FromArgb(208, 17, 16);
+            btnAgregarCarrito.BorderColor = Color.PaleVioletRed;
+            btnAgregarCarrito.BorderRadius = 40;
+            btnAgregarCarrito.BorderSize = 0;
+            btnAgregarCarrito.FlatAppearance.BorderSize = 0;
+            btnAgregarCarrito.FlatStyle = FlatStyle.Flat;
+            btnAgregarCarrito.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregarCarrito.ForeColor = SystemColors.ControlLightLight;
+            btnAgregarCarrito.Location = new Point(160, 18);
+            btnAgregarCarrito.Name = "btnAgregarCarrito";
+            btnAgregarCarrito.Size = new Size(277, 58);
+            btnAgregarCarrito.TabIndex = 0;
+            btnAgregarCarrito.Text = "Agregar al Carrito";
+            btnAgregarCarrito.TextColor = SystemColors.ControlLightLight;
+            btnAgregarCarrito.UseVisualStyleBackColor = false;
+            // 
+            // ProductDescriptionPanel
+            // 
+            ProductDescriptionPanel.BackColor = Color.Transparent;
+            ProductDescriptionPanel.Controls.Add(ProductModel);
+            ProductDescriptionPanel.Controls.Add(ProductMarca);
+            ProductDescriptionPanel.Controls.Add(ProductDescription);
+            ProductDescriptionPanel.Dock = DockStyle.Right;
+            ProductDescriptionPanel.Location = new Point(752, 0);
+            ProductDescriptionPanel.Name = "ProductDescriptionPanel";
+            ProductDescriptionPanel.Size = new Size(510, 447);
+            ProductDescriptionPanel.TabIndex = 0;
+            // 
+            // ProductDescription
+            // 
+            ProductDescription.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ProductDescription.BorderStyle = BorderStyle.None;
+            ProductDescription.Font = new Font("Microsoft Sans Serif", 8.25F);
+            ProductDescription.Location = new Point(41, 35);
+            ProductDescription.Name = "ProductDescription";
+            ProductDescription.Size = new Size(439, 399);
+            ProductDescription.TabIndex = 0;
+            ProductDescription.Text = "";
+            // 
+            // ProductMarca
+            // 
+            ProductMarca.AutoSize = true;
+            ProductMarca.Font = new Font("Tahoma", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProductMarca.Location = new Point(41, 28);
+            ProductMarca.Name = "ProductMarca";
+            ProductMarca.Size = new Size(343, 45);
+            ProductMarca.TabIndex = 1;
+            ProductMarca.Text = "Marca de el Tenis";
+            // 
+            // ProductModel
+            // 
+            ProductModel.AutoSize = true;
+            ProductModel.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProductModel.Location = new Point(41, 97);
+            ProductModel.Name = "ProductModel";
+            ProductModel.Size = new Size(296, 36);
+            ProductModel.TabIndex = 2;
+            ProductModel.Text = "Modelo de el Tenis";
+            // 
             // UserMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.White;
-            ClientSize = new Size(1275, 656);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(1304, 656);
+            Controls.Add(FooterPanel);
+            Controls.Add(ProductView);
             Controls.Add(UserMenu);
             Controls.Add(FlowLayoutProducts);
-            Controls.Add(RightPanel);
-            Controls.Add(LeftPanel);
-            Controls.Add(FooterPanel);
             Controls.Add(NavBarTableLayoutPanel);
             Controls.Add(HeaderTableLayoutPanel);
             Name = "UserMainForm";
@@ -448,6 +582,13 @@ namespace ProyectoProgramacion.Views
             LogOutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)ExitMenuPicture).EndInit();
+            ProductView.ResumeLayout(false);
+            ProductPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PictureRegresar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
+            ProductButtonsPanel.ResumeLayout(false);
+            ProductDescriptionPanel.ResumeLayout(false);
+            ProductDescriptionPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -466,8 +607,6 @@ namespace ProyectoProgramacion.Views
         private CustomeButton btnNovedades;
         private CustomeButton btnDescuento;
         private Panel FooterPanel;
-        private Panel LeftPanel;
-        private Panel RightPanel;
         private FlowLayoutPanel FlowLayoutProducts;
         private Label lblTime;
         private System.Windows.Forms.Timer Timer;
@@ -477,6 +616,17 @@ namespace ProyectoProgramacion.Views
         private Panel LogOutPanel;
         private Label lblLogout;
         private PictureBox LogoutPicture;
+        private Panel ProductView;
+        private Panel ProductButtonsPanel;
+        private Panel ProductDescriptionPanel;
+        private CustomeButton btnComprarYa;
+        private CustomeButton btnAgregarCarrito;
+        private Panel ProductPanel;
+        private PictureBox PictureRegresar;
+        private PictureBox ProductPicture;
+        private Label ProductModel;
+        private Label ProductMarca;
+        private RichTextBox ProductDescription;
     }
 }
 

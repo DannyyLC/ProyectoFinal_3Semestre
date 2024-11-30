@@ -12,9 +12,15 @@ namespace ProyectoProgramacion.Utlis
 {
     public partial class Product : UserControl
     {
+        public event EventHandler ProductClicked;
         public Product()
         {
             InitializeComponent();
+        }
+
+        private void ProductPicture_Click(object sender, EventArgs e)
+        {
+            ProductClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }
