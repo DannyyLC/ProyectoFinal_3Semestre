@@ -224,6 +224,7 @@ namespace ProyectoProgramacion.Views
             btnJordan.Text = "Jordan";
             btnJordan.TextColor = Color.Black;
             btnJordan.UseVisualStyleBackColor = false;
+            btnJordan.Click += btnJordan_Click;
             // 
             // btnAdidas
             // 
@@ -244,6 +245,7 @@ namespace ProyectoProgramacion.Views
             btnAdidas.Text = "Adidas";
             btnAdidas.TextColor = Color.Black;
             btnAdidas.UseVisualStyleBackColor = false;
+            btnAdidas.Click += btnAdidas_Click;
             // 
             // btnNovedades
             // 
@@ -264,6 +266,7 @@ namespace ProyectoProgramacion.Views
             btnNovedades.Text = "Novedades";
             btnNovedades.TextColor = Color.Black;
             btnNovedades.UseVisualStyleBackColor = false;
+            btnNovedades.Click += btnNovedades_Click;
             // 
             // btnDescuento
             // 
@@ -434,11 +437,12 @@ namespace ProyectoProgramacion.Views
             ProductPanel.Dock = DockStyle.Fill;
             ProductPanel.Location = new Point(0, 0);
             ProductPanel.Name = "ProductPanel";
-            ProductPanel.Size = new Size(785, 424);
+            ProductPanel.Size = new Size(785, 445);
             ProductPanel.TabIndex = 2;
             // 
             // PictureRegresar
             // 
+            PictureRegresar.Image = Properties.Resources.volver;
             PictureRegresar.Location = new Point(12, 16);
             PictureRegresar.Name = "PictureRegresar";
             PictureRegresar.Size = new Size(51, 38);
@@ -452,21 +456,22 @@ namespace ProyectoProgramacion.Views
             ProductPicture.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ProductPicture.Location = new Point(69, 28);
             ProductPicture.Name = "ProductPicture";
-            ProductPicture.Size = new Size(680, 390);
+            ProductPicture.Size = new Size(680, 411);
             ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
             // 
             // ProductButtonsPanel
             // 
-            ProductButtonsPanel.BackColor = Color.Transparent;
+            ProductButtonsPanel.BackColor = Color.RosyBrown;
             ProductButtonsPanel.Controls.Add(btnComprarYa);
             ProductButtonsPanel.Controls.Add(btnAgregarCarrito);
             ProductButtonsPanel.Dock = DockStyle.Bottom;
-            ProductButtonsPanel.Location = new Point(0, 424);
+            ProductButtonsPanel.Location = new Point(0, 445);
             ProductButtonsPanel.Name = "ProductButtonsPanel";
-            ProductButtonsPanel.Size = new Size(785, 89);
+            ProductButtonsPanel.Size = new Size(785, 68);
             ProductButtonsPanel.TabIndex = 1;
+            ProductButtonsPanel.Resize += ProductButtonsPanel_Resize;
             // 
             // btnComprarYa
             // 
@@ -474,15 +479,17 @@ namespace ProyectoProgramacion.Views
             btnComprarYa.BackColor = SystemColors.InactiveCaptionText;
             btnComprarYa.BackgroundClor = SystemColors.InactiveCaptionText;
             btnComprarYa.BorderColor = Color.PaleVioletRed;
-            btnComprarYa.BorderRadius = 40;
+            btnComprarYa.BorderRadius = 37;
             btnComprarYa.BorderSize = 0;
             btnComprarYa.FlatAppearance.BorderSize = 0;
             btnComprarYa.FlatStyle = FlatStyle.Flat;
             btnComprarYa.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComprarYa.ForeColor = SystemColors.ControlLightLight;
-            btnComprarYa.Location = new Point(447, 18);
+            btnComprarYa.Location = new Point(416, 6);
+            btnComprarYa.MaximumSize = new Size(300, 70);
+            btnComprarYa.MinimumSize = new Size(277, 56);
             btnComprarYa.Name = "btnComprarYa";
-            btnComprarYa.Size = new Size(237, 58);
+            btnComprarYa.Size = new Size(277, 56);
             btnComprarYa.TabIndex = 1;
             btnComprarYa.Text = "Comprar Ya";
             btnComprarYa.TextColor = SystemColors.ControlLightLight;
@@ -494,15 +501,17 @@ namespace ProyectoProgramacion.Views
             btnAgregarCarrito.BackColor = Color.FromArgb(208, 17, 16);
             btnAgregarCarrito.BackgroundClor = Color.FromArgb(208, 17, 16);
             btnAgregarCarrito.BorderColor = Color.PaleVioletRed;
-            btnAgregarCarrito.BorderRadius = 40;
+            btnAgregarCarrito.BorderRadius = 37;
             btnAgregarCarrito.BorderSize = 0;
             btnAgregarCarrito.FlatAppearance.BorderSize = 0;
             btnAgregarCarrito.FlatStyle = FlatStyle.Flat;
             btnAgregarCarrito.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarCarrito.ForeColor = SystemColors.ControlLightLight;
-            btnAgregarCarrito.Location = new Point(147, 18);
+            btnAgregarCarrito.Location = new Point(133, 6);
+            btnAgregarCarrito.MaximumSize = new Size(300, 70);
+            btnAgregarCarrito.MinimumSize = new Size(277, 56);
             btnAgregarCarrito.Name = "btnAgregarCarrito";
-            btnAgregarCarrito.Size = new Size(277, 58);
+            btnAgregarCarrito.Size = new Size(277, 56);
             btnAgregarCarrito.TabIndex = 0;
             btnAgregarCarrito.Text = "Agregar al Carrito";
             btnAgregarCarrito.TextColor = SystemColors.ControlLightLight;
@@ -617,16 +626,16 @@ namespace ProyectoProgramacion.Views
         private Label lblLogout;
         private PictureBox LogoutPicture;
         private Panel ProductView;
-        private Panel ProductButtonsPanel;
         private Panel ProductDescriptionPanel;
-        private CustomeButton btnComprarYa;
-        private CustomeButton btnAgregarCarrito;
         private Panel ProductPanel;
         private PictureBox PictureRegresar;
         private PictureBox ProductPicture;
         private Label ProductModel;
         private Label ProductMarca;
         private RichTextBox ProductDescription;
+        private CustomeButton btnComprarYa;
+        private CustomeButton btnAgregarCarrito;
+        private Panel ProductButtonsPanel;
     }
 }
 

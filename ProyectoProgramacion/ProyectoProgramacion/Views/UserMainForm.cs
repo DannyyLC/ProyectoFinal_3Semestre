@@ -7,13 +7,18 @@ using System.Diagnostics;
 using System.Xml.Linq;
 using System.Reflection;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace ProyectoProgramacion.Views
 {
     public partial class UserMainForm : Form
     {
+        // ----- * * * ATRIBUTOS * * * -----
         private List<Product> products;
         private MySqlConnection connection;
+
+
+        // ----- * * * CONSTRUCTOR * * * -----
         public UserMainForm()
         {
             InitializeComponent();
@@ -25,27 +30,22 @@ namespace ProyectoProgramacion.Views
             LoadProducts();
         }
 
+
+        // ----- * * * CLOCK Y MEJORA DE SEARCHBOX * * * -----
         private void UserMainForm_Layout(object sender, LayoutEventArgs e)
         {
             SearchBox.PerformLayout();
             SearchBox.Invalidate();
         }
-
         // Para el Funcionamiento de el Timer
         private void Timer_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
         }
-        // Para Mostrar Menu con el Log Out
-        private void AccountPicture_Click(object sender, EventArgs e)
-        {
-            UserMenu.Visible = true;
-        }
-        // Para Cerrar el Menu Desplegable
-        private void ExitMenuPicture_Click(object sender, EventArgs e)
-        {
-            UserMenu.Visible = false;
-        }
+
+
+        // ----- * * * CARRITO * * * -----
+        #region Carrito
         // Para ir al Carrito
         private void CartPicture_Click(object sender, EventArgs e)
         {
@@ -57,11 +57,21 @@ namespace ProyectoProgramacion.Views
 
             cart.ShowDialog();
         }
+        #endregion
+
+
+        // ----- * * * SEARCHBOX * * * -----
+        #region SearchBox
         // Para hacer una busqueda
         private void LoupePicture_Click(object sender, EventArgs e)
         {
 
         }
+        #endregion
+
+
+        // ----- * * * LOG OUT Y MENU DESLEGABLE * * * -----
+        #region Log Out y Menu desplegable
         // Hacer Log Out
         private void LogoutPicture_Click(object sender, EventArgs e)
         {
@@ -76,21 +86,21 @@ namespace ProyectoProgramacion.Views
             this.Close();
             this.Dispose();
         }
-        // Filtrar Productos Por Marca Nike
-        private void btnNike_Click(object sender, EventArgs e)
+        // Para Cerrar el Menu Desplegable
+        private void ExitMenuPicture_Click(object sender, EventArgs e)
         {
+            UserMenu.Visible = false;
+        }
+        // Para Mostrar Menu con el Log Out
+        private void AccountPicture_Click(object sender, EventArgs e)
+        {
+            UserMenu.Visible = true;
+        }
+        #endregion
 
-        }
-        // Filtrar Productos con Descuento
-        private void btnDescuento_Click(object sender, EventArgs e)
-        {
 
-        }
-        // Salir de la vista de un producto
-        private void PictureRegresar_Click(object sender, EventArgs e)
-        {
-            ProductView.Visible = false;
-        }
+        // ----- * * * BASE DE DATOS Y MOSTRAR PRODUCTOS * * * -----
+        #region
         // Nos conectamos con la base de datos
         public void Connect()
         {
@@ -192,6 +202,57 @@ namespace ProyectoProgramacion.Views
                 controlToHide.BringToFront();
             }
         }
+        // Salir de la vista de un producto
+        private void PictureRegresar_Click(object sender, EventArgs e)
+        {
+            ProductView.Visible = false;
+        }
+        // Centra los botones de compra y añadir al carrito
+        private void ProductButtonsPanel_Resize(object sender, EventArgs e)
+        {
+            int buttonSpacing = 10; // Espacio entre los botones
+            int totalButtonWidth = btnAgregarCarrito.Width + btnComprarYa.Width + buttonSpacing;
+
+            // Calcula la posición inicial para centrar los botones
+            int startX = (ProductButtonsPanel.Width - totalButtonWidth) / 2;
+            int startY = ProductButtonsPanel.Height - btnAgregarCarrito.Height - 10; // 10 px desde el borde inferior
+
+            // Posiciona los botones
+            btnAgregarCarrito.Location = new Point(startX, startY);
+            btnComprarYa.Location = new Point(startX + btnAgregarCarrito.Width + buttonSpacing, startY);
+        }
+        #endregion
+
+
+        // ----- * * * BOTONES DE EL NAVBAR * * * -----
+        #region Botones de el Nav Bar
+        // Filtrar Productos de la Marca Nike
+        private void btnNike_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Filtrar Productos de la Marca Jordan
+        private void btnJordan_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Filtrar Productos de la Marca Adidas
+        private void btnAdidas_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Filtrar Novedades
+        private void btnNovedades_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Filtrar Productos con Descuento
+        private void btnDescuento_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }
 
