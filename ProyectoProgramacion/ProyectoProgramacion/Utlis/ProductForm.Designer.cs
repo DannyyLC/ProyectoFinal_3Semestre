@@ -33,6 +33,7 @@
             ModeloLabel = new Label();
             PrecioLabel = new Label();
             LowPanel = new Panel();
+            StockLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).BeginInit();
             LowPanel.SuspendLayout();
             SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // LowPanel
             // 
+            LowPanel.Controls.Add(StockLabel);
             LowPanel.Controls.Add(PrecioLabel);
             LowPanel.Controls.Add(MarcaLabel);
             LowPanel.Controls.Add(ModeloLabel);
@@ -93,16 +95,28 @@
             LowPanel.TabIndex = 4;
             LowPanel.Click += LowPanel_Click;
             // 
-            // Product
+            // StockLabel
+            // 
+            StockLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            StockLabel.AutoSize = true;
+            StockLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            StockLabel.Location = new Point(223, 50);
+            StockLabel.Name = "StockLabel";
+            StockLabel.Size = new Size(58, 24);
+            StockLabel.TabIndex = 4;
+            StockLabel.Text = "Stock";
+            // 
+            // ProductForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             Controls.Add(LowPanel);
             Controls.Add(ProductPicture);
+            Cursor = Cursors.Hand;
             MaximumSize = new Size(300, 450);
             MinimumSize = new Size(250, 400);
-            Name = "Product";
+            Name = "ProductForm";
             Size = new Size(300, 450);
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
             LowPanel.ResumeLayout(false);
@@ -117,5 +131,6 @@
         private Label ModeloLabel;
         private Label PrecioLabel;
         private Panel LowPanel;
+        private Label StockLabel;
     }
 }

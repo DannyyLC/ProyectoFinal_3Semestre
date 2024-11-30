@@ -17,8 +17,12 @@ namespace ProyectoProgramacion.Views
         public UserMainForm()
         {
             InitializeComponent();
+            products = new List<Product>();
             lblTime.Text = DateTime.Now.ToLongTimeString();
             Timer.Start();
+            Connect();
+            Query();
+            LoadProducts();
         }
 
         private void UserMainForm_Layout(object sender, LayoutEventArgs e)
@@ -138,8 +142,8 @@ namespace ProyectoProgramacion.Views
                     image = Convert.ToString(reader["imagen"]) ?? "";
                     brand = Convert.ToString(reader["marca"]) ?? "";
                     colors = Convert.ToString(reader["colores"]) ?? "";
-                    stock = Convert.ToInt32(reader["precio"]);
-                    price = Convert.ToDecimal(reader["stock"]);
+                    price = Convert.ToDecimal(reader["precio"]);
+                    stock = Convert.ToInt32(reader["stock"]);
 
                     item = new Product(id, name, description, image, brand, colors, price, stock);
                     products.Add(item);
@@ -156,12 +160,25 @@ namespace ProyectoProgramacion.Views
         // Cargamos los Forms de los productos para verlos en la interfaz
         public void LoadProducts()
         {
+            FlowLayoutProducts.Controls.Clear(); // Limpia los controles anteriores
 
-            for (int i = 0; i < products.Count; i++)  
+            foreach (var product in products)
             {
-                ProductForm product = new ProductForm(products[i].Id);
-                product.ProductClicked += Product_ProductClicked;  
-                FlowLayoutProducts.Controls.Add(product);
+                // Asigna datos del producto al formulario
+                ProductForm productForm = new ProductForm(
+                    product.Id,
+                    product.Brand,
+                    product.Name,
+                    product.Price,
+                    product.Stock,
+                    product.Image // Nombre del archivo de imagen
+                );
+
+                // Suscribe el evento de clic
+                productForm.ProductClicked += Product_ProductClicked;
+
+                // Agrega el formulario al FlowLayoutPanel
+                FlowLayoutProducts.Controls.Add(productForm);
             }
         }
         // Evento que se activa al hacer click en un producto
