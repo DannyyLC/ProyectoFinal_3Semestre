@@ -7,18 +7,24 @@ namespace ProyectoProgramacion.Models
         // Propiedades
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        public string Brand { get; set; }
+        public string Colors { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
 
-        // Constructor
-        public Product(int id = 0, string name = "", decimal price = 0, string description = "", string image = "")
+        // Constructor con Parametros
+        public Product(int id = 0, string name = "", string description = "", string image = "", string brand = "", string colors = "", decimal price = 0, int stock = 0 )
         {
             Id = id;
             Name = name;
-            Price = price;
             Description = description;
             Image = image;
+            Brand = brand;
+            Colors = colors;
+            Price = price;
+            Stock = stock;
         }
     }
 }

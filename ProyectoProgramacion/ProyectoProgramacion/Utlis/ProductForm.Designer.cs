@@ -1,6 +1,6 @@
 ﻿namespace ProyectoProgramacion.Utlis
 {
-    partial class Product
+    partial class ProductForm
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -91,6 +91,7 @@
             LowPanel.Name = "LowPanel";
             LowPanel.Size = new Size(300, 84);
             LowPanel.TabIndex = 4;
+            LowPanel.Click += LowPanel_Click;
             // 
             // Product
             // 

@@ -10,15 +10,22 @@ using System.Windows.Forms;
 
 namespace ProyectoProgramacion.Utlis
 {
-    public partial class Product : UserControl
+    public partial class ProductForm : UserControl
     {
+        public int Id { get; set; }
         public event EventHandler ProductClicked;
-        public Product()
+        public ProductForm(int id)
         {
             InitializeComponent();
+            Id = id;
         }
 
         private void ProductPicture_Click(object sender, EventArgs e)
+        {
+            ProductClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void LowPanel_Click(object sender, EventArgs e)
         {
             ProductClicked?.Invoke(this, EventArgs.Empty);
         }
