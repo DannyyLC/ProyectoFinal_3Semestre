@@ -198,5 +198,53 @@ namespace adminView
 
             return data;
         }
+
+        public Dictionary<string, int> GetInfoMarca()
+        {
+            string connectionString = "Server=localhost;Database=tenisdb;Uid=root;Pwd=;";
+            var categories = new Dictionary<string, int>(); // Diccionario para almacenar los conteos
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    // Ejecutar consulta
+                    string query = "SELECT marcas FROM pedidos";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Leer el valor de la columna "marcas"
+                                string marcas = reader.GetString(0);
+
+                                // Dividir el contenido de la columna usando Regex
+                                string[] marcasArray = Regex.Split(marcas, @"[\r\n]+");
+
+                                foreach (string marca in marcasArray)
+                                {
+                                    if (categories.ContainsKey(marca))
+                                    {
+                                        categories[marca]++;
+                                    }
+                                    else
+                                    {
+                                        categories[marca] = 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+            return categories;
+        }
     }
 }

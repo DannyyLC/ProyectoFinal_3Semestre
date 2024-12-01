@@ -1,9 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
+import json
 
-# Datos de ejemplo
-categories = ['Nike', 'Adidas', 'UnderArmour', 'Puma']
-values = [5, 7, 6, 8]
+json_data = sys.argv[1]
+
+categories = json.loads(json_data)
+#categories = {"Puma":2,"Adidas":4}
+print(sys.argv[1])
 
 # Crear la figura y los ejes con fondo oscuro
 fig, ax = plt.subplots(figsize=(16, 6))
@@ -11,19 +15,15 @@ fig.patch.set_facecolor('#0e1726')  # Fondo de la figura
 ax.set_facecolor('#0e1726')  # Fondo del eje
 
 # Crear barras con un degradado
-for i, value in enumerate(values):
+for i, key in enumerate(categories):
     ax.bar(
-        categories[i], 
-        value, 
-        color=plt.cm.cool(i / len(values)),  # Usar un mapa de colores
+        key, 
+        categories[key], 
+        color=plt.cm.cool(i / len(categories)),  # Usar un mapa de colores
         edgecolor='white', 
         linewidth=1.5,
     )
     # Anotación de valores sobre cada barra
-    ax.text(
-        i, value + 10, f'{value:.2f}', 
-        ha='center', color='white', fontsize=16
-    )
 
 # Personalizar la gráfica
 ax.spines['bottom'].set_color('#c4c4c4')

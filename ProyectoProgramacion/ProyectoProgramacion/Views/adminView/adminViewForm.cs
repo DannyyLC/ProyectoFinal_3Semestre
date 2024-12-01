@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace adminView
@@ -27,6 +29,7 @@ namespace adminView
             dataGridViewListado.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dataGridViewListado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+            generarGrafica();
             actualizarResumen();
             cargarDataGrid();
         }
@@ -88,8 +91,6 @@ namespace adminView
 
                     // Recargar el DataGridView
                     this.cargarDataGrid();
-
-                    MessageBox.Show("Producto eliminado exitosamente.");
                 }
             }
             else
@@ -120,6 +121,54 @@ namespace adminView
             labelVentasTotalesDato.Text = data[0];
             labelNumeroPedidosDato.Text = data[1];
             labelStockDato.Text = data[2];
+        }
+
+        private void generarGrafica()
+        {
+            try
+            {
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                // Subir tres niveles: bin -> Debug -> net8.0-windows
+                string projectRoot = Directory.GetParent(baseDir).Parent.Parent.Parent.FullName;
+                string exePath = Path.Combine(projectRoot, "python", "ChartGenerator.exe");
+
+                // Verificar si el ejecutable existe en la ruta especificada
+                if (!File.Exists(exePath))
+                {
+                    MessageBox.Show("El ejecutable de Python no se encuentra en la ruta especificada.");
+                    return;
+                }
+
+                Dictionary<string, int> jsonData = dbManager.GetInfoMarca();
+                string json = JsonSerializer.Serialize(jsonData);
+                string escapedJson = json.Replace("\"", "\\\"");
+
+                // Ejecutar el ejecutable de Python
+                Process pythonProcess = new Process();
+                pythonProcess.StartInfo.FileName = exePath; // Cambiar a la ruta del ejecutable
+                pythonProcess.StartInfo.Arguments = $"\"{escapedJson}\""; // Pasa el JSON como argumento
+                pythonProcess.StartInfo.WorkingDirectory = Path.GetDirectoryName(exePath); // Establecer el directorio de trabajo al de los scripts
+                pythonProcess.StartInfo.RedirectStandardOutput = true;
+                pythonProcess.StartInfo.UseShellExecute = false;
+                pythonProcess.StartInfo.CreateNoWindow = true;
+                pythonProcess.Start();
+                pythonProcess.WaitForExit(); // Esperar a que termine la ejecución
+
+                // Cargar la imagen generada en el PictureBox
+                string imagenPath = Path.Combine(projectRoot, "python", "grafica_barras.png"); // Imagen en el directorio base
+                if (File.Exists(imagenPath))
+                {
+                    pictureBoxGrafica.Image = Image.FromFile(imagenPath); // Cargar la imagen en el PictureBox
+                }
+                else
+                {
+                    MessageBox.Show("La imagen generada no se encontró.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar la gráfica: " + ex.Message);
+            }
         }
     }
 }
