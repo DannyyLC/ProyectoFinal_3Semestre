@@ -75,16 +75,36 @@ namespace ProyectoProgramacion.Views
         // Hacer Log Out
         private void LogoutPicture_Click(object sender, EventArgs e)
         {
-            // Logica para Log Out
-            this.Close();
-            this.Dispose();
+            // Muestra un mensaje de confirmación con dos botones: Confirmar y Cancelar
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas cerrar la sesión?",
+                "Confirmar cierre de sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            // Verifica si el usuario seleccionó "Sí" para confirmar
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                this.Dispose();
+            }
         }
         // Hacer Log Out
         private void lblLogout_Click(object sender, EventArgs e)
         {
-            // Logica para Log Out
-            this.Close();
-            this.Dispose();
+            // Muestra un mensaje de confirmación con dos botones: Confirmar y Cancelar
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas cerrar la sesión?",
+                "Confirmar cierre de sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            // Verifica si el usuario seleccionó "Sí" para confirmar
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                this.Dispose();
+            }
         }
         // Para Cerrar el Menu Desplegable
         private void ExitMenuPicture_Click(object sender, EventArgs e)
@@ -100,7 +120,7 @@ namespace ProyectoProgramacion.Views
 
 
         // ----- * * * BASE DE DATOS Y MOSTRAR PRODUCTOS * * * -----
-        #region
+        #region Base de Datos y Mostrar Productos
         // Nos conectamos con la base de datos
         public void Connect()
         {
@@ -134,7 +154,6 @@ namespace ProyectoProgramacion.Views
             string description;
             string image;
             string brand;
-            string colors;
             int stock;
             decimal price;
 
@@ -151,11 +170,10 @@ namespace ProyectoProgramacion.Views
                     description = Convert.ToString(reader["descripcion"]) ?? "";
                     image = Convert.ToString(reader["imagen"]) ?? "";
                     brand = Convert.ToString(reader["marca"]) ?? "";
-                    colors = Convert.ToString(reader["colores"]) ?? "";
                     price = Convert.ToDecimal(reader["precio"]);
                     stock = Convert.ToInt32(reader["stock"]);
 
-                    item = new Product(id, name, description, image, brand, colors, price, stock);
+                    item = new Product(id, name, description, image, brand, price, stock);
                     products.Add(item);
 
                 }
@@ -177,11 +195,12 @@ namespace ProyectoProgramacion.Views
                 // Asigna datos del producto al formulario
                 ProductForm productForm = new ProductForm(
                     product.Id,
+                    product.Model,
+                    product.Description,
+                    product.Image,
                     product.Brand,
-                    product.Name,
                     product.Price,
-                    product.Stock,
-                    product.Image // Nombre del archivo de imagen
+                    product.Stock
                 );
 
                 // Suscribe el evento de clic
@@ -194,32 +213,24 @@ namespace ProyectoProgramacion.Views
         // Evento que se activa al hacer click en un producto
         private void Product_ProductClicked(object sender, EventArgs e)
         {
-            // Aquí puedes ocultar el control en FormB
-            var controlToHide = this.Controls["ProductView"];  // Cambia el nombre al control que deseas ocultar
-            if (controlToHide != null)
+            if (sender is ProductForm productForm)
             {
-                controlToHide.Visible = true;
-                controlToHide.BringToFront();
+                // Crear una instancia del control de usuario con el constructor
+                var muestraProductos = new MuestraProductos(
+                    id: productForm.Id,
+                    model: productForm.Model,
+                    description: productForm.Description,
+                    image: productForm.Imagen,
+                    brand: productForm.Brand,
+                    price: productForm.Price,
+                    stock: productForm.Stock
+                );
+
+                // Agregar el control al formulario principal
+                this.Controls.Add(muestraProductos);
+                muestraProductos.Dock = DockStyle.Fill;
+                muestraProductos.BringToFront();
             }
-        }
-        // Salir de la vista de un producto
-        private void PictureRegresar_Click(object sender, EventArgs e)
-        {
-            ProductView.Visible = false;
-        }
-        // Centra los botones de compra y añadir al carrito
-        private void ProductButtonsPanel_Resize(object sender, EventArgs e)
-        {
-            int buttonSpacing = 10; // Espacio entre los botones
-            int totalButtonWidth = btnAgregarCarrito.Width + btnComprarYa.Width + buttonSpacing;
-
-            // Calcula la posición inicial para centrar los botones
-            int startX = (ProductButtonsPanel.Width - totalButtonWidth) / 2;
-            int startY = ProductButtonsPanel.Height - btnAgregarCarrito.Height - 10; // 10 px desde el borde inferior
-
-            // Posiciona los botones
-            btnAgregarCarrito.Location = new Point(startX, startY);
-            btnComprarYa.Location = new Point(startX + btnAgregarCarrito.Width + buttonSpacing, startY);
         }
         #endregion
 
@@ -255,4 +266,5 @@ namespace ProyectoProgramacion.Views
 
     }
 }
+
 

@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace ProyectoProgramacion.Utlis
 {
-    public partial class ProductForm : UserControl
+    public partial class MuestraProductos : UserControl
     {
         // PROPIEDADES
         public int Id { get; set; }
@@ -22,27 +21,25 @@ namespace ProyectoProgramacion.Utlis
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        // EVENTOS 
-        public event EventHandler ProductClicked;
-
         // CONSTRUCTOR
-        public ProductForm(int id = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0)
+        public MuestraProductos(int id = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0)
         {
             InitializeComponent();
 
             Id = id;
             Model = model;
             Description = description;
-            Imagen = Path.Combine("ProductPictures", image);
+            Imagen = image;
             Brand = brand;
             Price = price;
             Stock = stock;
 
-            this.MarcaLabel.Text = brand;
-            this.ModeloLabel.Text = model;
-            this.PrecioLabel.Text = $"${price:F2}";
-            this.StockLabel.Text = Convert.ToString(stock);
-            
+            this.ProductMarca.Text = brand;
+            this.ProductModel.Text = model;
+            this.lblPrecio.Text = $"${price:F2}";
+            this.lblStock.Text = Convert.ToString(stock);
+            this.ProductDescription.Text = description;
+
             if (File.Exists(Imagen))
             {
                 this.ProductPicture.Image = Image.FromFile(Imagen);
@@ -54,15 +51,29 @@ namespace ProyectoProgramacion.Utlis
             }
         }
 
-        // METODOS  
-        private void ProductPicture_Click(object sender, EventArgs e)
+        private void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            ProductClicked?.Invoke(this, EventArgs.Empty);
+
         }
 
-        private void LowPanel_Click(object sender, EventArgs e)
+        private void PictureRegresar_Click(object sender, EventArgs e)
         {
-            ProductClicked?.Invoke(this, EventArgs.Empty);
+            this.Parent.Controls.Remove(this);
+        }
+
+        private void PictureLeft_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictuteRight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComprarYa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
