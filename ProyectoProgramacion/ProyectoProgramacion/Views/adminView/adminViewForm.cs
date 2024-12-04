@@ -170,5 +170,10 @@ namespace adminView
                 MessageBox.Show("Error al generar la gráfica: " + ex.Message);
             }
         }
+
+        private void roundedTableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

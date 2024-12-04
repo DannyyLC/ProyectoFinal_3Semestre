@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
             tableLayoutPanelPrincipal = new TableLayoutPanel();
             tableLayoutPanelLateral = new TableLayoutPanel();
             labelEslogan = new Label();
@@ -52,6 +52,8 @@
             pictureBoxGrafica = new PictureBox();
             labelHora = new Label();
             roundedTableLayoutPanel1 = new RoundedTableLayoutPanel();
+            labelStockDato = new Label();
+            labelStock = new Label();
             labelNumeroPedidosDato = new Label();
             labelVentasTotalesDato = new Label();
             labelResumen = new Label();
@@ -71,8 +73,6 @@
             Stock = new DataGridViewTextBoxColumn();
             btnAddProduct = new RoundedButton();
             btnDeleteProduct = new RoundedButton();
-            labelStock = new Label();
-            labelStockDato = new Label();
             tableLayoutPanelPrincipal.SuspendLayout();
             tableLayoutPanelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -104,7 +104,7 @@
             // 
             // tableLayoutPanelLateral
             // 
-            tableLayoutPanelLateral.BackColor = Color.LightBlue;
+            tableLayoutPanelLateral.BackColor = Color.FromArgb(204, 215, 221);
             tableLayoutPanelLateral.ColumnCount = 1;
             tableLayoutPanelLateral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanelLateral.Controls.Add(labelEslogan, 0, 3);
@@ -142,7 +142,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Bottom;
-            pictureBox1.BackColor = Color.LightBlue;
+            pictureBox1.BackColor = Color.FromArgb(204, 215, 221);
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = Properties.Resources.Shoe__Final__2024_11_23_20_57_53__1_;
             pictureBox1.Location = new Point(3, 514);
@@ -155,7 +155,7 @@
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.BackColor = Color.LightBlue;
+            pictureBoxLogo.BackColor = Color.FromArgb(204, 215, 221);
             pictureBoxLogo.BackgroundImageLayout = ImageLayout.None;
             pictureBoxLogo.Dock = DockStyle.Fill;
             pictureBoxLogo.Image = Properties.Resources.Kicks__Final__2024_11_23_20_56_34;
@@ -169,6 +169,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(204, 215, 221);
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
@@ -182,7 +183,7 @@
             // btnSignOff
             // 
             btnSignOff.Anchor = AnchorStyles.None;
-            btnSignOff.BackColor = Color.Firebrick;
+            btnSignOff.BackColor = Color.FromArgb(213, 12, 12);
             btnSignOff.BorderRadius = 20;
             btnSignOff.FlatAppearance.BorderSize = 0;
             btnSignOff.FlatStyle = FlatStyle.Flat;
@@ -256,7 +257,7 @@
             // 
             // roundedTableLayoutPanel1
             // 
-            roundedTableLayoutPanel1.BackColor = Color.LightBlue;
+            roundedTableLayoutPanel1.BackColor = Color.FromArgb(204, 215, 221);
             roundedTableLayoutPanel1.BorderRadius = 20;
             roundedTableLayoutPanel1.ColumnCount = 2;
             roundedTableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -269,7 +270,7 @@
             roundedTableLayoutPanel1.Controls.Add(labelVentasTotales, 0, 1);
             roundedTableLayoutPanel1.Controls.Add(labelNumeroPedidos, 0, 2);
             roundedTableLayoutPanel1.Dock = DockStyle.Fill;
-            roundedTableLayoutPanel1.ForeColor = Color.LightBlue;
+            roundedTableLayoutPanel1.ForeColor = Color.FromArgb(204, 215, 221);
             roundedTableLayoutPanel1.Location = new Point(906, 55);
             roundedTableLayoutPanel1.Name = "roundedTableLayoutPanel1";
             roundedTableLayoutPanel1.RowCount = 4;
@@ -279,6 +280,32 @@
             roundedTableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
             roundedTableLayoutPanel1.Size = new Size(220, 293);
             roundedTableLayoutPanel1.TabIndex = 4;
+            roundedTableLayoutPanel1.Paint += roundedTableLayoutPanel1_Paint;
+            // 
+            // labelStockDato
+            // 
+            labelStockDato.Anchor = AnchorStyles.None;
+            labelStockDato.AutoSize = true;
+            labelStockDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelStockDato.ForeColor = Color.Black;
+            labelStockDato.Location = new Point(120, 243);
+            labelStockDato.Name = "labelStockDato";
+            labelStockDato.Size = new Size(89, 23);
+            labelStockDato.TabIndex = 6;
+            labelStockDato.Text = "Placehold";
+            // 
+            // labelStock
+            // 
+            labelStock.Anchor = AnchorStyles.None;
+            labelStock.AutoSize = true;
+            labelStock.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelStock.ForeColor = Color.Black;
+            labelStock.Location = new Point(4, 231);
+            labelStock.Name = "labelStock";
+            labelStock.Size = new Size(102, 46);
+            labelStock.TabIndex = 5;
+            labelStock.Text = "Stock de la tienda:";
+            labelStock.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelNumeroPedidosDato
             // 
@@ -382,32 +409,32 @@
             dataGridViewListado.AllowUserToAddRows = false;
             dataGridViewListado.AllowUserToDeleteRows = false;
             dataGridViewListado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewListado.BackgroundColor = Color.LightBlue;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewListado.BackgroundColor = Color.FromArgb(204, 215, 221);
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             dataGridViewListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewListado.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Descripción, Imagen, Marca, Colores, Tallas, Precio, Stock });
             tableLayoutPanelListado.SetColumnSpan(dataGridViewListado, 3);
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = Color.Transparent;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dataGridViewListado.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = SystemColors.Window;
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle23.ForeColor = Color.Transparent;
+            dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            dataGridViewListado.DefaultCellStyle = dataGridViewCellStyle23;
             dataGridViewListado.Dock = DockStyle.Fill;
             dataGridViewListado.Location = new Point(3, 71);
             dataGridViewListado.Name = "dataGridViewListado";
             dataGridViewListado.ReadOnly = true;
-            dataGridViewCellStyle12.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dataGridViewListado.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
+            dataGridViewListado.RowsDefaultCellStyle = dataGridViewCellStyle24;
             dataGridViewListado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewListado.Size = new Size(1099, 266);
             dataGridViewListado.TabIndex = 3;
@@ -415,8 +442,8 @@
             // ID
             // 
             ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            ID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            ID.DefaultCellStyle = dataGridViewCellStyle14;
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.ReadOnly = true;
@@ -424,8 +451,8 @@
             // 
             // Nombre
             // 
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            Nombre.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.ForeColor = Color.Black;
+            Nombre.DefaultCellStyle = dataGridViewCellStyle15;
             Nombre.FillWeight = 27.2108841F;
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
@@ -434,8 +461,8 @@
             // Descripción
             // 
             Descripción.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            Descripción.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.ForeColor = Color.Black;
+            Descripción.DefaultCellStyle = dataGridViewCellStyle16;
             Descripción.FillWeight = 27.2108841F;
             Descripción.HeaderText = "Descripción";
             Descripción.MinimumWidth = 300;
@@ -445,9 +472,9 @@
             // 
             // Imagen
             // 
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            Imagen.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.ForeColor = Color.Black;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            Imagen.DefaultCellStyle = dataGridViewCellStyle17;
             Imagen.FillWeight = 27.2108841F;
             Imagen.HeaderText = "Imagen";
             Imagen.Name = "Imagen";
@@ -457,8 +484,8 @@
             // Marca
             // 
             Marca.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            Marca.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.ForeColor = Color.Black;
+            Marca.DefaultCellStyle = dataGridViewCellStyle18;
             Marca.FillWeight = 27.21088F;
             Marca.HeaderText = "Marca";
             Marca.Name = "Marca";
@@ -467,8 +494,8 @@
             // 
             // Colores
             // 
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            Colores.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.ForeColor = Color.Black;
+            Colores.DefaultCellStyle = dataGridViewCellStyle19;
             Colores.FillWeight = 27.2108841F;
             Colores.HeaderText = "Colores";
             Colores.Name = "Colores";
@@ -476,8 +503,8 @@
             // 
             // Tallas
             // 
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            Tallas.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.ForeColor = Color.Black;
+            Tallas.DefaultCellStyle = dataGridViewCellStyle20;
             Tallas.FillWeight = 27.2108841F;
             Tallas.HeaderText = "Tallas";
             Tallas.Name = "Tallas";
@@ -486,8 +513,8 @@
             // Precio
             // 
             Precio.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.ForeColor = Color.Black;
-            Precio.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.ForeColor = Color.Black;
+            Precio.DefaultCellStyle = dataGridViewCellStyle21;
             Precio.FillWeight = 408.163269F;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
@@ -497,8 +524,8 @@
             // Stock
             // 
             Stock.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.ForeColor = Color.Black;
-            Stock.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.ForeColor = Color.Black;
+            Stock.DefaultCellStyle = dataGridViewCellStyle22;
             Stock.FillWeight = 228.571426F;
             Stock.HeaderText = "Stock";
             Stock.Name = "Stock";
@@ -508,7 +535,7 @@
             // btnAddProduct
             // 
             btnAddProduct.Anchor = AnchorStyles.None;
-            btnAddProduct.BackColor = Color.DarkSlateGray;
+            btnAddProduct.BackColor = Color.FromArgb(32, 44, 84);
             btnAddProduct.BorderRadius = 20;
             btnAddProduct.FlatAppearance.BorderSize = 0;
             btnAddProduct.FlatStyle = FlatStyle.Flat;
@@ -525,7 +552,7 @@
             // btnDeleteProduct
             // 
             btnDeleteProduct.Anchor = AnchorStyles.None;
-            btnDeleteProduct.BackColor = Color.Firebrick;
+            btnDeleteProduct.BackColor = Color.FromArgb(213, 12, 12);
             btnDeleteProduct.BorderRadius = 20;
             btnDeleteProduct.FlatAppearance.BorderSize = 0;
             btnDeleteProduct.FlatStyle = FlatStyle.Flat;
@@ -538,31 +565,6 @@
             btnDeleteProduct.Text = "Eliminar Producto";
             btnDeleteProduct.UseVisualStyleBackColor = false;
             btnDeleteProduct.Click += btnDeleteProduct_Click;
-            // 
-            // labelStock
-            // 
-            labelStock.Anchor = AnchorStyles.None;
-            labelStock.AutoSize = true;
-            labelStock.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelStock.ForeColor = Color.Black;
-            labelStock.Location = new Point(4, 231);
-            labelStock.Name = "labelStock";
-            labelStock.Size = new Size(102, 46);
-            labelStock.TabIndex = 5;
-            labelStock.Text = "Stock de la tienda:";
-            labelStock.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // labelStockDato
-            // 
-            labelStockDato.Anchor = AnchorStyles.None;
-            labelStockDato.AutoSize = true;
-            labelStockDato.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelStockDato.ForeColor = Color.Black;
-            labelStockDato.Location = new Point(120, 243);
-            labelStockDato.Name = "labelStockDato";
-            labelStockDato.Size = new Size(89, 23);
-            labelStockDato.TabIndex = 6;
-            labelStockDato.Text = "Placehold";
             // 
             // adminViewForm
             // 
