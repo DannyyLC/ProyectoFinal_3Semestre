@@ -9,6 +9,7 @@ namespace ProyectoProgramacion.Models
 {
     internal class ProductCart
     {
+        // ----- * * * PROPIEDADES * * * -----
         public int Userid { get; set; }
         public int ProductId { get; set; }
         public decimal Precio { get; set; }
@@ -16,7 +17,7 @@ namespace ProyectoProgramacion.Models
         public string Marca { get; set; }
         public string Modelo { get; set; }
 
-
+        // ----- * * * CONSTRUCTOR * * * -----
         public ProductCart(string image = "", string marca = "", string modelo = "", decimal precio = 0, int userid = 0, int idproduct = 0)
         {
             this.Imagen = image;

@@ -31,14 +31,15 @@
             tableLayoutPanel = new TableLayoutPanel();
             ProductPicture = new PictureBox();
             MarcaLabel = new Label();
-            ModeloLabel = new Label();
             PrecioLabel = new Label();
+            ModeloLabel = new Label();
             tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel
             // 
+            tableLayoutPanel.BackColor = Color.Transparent;
             tableLayoutPanel.ColumnCount = 2;
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -53,16 +54,17 @@
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 34F));
-            tableLayoutPanel.Size = new Size(609, 201);
+            tableLayoutPanel.Size = new Size(900, 275);
             tableLayoutPanel.TabIndex = 0;
             // 
             // ProductPicture
             // 
+            ProductPicture.BackColor = Color.Transparent;
             ProductPicture.Dock = DockStyle.Fill;
             ProductPicture.Location = new Point(3, 3);
             ProductPicture.Name = "ProductPicture";
             tableLayoutPanel.SetRowSpan(ProductPicture, 3);
-            ProductPicture.Size = new Size(298, 195);
+            ProductPicture.Size = new Size(444, 269);
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
             // 
@@ -70,39 +72,42 @@
             // 
             MarcaLabel.AutoSize = true;
             MarcaLabel.Font = new Font("Tahoma", 18F, FontStyle.Bold);
-            MarcaLabel.Location = new Point(307, 0);
+            MarcaLabel.Location = new Point(453, 0);
             MarcaLabel.Name = "MarcaLabel";
             MarcaLabel.Size = new Size(107, 36);
             MarcaLabel.TabIndex = 1;
             MarcaLabel.Text = "Marca";
             // 
-            // ModeloLabel
-            // 
-            ModeloLabel.AutoSize = true;
-            ModeloLabel.Font = new Font("Tahoma", 18F, FontStyle.Bold);
-            ModeloLabel.Location = new Point(307, 66);
-            ModeloLabel.Name = "ModeloLabel";
-            ModeloLabel.Size = new Size(126, 36);
-            ModeloLabel.TabIndex = 2;
-            ModeloLabel.Text = "Modelo";
-            // 
             // PrecioLabel
             // 
             PrecioLabel.AutoSize = true;
             PrecioLabel.Font = new Font("Tahoma", 18F, FontStyle.Bold);
-            PrecioLabel.Location = new Point(307, 132);
+            PrecioLabel.Location = new Point(453, 180);
             PrecioLabel.Name = "PrecioLabel";
             PrecioLabel.Size = new Size(110, 36);
             PrecioLabel.TabIndex = 3;
             PrecioLabel.Text = "Precio";
             // 
+            // ModeloLabel
+            // 
+            ModeloLabel.AutoSize = true;
+            ModeloLabel.Font = new Font("Tahoma", 18F, FontStyle.Bold);
+            ModeloLabel.Location = new Point(453, 90);
+            ModeloLabel.Name = "ModeloLabel";
+            ModeloLabel.Size = new Size(126, 36);
+            ModeloLabel.TabIndex = 2;
+            ModeloLabel.Text = "Modelo";
+            // 
             // CartProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             Controls.Add(tableLayoutPanel);
+            MaximumSize = new Size(900, 275);
+            MinimumSize = new Size(500, 175);
             Name = "CartProduct";
-            Size = new Size(609, 201);
+            Size = new Size(900, 275);
             tableLayoutPanel.ResumeLayout(false);
             tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();

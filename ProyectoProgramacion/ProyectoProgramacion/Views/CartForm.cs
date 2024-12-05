@@ -12,7 +12,7 @@ namespace ProyectoProgramacion.Views
         // ----- * * * ATRIBUTOS * * * -----
         private List<ProductCart> cartProducts;
         public int Id { get; set; }
-        public decimal Total {  get; set; }
+        public decimal Total { get; set; }
         private MySqlConnection connection;
 
         // ----- * * * CONSTRUCTOR * * * -----
@@ -21,10 +21,11 @@ namespace ProyectoProgramacion.Views
             InitializeComponent();
             this.Id = id;
             cartProducts = new List<ProductCart>();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            Timer.Start();
             Query();
             AddCartProducts();
         }
-
 
         // ----- * * * BASE DE DATOS Y MOSTRAR PRODUCTOS * * * -----
         #region Base de Datos y Mostrar Productos
@@ -70,7 +71,7 @@ namespace ProyectoProgramacion.Views
         // Traer toda al informacion de la tabla de carrito de la base de datos
         public void Query()
         {
-            Connect(); 
+            Connect();
 
             ProductCart cart = new ProductCart();
             string imagen;
@@ -231,7 +232,7 @@ namespace ProyectoProgramacion.Views
         {
             try
             {
-                Connect(); 
+                Connect();
 
                 foreach (var product in cartProducts)
                 {
@@ -279,15 +280,20 @@ namespace ProyectoProgramacion.Views
             Query();
             TableProducts.Controls.Clear();
             AddCartProducts();
-          
+
             MessageBox.Show("Compra realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         // Cierra el form de el carrito y volvemos al principal
         private void LogoPicture_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            this.Close();    
+            this.Close();
         }
         #endregion
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

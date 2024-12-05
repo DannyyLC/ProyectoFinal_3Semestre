@@ -4,7 +4,7 @@ namespace ProyectoProgramacion.Models
 {
     public class Product
     {
-        // Propiedades
+        // ----- * * * PROPIEDADES * * * -----
         public int Id { get; set; }
         public string Model { get; set; }
         public string Description { get; set; }
@@ -13,7 +13,7 @@ namespace ProyectoProgramacion.Models
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        // Constructor con Parametros
+        // ----- * * * CONSTRUCTOR * * * -----
         public Product(int id = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0 )
         {
             Id = id;

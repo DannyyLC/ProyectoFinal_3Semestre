@@ -44,7 +44,7 @@
             ProductPicture.Dock = DockStyle.Top;
             ProductPicture.Location = new Point(0, 0);
             ProductPicture.Name = "ProductPicture";
-            ProductPicture.Size = new Size(300, 367);
+            ProductPicture.Size = new Size(450, 503);
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
             ProductPicture.Click += ProductPicture_Click;
@@ -54,7 +54,7 @@
             MarcaLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             MarcaLabel.AutoSize = true;
             MarcaLabel.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MarcaLabel.Location = new Point(10, 3);
+            MarcaLabel.Location = new Point(10, 17);
             MarcaLabel.Name = "MarcaLabel";
             MarcaLabel.Size = new Size(56, 22);
             MarcaLabel.TabIndex = 1;
@@ -65,7 +65,7 @@
             ModeloLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             ModeloLabel.AutoSize = true;
             ModeloLabel.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ModeloLabel.Location = new Point(10, 27);
+            ModeloLabel.Location = new Point(10, 41);
             ModeloLabel.Name = "ModeloLabel";
             ModeloLabel.Size = new Size(67, 22);
             ModeloLabel.TabIndex = 2;
@@ -76,7 +76,7 @@
             PrecioLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             PrecioLabel.AutoSize = true;
             PrecioLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PrecioLabel.Location = new Point(10, 50);
+            PrecioLabel.Location = new Point(10, 64);
             PrecioLabel.Name = "PrecioLabel";
             PrecioLabel.Size = new Size(73, 24);
             PrecioLabel.TabIndex = 3;
@@ -89,9 +89,9 @@
             LowPanel.Controls.Add(MarcaLabel);
             LowPanel.Controls.Add(ModeloLabel);
             LowPanel.Dock = DockStyle.Bottom;
-            LowPanel.Location = new Point(0, 366);
+            LowPanel.Location = new Point(0, 502);
             LowPanel.Name = "LowPanel";
-            LowPanel.Size = new Size(300, 84);
+            LowPanel.Size = new Size(450, 98);
             LowPanel.TabIndex = 4;
             LowPanel.Click += LowPanel_Click;
             // 
@@ -100,7 +100,7 @@
             StockLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             StockLabel.AutoSize = true;
             StockLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            StockLabel.Location = new Point(223, 50);
+            StockLabel.Location = new Point(373, 64);
             StockLabel.Name = "StockLabel";
             StockLabel.Size = new Size(58, 24);
             StockLabel.TabIndex = 4;
@@ -114,10 +114,10 @@
             Controls.Add(LowPanel);
             Controls.Add(ProductPicture);
             Cursor = Cursors.Hand;
-            MaximumSize = new Size(300, 450);
+            MaximumSize = new Size(450, 600);
             MinimumSize = new Size(250, 400);
             Name = "ProductForm";
-            Size = new Size(300, 450);
+            Size = new Size(450, 600);
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
             LowPanel.ResumeLayout(false);
             LowPanel.PerformLayout();

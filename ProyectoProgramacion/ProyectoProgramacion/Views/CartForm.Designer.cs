@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartForm));
             HeaderTable = new TableLayoutPanel();
             LogoPicture = new PictureBox();
             UserPicture = new PictureBox();
             TitlelLabel = new Label();
             FooterPanel = new Panel();
+            lblTime = new Label();
             TablePago = new TableLayoutPanel();
             btnPagar = new Utlis.CustomeButton();
             LabelMetodoPago = new Label();
@@ -51,9 +53,11 @@
             VisaPicture = new PictureBox();
             TarjetaPicture = new PictureBox();
             TableProducts = new TableLayoutPanel();
+            Timer = new System.Windows.Forms.Timer(components);
             HeaderTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UserPicture).BeginInit();
+            FooterPanel.SuspendLayout();
             TablePago.SuspendLayout();
             tableDatosTarjeta.SuspendLayout();
             panelTargetasimg.SuspendLayout();
@@ -121,11 +125,22 @@
             // FooterPanel
             // 
             FooterPanel.BackColor = Color.LightGray;
+            FooterPanel.Controls.Add(lblTime);
             FooterPanel.Dock = DockStyle.Bottom;
             FooterPanel.Location = new Point(0, 634);
             FooterPanel.Name = "FooterPanel";
             FooterPanel.Size = new Size(1293, 23);
             FooterPanel.TabIndex = 1;
+            // 
+            // lblTime
+            // 
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTime.Location = new Point(1122, 0);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(47, 22);
+            lblTime.TabIndex = 0;
+            lblTime.Text = "Hora";
             // 
             // TablePago
             // 
@@ -408,6 +423,12 @@
             TableProducts.Size = new Size(746, 555);
             TableProducts.TabIndex = 3;
             // 
+            // Timer
+            // 
+            Timer.Enabled = true;
+            Timer.Interval = 1000;
+            Timer.Tick += Timer_Tick;
+            // 
             // CartForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -425,6 +446,8 @@
             HeaderTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)UserPicture).EndInit();
+            FooterPanel.ResumeLayout(false);
+            FooterPanel.PerformLayout();
             TablePago.ResumeLayout(false);
             TablePago.PerformLayout();
             tableDatosTarjeta.ResumeLayout(false);
@@ -459,5 +482,7 @@
         private PictureBox VisaPicture;
         private PictureBox TarjetaPicture;
         private TableLayoutPanel TableProducts;
+        private Label lblTime;
+        private System.Windows.Forms.Timer Timer;
     }
 }

@@ -77,46 +77,34 @@ namespace ProyectoProgramacion.Utlis
 
         private void btnComprarYa_Click(object sender, EventArgs e)
         {
-            // Llamar a la función que agrega el producto al carrito
-            AgregarCarrito();
-
-            // Obtener el formulario contenedor
+            // Encuentra el formulario contenedor del control
             Form parentForm = this.FindForm();
 
             if (parentForm != null)
             {
-                // Eliminar el control actual del formulario
-                this.Parent.Controls.Remove(this);
+                // Crea una instancia de CartForm
+                CartForm cart = new CartForm(this.Userid)
+                {
+                    StartPosition = FormStartPosition.Manual, // Posicionamiento manual
+                    Location = parentForm.Location,          // Posición del formulario principal
+                    Size = parentForm.Bounds.Size            // Tamaño del formulario principal
+                };
 
-                // Crear una nueva instancia del formulario del carrito
-                CartForm cart = new CartForm(this.Userid);
-                cart.StartPosition = FormStartPosition.Manual;
-
-                // Establecer la ubicación en la esquina superior izquierda del formulario principal
-                cart.Location = parentForm.Location;
-
-                // Establecer el tamaño para que coincida con el tamaño total del formulario contenedor
-                cart.Size = new Size(parentForm.Width, parentForm.Height);
-
-                // Establecer el estilo de borde para que no tenga bordes
-                cart.FormBorderStyle = FormBorderStyle.None;
-
-                // Asegurarse de que el carrito esté al frente y visible
-                cart.TopMost = true;
-
-                // Mostrar el formulario del carrito
+                // Muestra el formulario de carrito como un diálogo modal
                 cart.ShowDialog();
             }
             else
             {
-                MessageBox.Show("No se pudo acceder al formulario contenedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Si no se encontró el formulario contenedor, muestra un mensaje de error
+                MessageBox.Show("No se pudo acceder al formulario principal desde el control de usuario.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
+
         public void AgregarCarrito()
         {
-            // Crear la conexión a la base de datos
             string connectionString = "Server=localhost;Database=tenisdb;User ID=root;Password=;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -128,7 +116,6 @@ namespace ProyectoProgramacion.Utlis
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Asignar los valores de los parámetros
                         command.Parameters.AddWithValue("@userid", this.Userid);
                         command.Parameters.AddWithValue("@productid", this.Productid);
                         command.Parameters.AddWithValue("@precio", this.Price);
@@ -136,7 +123,6 @@ namespace ProyectoProgramacion.Utlis
                         command.Parameters.AddWithValue("@marca", this.Brand);
                         command.Parameters.AddWithValue("@modelo", this.Model);
 
-                        // Ejecutar el comando
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {

@@ -13,7 +13,7 @@ namespace ProyectoProgramacion.Utlis
 {
     public partial class ProductForm : UserControl
     {
-        // PROPIEDADES
+        // ----- * * * PROPIEDADES * * * -----
         public int Id { get; set; }
         public string Model { get; set; }
         public string Description { get; set; }
@@ -22,10 +22,10 @@ namespace ProyectoProgramacion.Utlis
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        // EVENTOS 
+        // ----- * * * EVENTOS * * * ----- 
         public event EventHandler ProductClicked;
 
-        // CONSTRUCTOR
+        // ----- * * * CONSTRUCTOR * * * -----
         public ProductForm(int id = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0)
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace ProyectoProgramacion.Utlis
             }
         }
 
-        // METODOS  
+        // ----- * * * METODOS * * * -----
         private void ProductPicture_Click(object sender, EventArgs e)
         {
             ProductClicked?.Invoke(this, EventArgs.Empty);
