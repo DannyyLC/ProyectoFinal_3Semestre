@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using System.Reflection;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace ProyectoProgramacion.Views
 {
@@ -16,10 +17,11 @@ namespace ProyectoProgramacion.Views
         // ----- * * * ATRIBUTOS * * * -----
         private List<Product> products;
         private MySqlConnection connection;
+        public int Userid { get; set; }
 
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public UserMainForm()
+        public UserMainForm(int id)
         {
             InitializeComponent();
             products = new List<Product>();
@@ -28,6 +30,7 @@ namespace ProyectoProgramacion.Views
             Connect();
             Query();
             LoadProducts();
+            Userid = id;
         }
 
 
@@ -49,7 +52,7 @@ namespace ProyectoProgramacion.Views
         // Para ir al Carrito
         private void CartPicture_Click(object sender, EventArgs e)
         {
-            CartForm cart = new CartForm();
+            CartForm cart = new CartForm(this.Userid);
 
             cart.StartPosition = FormStartPosition.Manual;
             cart.Location = this.Location;
@@ -217,13 +220,14 @@ namespace ProyectoProgramacion.Views
             {
                 // Crear una instancia del control de usuario con el constructor
                 var muestraProductos = new MuestraProductos(
-                    id: productForm.Id,
-                    model: productForm.Model,
-                    description: productForm.Description,
-                    image: productForm.Imagen,
-                    brand: productForm.Brand,
-                    price: productForm.Price,
-                    stock: productForm.Stock
+                    userid:         this.Userid,
+                    productid:      productForm.Id,
+                    model:          productForm.Model,
+                    description:    productForm.Description,
+                    image:          productForm.Imagen,
+                    brand:          productForm.Brand,
+                    price:          productForm.Price,
+                    stock:          productForm.Stock
                 );
 
                 // Agregar el control al formulario principal

@@ -55,7 +55,7 @@
             PictureRegresar.Image = Properties.Resources.volver;
             PictureRegresar.Location = new Point(3, 3);
             PictureRegresar.Name = "PictureRegresar";
-            PictureRegresar.Size = new Size(43, 38);
+            PictureRegresar.Size = new Size(40, 38);
             PictureRegresar.SizeMode = PictureBoxSizeMode.Zoom;
             PictureRegresar.TabIndex = 1;
             PictureRegresar.TabStop = false;
@@ -65,10 +65,10 @@
             // 
             tableLayoutProducts.SetColumnSpan(ProductPicture, 2);
             ProductPicture.Dock = DockStyle.Fill;
-            ProductPicture.Location = new Point(55, 3);
+            ProductPicture.Location = new Point(49, 3);
             ProductPicture.Name = "ProductPicture";
             tableLayoutProducts.SetRowSpan(ProductPicture, 2);
-            ProductPicture.Size = new Size(814, 644);
+            ProductPicture.Size = new Size(710, 559);
             ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
@@ -86,11 +86,11 @@
             btnComprarYa.FlatStyle = FlatStyle.Flat;
             btnComprarYa.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComprarYa.ForeColor = SystemColors.ControlLightLight;
-            btnComprarYa.Location = new Point(159, 691);
+            btnComprarYa.Location = new Point(101, 601);
             btnComprarYa.MaximumSize = new Size(300, 70);
             btnComprarYa.MinimumSize = new Size(277, 56);
             btnComprarYa.Name = "btnComprarYa";
-            btnComprarYa.Size = new Size(300, 65);
+            btnComprarYa.Size = new Size(300, 61);
             btnComprarYa.TabIndex = 1;
             btnComprarYa.Text = "Comprar Ya";
             btnComprarYa.TextColor = SystemColors.ControlLightLight;
@@ -109,15 +109,16 @@
             btnAgregarCarrito.FlatStyle = FlatStyle.Flat;
             btnAgregarCarrito.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarCarrito.ForeColor = SystemColors.ControlLightLight;
-            btnAgregarCarrito.Location = new Point(465, 691);
+            btnAgregarCarrito.Location = new Point(407, 601);
             btnAgregarCarrito.MaximumSize = new Size(300, 70);
             btnAgregarCarrito.MinimumSize = new Size(277, 56);
             btnAgregarCarrito.Name = "btnAgregarCarrito";
-            btnAgregarCarrito.Size = new Size(288, 65);
+            btnAgregarCarrito.Size = new Size(288, 61);
             btnAgregarCarrito.TabIndex = 0;
             btnAgregarCarrito.Text = "Agregar al Carrito";
             btnAgregarCarrito.TextColor = SystemColors.ControlLightLight;
             btnAgregarCarrito.UseVisualStyleBackColor = false;
+            btnAgregarCarrito.Click += btnAgregarCarrito_Click;
             // 
             // ProductDescription
             // 
@@ -126,10 +127,10 @@
             ProductDescription.Dock = DockStyle.Fill;
             ProductDescription.Enabled = false;
             ProductDescription.Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProductDescription.Location = new Point(875, 347);
+            ProductDescription.Location = new Point(765, 302);
             ProductDescription.Name = "ProductDescription";
             tableLayoutProducts.SetRowSpan(ProductDescription, 3);
-            ProductDescription.Size = new Size(445, 416);
+            ProductDescription.Size = new Size(387, 360);
             ProductDescription.TabIndex = 0;
             ProductDescription.Text = "";
             // 
@@ -157,7 +158,7 @@
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutProducts.Size = new Size(1323, 766);
+            tableLayoutProducts.Size = new Size(1155, 665);
             tableLayoutProducts.TabIndex = 11;
             // 
             // PanelProducto
@@ -167,9 +168,9 @@
             PanelProducto.Controls.Add(ProductModel);
             PanelProducto.Controls.Add(ProductMarca);
             PanelProducto.Dock = DockStyle.Fill;
-            PanelProducto.Location = new Point(875, 3);
+            PanelProducto.Location = new Point(765, 3);
             PanelProducto.Name = "PanelProducto";
-            PanelProducto.Size = new Size(445, 338);
+            PanelProducto.Size = new Size(387, 293);
             PanelProducto.TabIndex = 3;
             // 
             // lblStock
@@ -217,9 +218,9 @@
             PictureLeft.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PictureLeft.Cursor = Cursors.Hand;
             PictureLeft.Image = Properties.Resources.atras;
-            PictureLeft.Location = new Point(309, 653);
+            PictureLeft.Location = new Point(251, 568);
             PictureLeft.Name = "PictureLeft";
-            PictureLeft.Size = new Size(150, 32);
+            PictureLeft.Size = new Size(150, 27);
             PictureLeft.SizeMode = PictureBoxSizeMode.Zoom;
             PictureLeft.TabIndex = 4;
             PictureLeft.TabStop = false;
@@ -229,9 +230,9 @@
             // 
             PictuteRight.Cursor = Cursors.Hand;
             PictuteRight.Image = Properties.Resources.Adelante;
-            PictuteRight.Location = new Point(465, 653);
+            PictuteRight.Location = new Point(407, 568);
             PictuteRight.Name = "PictuteRight";
-            PictuteRight.Size = new Size(150, 32);
+            PictuteRight.Size = new Size(150, 27);
             PictuteRight.SizeMode = PictureBoxSizeMode.Zoom;
             PictuteRight.TabIndex = 5;
             PictuteRight.TabStop = false;
@@ -243,7 +244,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutProducts);
             Name = "MuestraProductos";
-            Size = new Size(1323, 766);
+            Size = new Size(1155, 665);
             ((System.ComponentModel.ISupportInitialize)PictureRegresar).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
             tableLayoutProducts.ResumeLayout(false);
