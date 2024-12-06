@@ -26,7 +26,7 @@ namespace ProyectoProgramacion.Views
         {
             InitializeComponent();
             products = new List<Product>();
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             Timer.Start();
             Connect();
             Query();
@@ -44,7 +44,7 @@ namespace ProyectoProgramacion.Views
         // Para el Funcionamiento de el Timer
         private void Timer_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
 

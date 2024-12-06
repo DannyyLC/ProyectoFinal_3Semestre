@@ -21,7 +21,7 @@ namespace ProyectoProgramacion.Views
             InitializeComponent();
             this.Id = id;
             cartProducts = new List<ProductCart>();
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             Timer.Start();
             Query();
             AddCartProducts();
@@ -299,7 +299,7 @@ namespace ProyectoProgramacion.Views
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

@@ -134,9 +134,10 @@
             // 
             // lblTime
             // 
+            lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(1122, 0);
+            lblTime.Location = new Point(1067, 1);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(47, 22);
             lblTime.TabIndex = 0;
