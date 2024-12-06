@@ -1,31 +1,16 @@
-# Ignorar archivos y carpetas generadas por Visual Studio
+# Visual Studio files
 .vs/
-.vscode/
-bin/
-obj/
-
-# Ignorar archivos de compilación
-*.dll
-*.exe
-*.pdb
-*.app
-*.apk
-
-# Ignorar archivos de configuración de Visual Studio
+.vs/**
 *.user
 *.suo
-*.userosscache
-*.sln.docstates
 
-# Ignorar archivos temporales
-*.log
-*.bak
-*.swp
-*.tmp
-
-# Ignorar archivos específicos de sistemas operativos
-Thumbs.db
-Desktop.ini
-
-# Ignorar archivos de dependencias de paquetes
-packages/
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
