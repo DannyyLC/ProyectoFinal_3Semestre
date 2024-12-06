@@ -18,26 +18,28 @@ namespace ProyectoProgramacion.Utlis
         // PROPIEDADES
         public int Userid { get; set; }
         public int Productid { get; set; }
+        public string Brand { get; set; }
         public string Model { get; set; }
         public string Description { get; set; }
-        public string Imagen { get; set; }
-        public string Brand { get; set; }
+        public List<string> Images { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        public int Index { get; set; }
 
         // CONSTRUCTOR
-        public MuestraProductos(int userid = 0, int productid = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0)
+        public MuestraProductos(int userid = 0, int productid = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
         {
             InitializeComponent();
 
             Userid = userid;
             Productid = productid;
+            Brand = brand;
             Model = model;
             Description = description;
-            Imagen = image;
-            Brand = brand;
+            Images = images ?? new List<string>();
             Price = price;
             Stock = stock;
+            this.Index = 0;
 
             this.ProductMarca.Text = brand;
             this.ProductModel.Text = model;
@@ -45,9 +47,9 @@ namespace ProyectoProgramacion.Utlis
             this.lblStock.Text = Convert.ToString(stock);
             this.ProductDescription.Text = description;
 
-            if (File.Exists(Imagen))
+            if (File.Exists(Images[this.Index]))
             {
-                this.ProductPicture.Image = Image.FromFile(Imagen);
+                this.ProductPicture.Image = System.Drawing.Image.FromFile(Images[this.Index]);
                 this.ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else
@@ -64,17 +66,29 @@ namespace ProyectoProgramacion.Utlis
         {
             this.Parent.Controls.Remove(this);
         }
-
+        // Cambia a la imagen anterior
         private void PictureLeft_Click(object sender, EventArgs e)
         {
+            if (this.Index == 0)
+                this.Index = 4;
+            else
+                this.Index--;
 
+            this.ProductPicture.Image = Image.FromFile(Images[this.Index]);
+            this.ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
         }
-
+        // Cambia a la imagen siguiente
         private void PictuteRight_Click(object sender, EventArgs e)
         {
+            if (this.Index == 4)
+                this.Index = 0;
+            else
+                this.Index++;
 
+            this.ProductPicture.Image = Image.FromFile(Images[this.Index]);
+            this.ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
         }
-
+        // Añade el producto al carrito y te lleva a la pagina de el carrito
         private void btnComprarYa_Click(object sender, EventArgs e)
         {
             // Encuentra el formulario contenedor del control
@@ -100,9 +114,7 @@ namespace ProyectoProgramacion.Utlis
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
+        // Añade el producto al carrito 
         public void AgregarCarrito()
         {
             string connectionString = "Server=localhost;Database=tenisdb;User ID=root;Password=;";
@@ -119,7 +131,7 @@ namespace ProyectoProgramacion.Utlis
                         command.Parameters.AddWithValue("@userid", this.Userid);
                         command.Parameters.AddWithValue("@productid", this.Productid);
                         command.Parameters.AddWithValue("@precio", this.Price);
-                        command.Parameters.AddWithValue("@imagen", this.Imagen);
+                        command.Parameters.AddWithValue("@imagen", this.Images[0]);
                         command.Parameters.AddWithValue("@marca", this.Brand);
                         command.Parameters.AddWithValue("@modelo", this.Model);
 

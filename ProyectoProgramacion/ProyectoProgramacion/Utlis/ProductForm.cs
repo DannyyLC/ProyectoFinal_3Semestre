@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoProgramacion.Utlis
 {
@@ -15,10 +16,10 @@ namespace ProyectoProgramacion.Utlis
     {
         // ----- * * * PROPIEDADES * * * -----
         public int Id { get; set; }
+        public string Brand { get; set; }
         public string Model { get; set; }
         public string Description { get; set; }
-        public string Imagen { get; set; }
-        public string Brand { get; set; }
+        public List<string> Images { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
@@ -26,14 +27,14 @@ namespace ProyectoProgramacion.Utlis
         public event EventHandler ProductClicked;
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public ProductForm(int id = 0, string model = "", string description = "", string image = "", string brand = "", decimal price = 0, int stock = 0)
+        public ProductForm(int id = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
         {
             InitializeComponent();
 
             Id = id;
             Model = model;
             Description = description;
-            Imagen = Path.Combine("ProductPictures", image);
+            Images = images;
             Brand = brand;
             Price = price;
             Stock = stock;
@@ -43,9 +44,9 @@ namespace ProyectoProgramacion.Utlis
             this.PrecioLabel.Text = $"${price:F2}";
             this.StockLabel.Text = Convert.ToString(stock);
             
-            if (File.Exists(Imagen))
+            if (File.Exists(Images[0]))
             {
-                this.ProductPicture.Image = Image.FromFile(Imagen);
+                this.ProductPicture.Image = System.Drawing.Image.FromFile(Images[0]);
                 this.ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else

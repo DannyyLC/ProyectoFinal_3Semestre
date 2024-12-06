@@ -120,7 +120,7 @@ namespace ProyectoProgramacion.Views
             SearchBox.Padding = new Padding(25, 20, 10, 15);
             SearchBox.PasswordChar = false;
             SearchBox.PlaceholderColor = Color.DarkGray;
-            SearchBox.PlaceholderText = "Buscar por marca, modelo, etc.";
+            SearchBox.PlaceholderText = "Buscar por modelo";
             SearchBox.Size = new Size(769, 64);
             SearchBox.TabIndex = 0;
             SearchBox.Texts = "";
@@ -155,6 +155,7 @@ namespace ProyectoProgramacion.Views
             // 
             // LogoPicture
             // 
+            LogoPicture.Cursor = Cursors.Hand;
             LogoPicture.Image = Properties.Resources.Kicks__600_x_100_;
             LogoPicture.Location = new Point(0, 0);
             LogoPicture.Margin = new Padding(0);
@@ -163,6 +164,7 @@ namespace ProyectoProgramacion.Views
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
+            LogoPicture.Click += LogoPicture_Click;
             // 
             // NavBarTableLayoutPanel
             // 
@@ -322,7 +324,7 @@ namespace ProyectoProgramacion.Views
             FlowLayoutProducts.BackColor = SystemColors.Window;
             FlowLayoutProducts.Location = new Point(162, 168);
             FlowLayoutProducts.Name = "FlowLayoutProducts";
-            FlowLayoutProducts.Size = new Size(929, 675);
+            FlowLayoutProducts.Size = new Size(929, 507);
             FlowLayoutProducts.TabIndex = 7;
             // 
             // Timer

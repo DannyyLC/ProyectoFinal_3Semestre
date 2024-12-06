@@ -274,6 +274,12 @@ namespace ProyectoProgramacion.Views
             this.txtNumeroTarjeta.Texts = "";
             this.txtTitular.Texts = "";
 
+            if (cartProducts.Count == 0)
+            {
+                MessageBox.Show("No se puede realizar la compra porque el carrito esta vacio", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             UpdateProductStock();
             DeleteCartItemsByUserId();
             cartProducts.Clear();

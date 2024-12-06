@@ -135,8 +135,15 @@ namespace ProyectoProgramacion.Utlis
             }
             set
             {
-                textBox1.Text = value;
-                SetPlaceHolder();
+                if (value == "")
+                {
+                    SetPlaceHolder();
+                }
+                else
+                {
+                    RemovePlaceholder();
+                    textBox1.Text = value;
+                }
             }
         }
         [Category("Custom TextBox")]
@@ -324,8 +331,11 @@ namespace ProyectoProgramacion.Utlis
                 textBox1.ForeColor = placeholderColor;
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = false;
+                textBox1.ReadOnly = false;
+                textBox1.Enabled = true;
             }
         }
+
 
         private void RemovePlaceholder()
         {

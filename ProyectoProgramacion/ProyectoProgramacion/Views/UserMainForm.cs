@@ -9,6 +9,7 @@ using System.Reflection;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using Microsoft.VisualBasic.ApplicationServices;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoProgramacion.Views
 {
@@ -68,7 +69,49 @@ namespace ProyectoProgramacion.Views
         // Para hacer una busqueda
         private void LoupePicture_Click(object sender, EventArgs e)
         {
+            string searchmodel = this.SearchBox.Texts;
+            searchmodel = searchmodel.Replace(" ", "").ToLower();
+            string comp;
+            List<Product> filter = new List<Product>();
 
+            if (searchmodel == "")
+            {
+                return;
+            }
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                comp = this.products[i].Model;
+                comp = comp.Replace(" ", "").ToLower();
+                if (comp.Contains(searchmodel))
+                {
+                    filter.Add(products[i]);
+                }
+            }
+
+            if (filter.Count > 0)
+            {
+                FlowLayoutProducts.Controls.Clear();
+                foreach (var product in filter)
+                {
+                    ProductForm productForm = new ProductForm(
+                        product.Id,
+                        product.Brand,
+                        product.Model,
+                        product.Description,
+                        product.Images,
+                        product.Price,
+                        product.Stock
+                    );
+                    productForm.ProductClicked += Product_ProductClicked;
+                    FlowLayoutProducts.Controls.Add(productForm);
+                }
+                SearchBox.Texts = "";
+            }
+            else
+            {
+                SearchBox.Texts = "";
+            }
         }
         #endregion
 
@@ -152,13 +195,19 @@ namespace ProyectoProgramacion.Views
         public void Query()
         {
             Product item;
+
             int id;
-            string name;
-            string description;
-            string image;
             string brand;
-            int stock;
+            string model;
+            string description;
+            List<string> images = new List<string>(5);
+            string img1;
+            string img2;
+            string img3;
+            string img4;
+            string img5;
             decimal price;
+            int stock;
 
             try
             {
@@ -169,16 +218,26 @@ namespace ProyectoProgramacion.Views
                 while (reader.Read())
                 {
                     id = Convert.ToInt32(reader["id"]);
-                    name = Convert.ToString(reader["nombre"]) ?? "";
-                    description = Convert.ToString(reader["descripcion"]) ?? "";
-                    image = Convert.ToString(reader["imagen"]) ?? "";
                     brand = Convert.ToString(reader["marca"]) ?? "";
+                    model = Convert.ToString(reader["modelo"]) ?? "";
+                    description = Convert.ToString(reader["descripcion"]) ?? "";
+
+                    img1 = Convert.ToString(reader["imagen"]) ?? "";
+                    img2 = Convert.ToString(reader["imagen2"]) ?? "";
+                    img3 = Convert.ToString(reader["imagen3"]) ?? "";
+                    img4 = Convert.ToString(reader["imagen4"]) ?? "";
+                    img5 = Convert.ToString(reader["imagen5"]) ?? "";
                     price = Convert.ToDecimal(reader["precio"]);
                     stock = Convert.ToInt32(reader["stock"]);
 
-                    item = new Product(id, name, description, image, brand, price, stock);
-                    products.Add(item);
+                    images.Add(img1);
+                    images.Add(img2);
+                    images.Add(img3);
+                    images.Add(img4);
+                    images.Add(img5);
 
+                    item = new Product(id, brand, model, description, images, price, stock);
+                    products.Add(item);
                 }
                 reader.Close();
             }
@@ -198,10 +257,10 @@ namespace ProyectoProgramacion.Views
                 // Asigna datos del producto al formulario
                 ProductForm productForm = new ProductForm(
                     product.Id,
+                    product.Brand,
                     product.Model,
                     product.Description,
-                    product.Image,
-                    product.Brand,
+                    product.Images,
                     product.Price,
                     product.Stock
                 );
@@ -220,14 +279,14 @@ namespace ProyectoProgramacion.Views
             {
                 // Crear una instancia del control de usuario con el constructor
                 var muestraProductos = new MuestraProductos(
-                    userid:         this.Userid,
-                    productid:      productForm.Id,
-                    model:          productForm.Model,
-                    description:    productForm.Description,
-                    image:          productForm.Imagen,
-                    brand:          productForm.Brand,
-                    price:          productForm.Price,
-                    stock:          productForm.Stock
+                    userid: this.Userid,
+                    productid: productForm.Id,
+                    brand: productForm.Brand,
+                    model: productForm.Model,
+                    description: productForm.Description,
+                    images: productForm.Images,
+                    price: productForm.Price,
+                    stock: productForm.Stock
                 );
 
                 // Agregar el control al formulario principal
@@ -244,17 +303,74 @@ namespace ProyectoProgramacion.Views
         // Filtrar Productos de la Marca Nike
         private void btnNike_Click(object sender, EventArgs e)
         {
+            var nikeProducts = products.Where(p => p.Brand.Equals("Nike", StringComparison.OrdinalIgnoreCase)).ToList();
 
+            FlowLayoutProducts.Controls.Clear();
+
+            foreach (var product in nikeProducts)
+            {
+                ProductForm productForm = new ProductForm(
+                    product.Id,
+                    product.Brand,
+                    product.Model,
+                    product.Description,
+                    product.Images,
+                    product.Price,
+                    product.Stock
+                );
+
+                productForm.ProductClicked += Product_ProductClicked;
+
+                FlowLayoutProducts.Controls.Add(productForm);
+            }
         }
         // Filtrar Productos de la Marca Jordan
         private void btnJordan_Click(object sender, EventArgs e)
         {
+            var jordanProducts = products.Where(p => p.Brand.Equals("Jordan", StringComparison.OrdinalIgnoreCase)).ToList();
 
+            FlowLayoutProducts.Controls.Clear();
+
+            foreach (var product in jordanProducts)
+            {
+                ProductForm productForm = new ProductForm(
+                    product.Id,
+                    product.Brand,
+                    product.Model,
+                    product.Description,
+                    product.Images,
+                    product.Price,
+                    product.Stock
+                );
+
+                productForm.ProductClicked += Product_ProductClicked;
+
+                FlowLayoutProducts.Controls.Add(productForm);
+            }
         }
         // Filtrar Productos de la Marca Adidas
         private void btnAdidas_Click(object sender, EventArgs e)
         {
+            var adidasProducts = products.Where(p => p.Brand.Equals("Adidas", StringComparison.OrdinalIgnoreCase)).ToList();
 
+            FlowLayoutProducts.Controls.Clear();
+
+            foreach (var product in adidasProducts)
+            {
+                ProductForm productForm = new ProductForm(
+                    product.Id,
+                    product.Brand,
+                    product.Model,
+                    product.Description,
+                    product.Images,
+                    product.Price,
+                    product.Stock
+                );
+
+                productForm.ProductClicked += Product_ProductClicked;
+
+                FlowLayoutProducts.Controls.Add(productForm);
+            }
         }
         // Filtrar Novedades
         private void btnNovedades_Click(object sender, EventArgs e)
@@ -266,8 +382,12 @@ namespace ProyectoProgramacion.Views
         {
 
         }
+        // Muestra todos los productos disponibles
+        private void LogoPicture_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
         #endregion
-
     }
 }
 
