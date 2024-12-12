@@ -1,29 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\",
+  "WorkspaceRootPath": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integracion del proyecto\\adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integraciondelproyecto\\adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:adminview\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integracion del proyecto\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integraciondelproyecto\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integracion del proyecto\\adminview\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integraciondelproyecto\\adminview\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:adminview\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integracion del proyecto\\juandbadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\integraciondelproyecto\\juandbadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:juandbadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminview\\adminviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminview\\adminviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{97C292B2-B365-4801-BB81-4B233BE2A950}|IntroductionView.csproj|solutionrelative:adminview\\adminviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -39,10 +43,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "IntroductionView.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "RelativeToolTip": "obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:42:15.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AddProductForm.cs",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\AddProductForm.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\AddProductForm.cs",
               "RelativeDocumentMoniker": "adminView\\AddProductForm.cs",
-              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\AddProductForm.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\AddProductForm.cs",
               "RelativeToolTip": "adminView\\AddProductForm.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -51,9 +68,9 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddProductForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\AddProductForm.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\AddProductForm.cs",
               "RelativeDocumentMoniker": "adminView\\AddProductForm.cs",
               "ToolTip": "C:\\Users\\Samuel\\Documents\\Proyecto tercer semestre\\IntroductionView\\adminView\\AddProductForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "..\\..\\..\\..\\Documents\\Proyecto tercer semestre\\IntroductionView\\adminView\\AddProductForm.cs [Dise\u00F1o]",
@@ -62,11 +79,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
-              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\Form2.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAcwDoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -74,11 +91,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DbManager.cs",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\DbManager.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\DbManager.cs",
               "RelativeDocumentMoniker": "adminView\\DbManager.cs",
-              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\DbManager.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\DbManager.cs",
               "RelativeToolTip": "adminView\\DbManager.cs",
               "ViewState": "AgIAACkAAAAAAAAAAIA7wF4AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -86,9 +103,9 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "adminViewForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\adminView\\adminViewForm.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\adminView\\adminViewForm.cs",
               "RelativeDocumentMoniker": "adminView\\adminViewForm.cs",
               "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\IntroductionView\\IntroductionView\\adminView\\adminViewForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "..\\ProyectoProgramacion\\IntroductionView\\IntroductionView\\adminView\\adminViewForm.cs [Dise\u00F1o]",
@@ -97,11 +114,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "JuanDBAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\JuanDBAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\JuanDBAdmin.cs",
               "RelativeDocumentMoniker": "JuanDBAdmin.cs",
-              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\Integracion del proyecto\\JuanDBAdmin.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\IntegracionDelProyecto\\JuanDBAdmin.cs",
               "RelativeToolTip": "JuanDBAdmin.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA7wCIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
