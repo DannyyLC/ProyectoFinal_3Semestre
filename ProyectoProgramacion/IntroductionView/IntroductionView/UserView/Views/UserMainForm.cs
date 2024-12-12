@@ -60,6 +60,9 @@ namespace ProyectoProgramacion.Views
             cart.Size = this.Bounds.Size;
 
             cart.ShowDialog();
+
+            this.Dispose();
+            this.Close();
         }
         #endregion
 
@@ -208,6 +211,8 @@ namespace ProyectoProgramacion.Views
             string img5;
             decimal price;
             int stock;
+            int novedad;
+            double descuento;
 
             try
             {
@@ -218,8 +223,8 @@ namespace ProyectoProgramacion.Views
                 while (reader.Read())
                 {
                     id = Convert.ToInt32(reader["id"]);
-                    brand = Convert.ToString(reader["marca"]) ?? "";
                     model = Convert.ToString(reader["modelo"]) ?? "";
+                    brand = Convert.ToString(reader["marca"]) ?? "";
                     description = Convert.ToString(reader["descripcion"]) ?? "";
                     img1 = Convert.ToString(reader["imagen1"]) ?? "";
                     img2 = Convert.ToString(reader["imagen2"]) ?? "";
@@ -228,6 +233,8 @@ namespace ProyectoProgramacion.Views
                     img5 = Convert.ToString(reader["imagen5"]) ?? "";
                     price = Convert.ToDecimal(reader["precio"]);
                     stock = Convert.ToInt32(reader["stock"]);
+                    novedad = Convert.ToInt32(reader["novedad"]);
+                    descuento = Convert.ToDouble(reader["descuento"]);
 
                     images.Add(img1);
                     images.Add(img2);
@@ -235,7 +242,7 @@ namespace ProyectoProgramacion.Views
                     images.Add(img4);
                     images.Add(img5);
 
-                    item = new Product(id, brand, model, description, images, price, stock);
+                    item = new Product(id, brand, model, description, images, price, stock, novedad, descuento);
                     products.Add(item);
                 }
                 reader.Close();
@@ -261,7 +268,9 @@ namespace ProyectoProgramacion.Views
                     product.Description,
                     product.Images,
                     product.Price,
-                    product.Stock
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
                 );
 
                 // Suscribe el evento de clic
@@ -315,7 +324,9 @@ namespace ProyectoProgramacion.Views
                     product.Description,
                     product.Images,
                     product.Price,
-                    product.Stock
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
                 );
 
                 productForm.ProductClicked += Product_ProductClicked;
@@ -339,7 +350,9 @@ namespace ProyectoProgramacion.Views
                     product.Description,
                     product.Images,
                     product.Price,
-                    product.Stock
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
                 );
 
                 productForm.ProductClicked += Product_ProductClicked;
@@ -363,7 +376,9 @@ namespace ProyectoProgramacion.Views
                     product.Description,
                     product.Images,
                     product.Price,
-                    product.Stock
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
                 );
 
                 productForm.ProductClicked += Product_ProductClicked;
@@ -374,16 +389,59 @@ namespace ProyectoProgramacion.Views
         // Filtrar Novedades
         private void btnNovedades_Click(object sender, EventArgs e)
         {
+            var novedadesProducts = products.Where(p => p.Novedad == 1).ToList();
 
+            FlowLayoutProducts.Controls.Clear();
+
+            foreach (var product in novedadesProducts)
+            {
+                ProductForm productForm = new ProductForm(
+                   product.Id,
+                    product.Brand,
+                    product.Model,
+                    product.Description,
+                    product.Images,
+                    product.Price,
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
+                );
+
+                productForm.ProductClicked += Product_ProductClicked;
+
+                FlowLayoutProducts.Controls.Add(productForm);
+            }
         }
         // Filtrar Productos con Descuento
         private void btnDescuento_Click(object sender, EventArgs e)
         {
+            var descuentoProducts = products.Where(p => p.Descuento != 0).ToList();
 
+            FlowLayoutProducts.Controls.Clear();
+
+            foreach (var product in descuentoProducts)
+            {
+                ProductForm productForm = new ProductForm(
+                   product.Id,
+                    product.Brand,
+                    product.Model,
+                    product.Description,
+                    product.Images,
+                    product.Price,
+                    product.Stock,
+                    product.Novedad,
+                    product.Descuento
+                );
+
+                productForm.ProductClicked += Product_ProductClicked;
+
+                FlowLayoutProducts.Controls.Add(productForm);
+            }
         }
         // Muestra todos los productos disponibles
         private void LogoPicture_Click(object sender, EventArgs e)
         {
+            Query();
             LoadProducts();
         }
         #endregion

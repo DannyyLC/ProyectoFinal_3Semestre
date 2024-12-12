@@ -300,6 +300,14 @@ namespace ProyectoProgramacion.Views
         {
             this.Dispose();
             this.Close();
+
+            UserMainForm form = new UserMainForm(this.Id);
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = this.Location;
+            form.Size = this.Bounds.Size;
+
+            form.ShowDialog();
         }
         #endregion
 
