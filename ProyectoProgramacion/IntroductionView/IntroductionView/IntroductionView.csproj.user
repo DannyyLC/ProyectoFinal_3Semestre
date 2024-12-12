@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="adminView\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="adminView\adminViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="adminView\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="adminView\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NuevoUsuario\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\CartProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\CustomeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\FullCustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\MuestraProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserView\Utlis\ProductForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserView\Views\CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserView\Views\UserMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

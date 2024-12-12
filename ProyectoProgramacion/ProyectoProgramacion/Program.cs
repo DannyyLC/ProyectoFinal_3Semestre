@@ -1,3 +1,4 @@
+using IntroductionView;
 using ProyectoProgramacion.Views;
 
 namespace ProyectoProgramacion
@@ -13,7 +14,7 @@ namespace ProyectoProgramacion
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new UserMainForm(1));
+            Application.Run(new Login());
         }
     }
 }

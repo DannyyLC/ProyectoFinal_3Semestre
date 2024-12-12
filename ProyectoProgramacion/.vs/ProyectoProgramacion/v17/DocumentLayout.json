@@ -1,7 +1,36 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "\\\\wsl$\\Ubuntu\\home\\dannylimon\\College\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\adminview\\obj\\release\\net8.0-windows\\adminview.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\adminview\\obj\\release\\net8.0-windows\\adminview.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\introductionview\\introductionview\\obj\\debug\\net8.0-windows\\introductionview.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\introductionview\\introductionview\\obj\\debug\\net8.0-windows\\introductionview.assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\adminview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\adminview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\introductionview\\introductionview\\obj\\debug\\net8.0-windows\\.netcoreapp,version=v8.0.assemblyattributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\introductionview\\introductionview\\obj\\debug\\net8.0-windows\\.netcoreapp,version=v8.0.assemblyattributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\adminview\\obj\\release\\net8.0-windows\\.netcoreapp,version=v8.0.assemblyattributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\adminview\\obj\\release\\net8.0-windows\\.netcoreapp,version=v8.0.assemblyattributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\samuel\\source\\repos\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,25 +38,98 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:33:26.945Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 606,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": ".NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:33:14.565Z",
+              "EditorCaption": ""
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\Program.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\adminView\\Program.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\Program.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\adminView\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:30:35.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProyectoProgramacion.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\obj\\Debug\\net8.0-windows\\ProyectoProgramacion.AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:26:38.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "adminView.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\adminView.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\adminView.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\adminView.AssemblyInfo.cs*",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\adminView\\obj\\Release\\net8.0-windows\\adminView.AssemblyInfo.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:26:35.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IntroductionView.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs*",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\IntroductionView\\IntroductionView\\obj\\Debug\\net8.0-windows\\IntroductionView.AssemblyInfo.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:26:32.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Program.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Program.cs",
+              "ToolTip": "C:\\Users\\Samuel\\source\\repos\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Program.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T08:03:58.479Z",
+              "EditorCaption": ""
             }
           ]
         }
