@@ -16,9 +16,11 @@ namespace ProyectoProgramacion.Models
         public string Imagen { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
+        public int Cantidad { get; set; }
+        public int Stock { get; set; }
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public ProductCart(string image = "", string marca = "", string modelo = "", decimal precio = 0, int userid = 0, int idproduct = 0)
+        public ProductCart(string image = "", string marca = "", string modelo = "", decimal precio = 0, int userid = 0, int idproduct = 0, int cantidad = 1, int stock = 100)
         {
             this.Imagen = image;
             this.Marca = marca;
@@ -26,6 +28,8 @@ namespace ProyectoProgramacion.Models
             this.Precio = precio;
             this.Userid = userid;
             this.ProductId = idproduct;
+            this.Cantidad = cantidad;
+            this.Stock = stock;
         }
     }
 }

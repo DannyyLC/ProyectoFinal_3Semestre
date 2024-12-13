@@ -91,6 +91,7 @@ namespace ProyectoProgramacion.Utlis
         // Añade el producto al carrito y te lleva a la pagina de el carrito
         private void btnComprarYa_Click(object sender, EventArgs e)
         {
+            AgregarCarrito();
             // Encuentra el formulario contenedor del control
             Form parentForm = this.FindForm();
 
@@ -99,9 +100,9 @@ namespace ProyectoProgramacion.Utlis
                 // Crea una instancia de CartForm
                 CartForm cart = new CartForm(this.Userid)
                 {
-                    StartPosition = FormStartPosition.Manual, // Posicionamiento manual
-                    Location = parentForm.Location,          // Posición del formulario principal
-                    Size = parentForm.Bounds.Size            // Tamaño del formulario principal
+                    StartPosition = FormStartPosition.Manual,
+                    Location = parentForm.Location,          
+                    Size = parentForm.Bounds.Size           
                 };
 
                 // Muestra el formulario de carrito como un diálogo modal
@@ -109,7 +110,6 @@ namespace ProyectoProgramacion.Utlis
             }
             else
             {
-                // Si no se encontró el formulario contenedor, muestra un mensaje de error
                 MessageBox.Show("No se pudo acceder al formulario principal desde el control de usuario.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -124,7 +124,7 @@ namespace ProyectoProgramacion.Utlis
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO carrito (userid, productid, precio, imagen, marca, modelo) VALUES (@userid, @productid, @precio, @imagen, @marca, @modelo)";
+                    string query = "INSERT INTO carrito (userid, productid, precio, imagen, marca, modelo, cantidad) VALUES (@userid, @productid, @precio, @imagen, @marca, @modelo, @cantidad)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -134,6 +134,7 @@ namespace ProyectoProgramacion.Utlis
                         command.Parameters.AddWithValue("@imagen", this.Images[0]);
                         command.Parameters.AddWithValue("@marca", this.Brand);
                         command.Parameters.AddWithValue("@modelo", this.Model);
+                        command.Parameters.AddWithValue("@cantidad", 1);
 
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)

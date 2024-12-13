@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using ProyectoProgramacion.Models;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Net.Quic;
 using System.Reflection;
@@ -75,13 +77,14 @@ namespace ProyectoProgramacion.Views
         {
             Connect();
 
-            ProductCart cart = new ProductCart();
+            ProductCart cart;
             string imagen;
             string marca;
             string modelo;
             decimal precio;
             int userid;
             int productid;
+            int cantidad;
 
             try
             {
@@ -90,17 +93,14 @@ namespace ProyectoProgramacion.Views
                     MessageBox.Show("La conexión no está abierta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                string query = "SELECT * FROM carrito WHERE userid = @userid";
 
+                string query = "SELECT * FROM carrito WHERE userid = @userid";
                 MySqlCommand command = new MySqlCommand(query, this.connection);
                 command.Parameters.AddWithValue("@userid", this.Id);
 
                 MySqlDataReader reader = command.ExecuteReader();
 
-                if (!reader.HasRows)
-                {
-                    Console.WriteLine("No se encontraron productos en el carrito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                Dictionary<int, int> cantidadPorProducto = new Dictionary<int, int>();
 
                 while (reader.Read())
                 {
@@ -110,19 +110,46 @@ namespace ProyectoProgramacion.Views
                     modelo = Convert.ToString(reader["modelo"]) ?? "";
                     precio = Convert.ToDecimal(reader["precio"]);
                     imagen = Convert.ToString(reader["imagen"]) ?? "";
-                    //CANTIDAD INT
+                    cantidad = Convert.ToInt32(reader["cantidad"]);
 
-                    cart = new ProductCart(imagen, marca, modelo, precio, userid, productid);
-                    cartProducts.Add(cart);
+                    if (cantidadPorProducto.ContainsKey(productid))
+                    {
+                        cantidadPorProducto[productid] += cantidad;
+                    }
+                    else
+                    {
+                        cantidadPorProducto[productid] = cantidad;
+                        int stock = GetProductStock(productid);
+
+                        cart = new ProductCart(imagen, marca, modelo, precio, userid, productid, cantidad, stock);
+                        cartProducts.Add(cart);
+                    }
                 }
-                reader.Close();
+
+                reader.Close(); // Cierra el DataReader antes de ejecutar otros comandos
+
+                // Actualiza las cantidades en la base de datos
+                foreach (var item in cantidadPorProducto)
+                {
+                    string updateQuery = "UPDATE carrito SET cantidad = @cantidad WHERE productid = @productid AND userid = @userid";
+                    MySqlCommand updateCommand = new MySqlCommand(updateQuery, this.connection);
+                    updateCommand.Parameters.AddWithValue("@cantidad", item.Value);
+                    updateCommand.Parameters.AddWithValue("@productid", item.Key);
+                    updateCommand.Parameters.AddWithValue("@userid", this.Id);
+
+                    updateCommand.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al leer la tabla de la base de datos: " + ex.Message);
+            }
+            finally
+            {
                 this.Disconnect();
             }
         }
+
         // Añade los productos de la lista a la interfaz grafica
         public void AddCartProducts()
         {
@@ -167,6 +194,10 @@ namespace ProyectoProgramacion.Views
                 string marca;
                 string modelo;
                 decimal precio;
+                int cantidad;
+                int stock;
+                int userid;
+                int productid;
                 this.Total = 0;
 
                 for (int i = 0; i < cartProducts.Count; i++)
@@ -175,10 +206,14 @@ namespace ProyectoProgramacion.Views
                     marca = cartProducts[i].Marca;
                     modelo = cartProducts[i].Modelo;
                     precio = cartProducts[i].Precio;
+                    cantidad = cartProducts[i].Cantidad;
+                    stock = cartProducts[i].Stock;
+                    userid = cartProducts[i].Userid;
+                    productid = cartProducts[i].ProductId;
 
-                    this.Total += precio;
+                    this.Total += precio * cantidad;
 
-                    CartProduct product = new CartProduct(imagen, marca, modelo, precio);
+                    CartProduct product = new CartProduct(imagen, marca, modelo, precio, cantidad, stock, userid, productid);
                     TableProducts.Controls.Add(product, 1, i);
                 }
 
@@ -194,6 +229,40 @@ namespace ProyectoProgramacion.Views
                 TableProducts.Controls.Add(totalLabel, 1, cartProducts.Count);
             }
         }
+        // Retorna el Sstock disponible para algun producto
+        private int GetProductStock(int productId)
+        {
+            int stock = 0;
+
+            try
+            {
+                // Nueva conexión para esta consulta
+                string connectionString = "Server=localhost; Database=tenisdb; User=root; Password=; SslMode=none;";
+                using (var connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string stockQuery = "SELECT stock FROM productos WHERE id = @productId";
+                    using (MySqlCommand stockCommand = new MySqlCommand(stockQuery, connection))
+                    {
+                        stockCommand.Parameters.AddWithValue("@productId", productId);
+
+                        object result = stockCommand.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            stock = Convert.ToInt32(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el stock del producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return stock;
+        }
+
         //  Elimina los productos de el carrito
         public void DeleteCartItemsByUserId()
         {
@@ -265,6 +334,7 @@ namespace ProyectoProgramacion.Views
                 MessageBox.Show($"Error al actualizar el stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         #endregion
 
         // ----- * * * BOTONES * * * -----
@@ -294,10 +364,29 @@ namespace ProyectoProgramacion.Views
             AddCartProducts();
 
             MessageBox.Show("Compra realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            UserMainForm user = new UserMainForm(this.Id);
+
+            user.StartPosition = FormStartPosition.Manual;
+            user.Location = this.Location;
+            user.Size = this.Bounds.Size;
+
+            user.ShowDialog();
+
+            this.Dispose();
+            this.Close();
         }
         // Cierra el form de el carrito y volvemos al principal
         private void LogoPicture_Click(object sender, EventArgs e)
         {
+            UserMainForm user = new UserMainForm(this.Id);
+
+            user.StartPosition = FormStartPosition.Manual;
+            user.Location = this.Location;
+            user.Size = this.Bounds.Size;
+
+            user.ShowDialog();
+
             this.Dispose();
             this.Close();
         }

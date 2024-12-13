@@ -72,11 +72,10 @@ namespace ProyectoProgramacion.Views
             HeaderTableLayoutPanel.Controls.Add(LogoPicture, 0, 0);
             HeaderTableLayoutPanel.Dock = DockStyle.Top;
             HeaderTableLayoutPanel.Location = new Point(0, 0);
-            HeaderTableLayoutPanel.Margin = new Padding(3, 2, 3, 2);
             HeaderTableLayoutPanel.Name = "HeaderTableLayoutPanel";
             HeaderTableLayoutPanel.RowCount = 1;
             HeaderTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            HeaderTableLayoutPanel.Size = new Size(1145, 78);
+            HeaderTableLayoutPanel.Size = new Size(1309, 104);
             HeaderTableLayoutPanel.TabIndex = 2;
             // 
             // panelSearchBox
@@ -85,10 +84,9 @@ namespace ProyectoProgramacion.Views
             panelSearchBox.Controls.Add(LoupePicture);
             panelSearchBox.Controls.Add(SearchBox);
             panelSearchBox.Dock = DockStyle.Fill;
-            panelSearchBox.Location = new Point(282, 2);
-            panelSearchBox.Margin = new Padding(3, 2, 3, 2);
+            panelSearchBox.Location = new Point(322, 3);
             panelSearchBox.Name = "panelSearchBox";
-            panelSearchBox.Size = new Size(687, 74);
+            panelSearchBox.Size = new Size(787, 98);
             panelSearchBox.TabIndex = 1;
             // 
             // LoupePicture
@@ -97,10 +95,9 @@ namespace ProyectoProgramacion.Views
             LoupePicture.BackColor = SystemColors.Window;
             LoupePicture.Cursor = Cursors.Hand;
             LoupePicture.Image = IntroductionView.Properties.Resources.loupe;
-            LoupePicture.Location = new Point(629, 19);
-            LoupePicture.Margin = new Padding(3, 2, 3, 2);
+            LoupePicture.Location = new Point(721, 25);
             LoupePicture.Name = "LoupePicture";
-            LoupePicture.Size = new Size(40, 32);
+            LoupePicture.Size = new Size(46, 42);
             LoupePicture.SizeMode = PictureBoxSizeMode.Zoom;
             LoupePicture.TabIndex = 0;
             LoupePicture.TabStop = false;
@@ -117,15 +114,14 @@ namespace ProyectoProgramacion.Views
             SearchBox.Cursor = Cursors.IBeam;
             SearchBox.Font = new Font("Tahoma", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchBox.ForeColor = Color.DimGray;
-            SearchBox.Location = new Point(2, 11);
-            SearchBox.Margin = new Padding(3, 2, 3, 2);
+            SearchBox.Location = new Point(2, 15);
             SearchBox.Multiline = false;
             SearchBox.Name = "SearchBox";
-            SearchBox.Padding = new Padding(22, 15, 9, 11);
+            SearchBox.Padding = new Padding(25, 20, 10, 15);
             SearchBox.PasswordChar = false;
             SearchBox.PlaceholderColor = Color.DarkGray;
             SearchBox.PlaceholderText = "Buscar por modelo";
-            SearchBox.Size = new Size(679, 49);
+            SearchBox.Size = new Size(778, 64);
             SearchBox.TabIndex = 0;
             SearchBox.Texts = "";
             SearchBox.UnderlinedStyle = false;
@@ -135,10 +131,9 @@ namespace ProyectoProgramacion.Views
             AccountPicture.Anchor = AnchorStyles.None;
             AccountPicture.Cursor = Cursors.Hand;
             AccountPicture.Image = IntroductionView.Properties.Resources.user;
-            AccountPicture.Location = new Point(1073, 17);
-            AccountPicture.Margin = new Padding(3, 2, 3, 2);
+            AccountPicture.Location = new Point(1227, 22);
             AccountPicture.Name = "AccountPicture";
-            AccountPicture.Size = new Size(61, 44);
+            AccountPicture.Size = new Size(70, 59);
             AccountPicture.SizeMode = PictureBoxSizeMode.Zoom;
             AccountPicture.TabIndex = 0;
             AccountPicture.TabStop = false;
@@ -149,11 +144,10 @@ namespace ProyectoProgramacion.Views
             CartPicture.Anchor = AnchorStyles.None;
             CartPicture.Cursor = Cursors.Hand;
             CartPicture.Image = IntroductionView.Properties.Resources.shopping_cart;
-            CartPicture.Location = new Point(982, 17);
-            CartPicture.Margin = new Padding(3, 2, 3, 2);
+            CartPicture.Location = new Point(1124, 22);
             CartPicture.Name = "CartPicture";
-            CartPicture.Padding = new Padding(2);
-            CartPicture.Size = new Size(70, 44);
+            CartPicture.Padding = new Padding(2, 3, 2, 3);
+            CartPicture.Size = new Size(80, 59);
             CartPicture.SizeMode = PictureBoxSizeMode.Zoom;
             CartPicture.TabIndex = 0;
             CartPicture.TabStop = false;
@@ -166,7 +160,7 @@ namespace ProyectoProgramacion.Views
             LogoPicture.Location = new Point(0, 0);
             LogoPicture.Margin = new Padding(0);
             LogoPicture.Name = "LogoPicture";
-            LogoPicture.Size = new Size(256, 71);
+            LogoPicture.Size = new Size(293, 95);
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
@@ -190,12 +184,11 @@ namespace ProyectoProgramacion.Views
             NavBarTableLayoutPanel.Controls.Add(btnNike, 1, 0);
             NavBarTableLayoutPanel.Dock = DockStyle.Top;
             NavBarTableLayoutPanel.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            NavBarTableLayoutPanel.Location = new Point(0, 78);
-            NavBarTableLayoutPanel.Margin = new Padding(3, 2, 3, 2);
+            NavBarTableLayoutPanel.Location = new Point(0, 104);
             NavBarTableLayoutPanel.Name = "NavBarTableLayoutPanel";
             NavBarTableLayoutPanel.RowCount = 1;
             NavBarTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            NavBarTableLayoutPanel.Size = new Size(1145, 48);
+            NavBarTableLayoutPanel.Size = new Size(1309, 64);
             NavBarTableLayoutPanel.TabIndex = 3;
             // 
             // btnJordan
@@ -210,10 +203,9 @@ namespace ProyectoProgramacion.Views
             btnJordan.FlatAppearance.BorderSize = 0;
             btnJordan.FlatStyle = FlatStyle.Flat;
             btnJordan.ForeColor = Color.Black;
-            btnJordan.Location = new Point(368, 2);
-            btnJordan.Margin = new Padding(3, 2, 3, 2);
+            btnJordan.Location = new Point(421, 3);
             btnJordan.Name = "btnJordan";
-            btnJordan.Size = new Size(108, 44);
+            btnJordan.Size = new Size(124, 58);
             btnJordan.TabIndex = 1;
             btnJordan.Text = "Jordan";
             btnJordan.TextColor = Color.Black;
@@ -232,10 +224,9 @@ namespace ProyectoProgramacion.Views
             btnAdidas.FlatAppearance.BorderSize = 0;
             btnAdidas.FlatStyle = FlatStyle.Flat;
             btnAdidas.ForeColor = Color.Black;
-            btnAdidas.Location = new Point(482, 2);
-            btnAdidas.Margin = new Padding(3, 2, 3, 2);
+            btnAdidas.Location = new Point(551, 3);
             btnAdidas.Name = "btnAdidas";
-            btnAdidas.Size = new Size(97, 44);
+            btnAdidas.Size = new Size(111, 58);
             btnAdidas.TabIndex = 2;
             btnAdidas.Text = "Adidas";
             btnAdidas.TextColor = Color.Black;
@@ -254,10 +245,9 @@ namespace ProyectoProgramacion.Views
             btnNovedades.FlatAppearance.BorderSize = 0;
             btnNovedades.FlatStyle = FlatStyle.Flat;
             btnNovedades.ForeColor = Color.Black;
-            btnNovedades.Location = new Point(585, 2);
-            btnNovedades.Margin = new Padding(3, 2, 3, 2);
+            btnNovedades.Location = new Point(668, 3);
             btnNovedades.Name = "btnNovedades";
-            btnNovedades.Size = new Size(131, 44);
+            btnNovedades.Size = new Size(151, 58);
             btnNovedades.TabIndex = 3;
             btnNovedades.Text = "Novedades";
             btnNovedades.TextColor = Color.Black;
@@ -276,10 +266,9 @@ namespace ProyectoProgramacion.Views
             btnDescuento.FlatAppearance.BorderSize = 0;
             btnDescuento.FlatStyle = FlatStyle.Flat;
             btnDescuento.ForeColor = Color.FromArgb(208, 17, 16);
-            btnDescuento.Location = new Point(722, 2);
-            btnDescuento.Margin = new Padding(3, 2, 3, 2);
+            btnDescuento.Location = new Point(825, 3);
             btnDescuento.Name = "btnDescuento";
-            btnDescuento.Size = new Size(142, 44);
+            btnDescuento.Size = new Size(164, 58);
             btnDescuento.TabIndex = 4;
             btnDescuento.Text = "Descuentos";
             btnDescuento.TextColor = Color.FromArgb(208, 17, 16);
@@ -298,10 +287,9 @@ namespace ProyectoProgramacion.Views
             btnNike.FlatAppearance.BorderSize = 0;
             btnNike.FlatStyle = FlatStyle.Flat;
             btnNike.ForeColor = Color.Black;
-            btnNike.Location = new Point(277, 2);
-            btnNike.Margin = new Padding(3, 2, 3, 2);
+            btnNike.Location = new Point(317, 3);
             btnNike.Name = "btnNike";
-            btnNike.Size = new Size(85, 44);
+            btnNike.Size = new Size(98, 58);
             btnNike.TabIndex = 0;
             btnNike.Text = "Nike";
             btnNike.TextColor = Color.Black;
@@ -313,10 +301,9 @@ namespace ProyectoProgramacion.Views
             FooterPanel.BackColor = Color.Gainsboro;
             FooterPanel.Controls.Add(lblTime);
             FooterPanel.Dock = DockStyle.Bottom;
-            FooterPanel.Location = new Point(0, 501);
-            FooterPanel.Margin = new Padding(3, 2, 3, 2);
+            FooterPanel.Location = new Point(0, 668);
             FooterPanel.Name = "FooterPanel";
-            FooterPanel.Size = new Size(1145, 22);
+            FooterPanel.Size = new Size(1309, 29);
             FooterPanel.TabIndex = 4;
             // 
             // lblTime
@@ -324,9 +311,9 @@ namespace ProyectoProgramacion.Views
             lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(1046, 2);
+            lblTime.Location = new Point(1195, 3);
             lblTime.Name = "lblTime";
-            lblTime.Size = new Size(39, 18);
+            lblTime.Size = new Size(47, 22);
             lblTime.TabIndex = 0;
             lblTime.Text = "Hora";
             // 
@@ -335,10 +322,9 @@ namespace ProyectoProgramacion.Views
             FlowLayoutProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             FlowLayoutProducts.AutoScroll = true;
             FlowLayoutProducts.BackColor = SystemColors.Window;
-            FlowLayoutProducts.Location = new Point(142, 126);
-            FlowLayoutProducts.Margin = new Padding(3, 2, 3, 2);
+            FlowLayoutProducts.Location = new Point(162, 168);
             FlowLayoutProducts.Name = "FlowLayoutProducts";
-            FlowLayoutProducts.Size = new Size(825, 371);
+            FlowLayoutProducts.Size = new Size(943, 495);
             FlowLayoutProducts.TabIndex = 7;
             // 
             // Timer
@@ -352,9 +338,9 @@ namespace ProyectoProgramacion.Views
             MenuUser.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             MenuUser.AutoSize = true;
             MenuUser.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MenuUser.Location = new Point(3, 48);
+            MenuUser.Location = new Point(3, 69);
             MenuUser.Name = "MenuUser";
-            MenuUser.Size = new Size(167, 18);
+            MenuUser.Size = new Size(203, 22);
             MenuUser.TabIndex = 0;
             MenuUser.Text = "Nombre de el usuario";
             // 
@@ -362,10 +348,9 @@ namespace ProyectoProgramacion.Views
             // 
             ExitMenuPicture.Cursor = Cursors.Hand;
             ExitMenuPicture.Image = IntroductionView.Properties.Resources.close;
-            ExitMenuPicture.Location = new Point(4, 4);
-            ExitMenuPicture.Margin = new Padding(3, 2, 3, 2);
+            ExitMenuPicture.Location = new Point(5, 5);
             ExitMenuPicture.Name = "ExitMenuPicture";
-            ExitMenuPicture.Size = new Size(28, 20);
+            ExitMenuPicture.Size = new Size(32, 27);
             ExitMenuPicture.SizeMode = PictureBoxSizeMode.Zoom;
             ExitMenuPicture.TabIndex = 1;
             ExitMenuPicture.TabStop = false;
@@ -376,10 +361,9 @@ namespace ProyectoProgramacion.Views
             LogOutPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             LogOutPanel.Controls.Add(lblLogout);
             LogOutPanel.Controls.Add(LogoutPicture);
-            LogOutPanel.Location = new Point(4, 81);
-            LogOutPanel.Margin = new Padding(3, 2, 3, 2);
+            LogOutPanel.Location = new Point(5, 113);
             LogOutPanel.Name = "LogOutPanel";
-            LogOutPanel.Size = new Size(176, 32);
+            LogOutPanel.Size = new Size(201, 43);
             LogOutPanel.TabIndex = 2;
             // 
             // lblLogout
@@ -387,9 +371,9 @@ namespace ProyectoProgramacion.Views
             lblLogout.AutoSize = true;
             lblLogout.Cursor = Cursors.Hand;
             lblLogout.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogout.Location = new Point(35, 4);
+            lblLogout.Location = new Point(40, 5);
             lblLogout.Name = "lblLogout";
-            lblLogout.Size = new Size(86, 23);
+            lblLogout.Size = new Size(103, 28);
             lblLogout.TabIndex = 1;
             lblLogout.Text = "Log Out";
             lblLogout.Click += lblLogout_Click;
@@ -400,9 +384,8 @@ namespace ProyectoProgramacion.Views
             LogoutPicture.Dock = DockStyle.Left;
             LogoutPicture.Image = IntroductionView.Properties.Resources.logout;
             LogoutPicture.Location = new Point(0, 0);
-            LogoutPicture.Margin = new Padding(3, 2, 3, 2);
             LogoutPicture.Name = "LogoutPicture";
-            LogoutPicture.Size = new Size(30, 32);
+            LogoutPicture.Size = new Size(34, 43);
             LogoutPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoutPicture.TabIndex = 0;
             LogoutPicture.TabStop = false;
@@ -415,27 +398,25 @@ namespace ProyectoProgramacion.Views
             UserMenu.Controls.Add(LogOutPanel);
             UserMenu.Controls.Add(ExitMenuPicture);
             UserMenu.Controls.Add(MenuUser);
-            UserMenu.Location = new Point(912, 4);
-            UserMenu.Margin = new Padding(3, 2, 3, 2);
+            UserMenu.Location = new Point(1042, 0);
             UserMenu.Name = "UserMenu";
-            UserMenu.Size = new Size(228, 138);
+            UserMenu.Size = new Size(267, 189);
             UserMenu.TabIndex = 8;
             UserMenu.Visible = false;
             // 
             // UserMainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1145, 523);
+            ClientSize = new Size(1309, 697);
             Controls.Add(FooterPanel);
             Controls.Add(UserMenu);
             Controls.Add(FlowLayoutProducts);
             Controls.Add(NavBarTableLayoutPanel);
             Controls.Add(HeaderTableLayoutPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "UserMainForm";
             Text = "KICK5";
             Layout += UserMainForm_Layout;

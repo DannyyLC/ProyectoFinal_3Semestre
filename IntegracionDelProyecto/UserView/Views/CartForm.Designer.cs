@@ -78,11 +78,10 @@
             HeaderTable.Controls.Add(TitlelLabel, 1, 0);
             HeaderTable.Dock = DockStyle.Top;
             HeaderTable.Location = new Point(0, 0);
-            HeaderTable.Margin = new Padding(3, 2, 3, 2);
             HeaderTable.Name = "HeaderTable";
             HeaderTable.RowCount = 1;
             HeaderTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            HeaderTable.Size = new Size(1131, 59);
+            HeaderTable.Size = new Size(1293, 79);
             HeaderTable.TabIndex = 0;
             // 
             // LogoPicture
@@ -90,10 +89,9 @@
             LogoPicture.Cursor = Cursors.Hand;
             LogoPicture.Dock = DockStyle.Fill;
             LogoPicture.Image = IntroductionView.Properties.Resources.Kicks__600_x_100_;
-            LogoPicture.Location = new Point(3, 2);
-            LogoPicture.Margin = new Padding(3, 2, 3, 2);
+            LogoPicture.Location = new Point(3, 3);
             LogoPicture.Name = "LogoPicture";
-            LogoPicture.Size = new Size(220, 55);
+            LogoPicture.Size = new Size(252, 73);
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
@@ -104,10 +102,9 @@
             UserPicture.Anchor = AnchorStyles.None;
             UserPicture.BackColor = Color.Transparent;
             UserPicture.Image = IntroductionView.Properties.Resources.user1;
-            UserPicture.Location = new Point(981, 6);
-            UserPicture.Margin = new Padding(3, 2, 3, 2);
+            UserPicture.Location = new Point(1122, 9);
             UserPicture.Name = "UserPicture";
-            UserPicture.Size = new Size(72, 46);
+            UserPicture.Size = new Size(82, 61);
             UserPicture.SizeMode = PictureBoxSizeMode.Zoom;
             UserPicture.TabIndex = 1;
             UserPicture.TabStop = false;
@@ -118,9 +115,9 @@
             TitlelLabel.BackColor = Color.Gainsboro;
             TitlelLabel.Dock = DockStyle.Fill;
             TitlelLabel.Font = new Font("Tahoma", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TitlelLabel.Location = new Point(229, 0);
+            TitlelLabel.Location = new Point(261, 0);
             TitlelLabel.Name = "TitlelLabel";
-            TitlelLabel.Size = new Size(672, 59);
+            TitlelLabel.Size = new Size(769, 79);
             TitlelLabel.TabIndex = 2;
             TitlelLabel.Text = "CARRITO";
             TitlelLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -130,10 +127,9 @@
             FooterPanel.BackColor = Color.LightGray;
             FooterPanel.Controls.Add(lblTime);
             FooterPanel.Dock = DockStyle.Bottom;
-            FooterPanel.Location = new Point(0, 476);
-            FooterPanel.Margin = new Padding(3, 2, 3, 2);
+            FooterPanel.Location = new Point(0, 634);
             FooterPanel.Name = "FooterPanel";
-            FooterPanel.Size = new Size(1131, 17);
+            FooterPanel.Size = new Size(1293, 23);
             FooterPanel.TabIndex = 1;
             // 
             // lblTime
@@ -141,9 +137,9 @@
             lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(934, 1);
+            lblTime.Location = new Point(1067, 1);
             lblTime.Name = "lblTime";
-            lblTime.Size = new Size(39, 18);
+            lblTime.Size = new Size(47, 22);
             lblTime.TabIndex = 0;
             lblTime.Text = "Hora";
             // 
@@ -161,8 +157,7 @@
             TablePago.Controls.Add(txtTitular, 0, 6);
             TablePago.Controls.Add(tableDatosTarjeta, 0, 4);
             TablePago.Dock = DockStyle.Right;
-            TablePago.Location = new Point(652, 59);
-            TablePago.Margin = new Padding(3, 2, 3, 2);
+            TablePago.Location = new Point(746, 79);
             TablePago.Name = "TablePago";
             TablePago.RowCount = 8;
             TablePago.RowStyles.Add(new RowStyle(SizeType.Percent, 13F));
@@ -173,7 +168,7 @@
             TablePago.RowStyles.Add(new RowStyle(SizeType.Percent, 7F));
             TablePago.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
             TablePago.RowStyles.Add(new RowStyle(SizeType.Percent, 32F));
-            TablePago.Size = new Size(479, 417);
+            TablePago.Size = new Size(547, 555);
             TablePago.TabIndex = 2;
             // 
             // btnPagar
@@ -189,10 +184,9 @@
             btnPagar.FlatStyle = FlatStyle.Flat;
             btnPagar.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPagar.ForeColor = Color.White;
-            btnPagar.Location = new Point(128, 283);
-            btnPagar.Margin = new Padding(3, 2, 3, 2);
+            btnPagar.Location = new Point(146, 377);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(223, 41);
+            btnPagar.Size = new Size(255, 55);
             btnPagar.TabIndex = 1;
             btnPagar.Text = "Pagar";
             btnPagar.TextColor = Color.White;
@@ -206,7 +200,7 @@
             LabelMetodoPago.Font = new Font("Tahoma", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LabelMetodoPago.Location = new Point(3, 0);
             LabelMetodoPago.Name = "LabelMetodoPago";
-            LabelMetodoPago.Size = new Size(473, 54);
+            LabelMetodoPago.Size = new Size(541, 72);
             LabelMetodoPago.TabIndex = 2;
             LabelMetodoPago.Text = "Metodo de Pago";
             LabelMetodoPago.TextAlign = ContentAlignment.MiddleCenter;
@@ -216,9 +210,9 @@
             lblEmail.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Tahoma", 13.8F, FontStyle.Bold);
-            lblEmail.Location = new Point(3, 60);
+            lblEmail.Location = new Point(3, 82);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(70, 23);
+            lblEmail.Size = new Size(85, 28);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "E-Mail";
             // 
@@ -227,9 +221,9 @@
             lblDatosTarjeta.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblDatosTarjeta.AutoSize = true;
             lblDatosTarjeta.Font = new Font("Tahoma", 13.8F, FontStyle.Bold);
-            lblDatosTarjeta.Location = new Point(3, 116);
+            lblDatosTarjeta.Location = new Point(3, 154);
             lblDatosTarjeta.Name = "lblDatosTarjeta";
-            lblDatosTarjeta.Size = new Size(187, 20);
+            lblDatosTarjeta.Size = new Size(229, 27);
             lblDatosTarjeta.TabIndex = 4;
             lblDatosTarjeta.Text = "Datos de la tarjeta";
             // 
@@ -238,9 +232,9 @@
             lblTitular.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblTitular.AutoSize = true;
             lblTitular.Font = new Font("Tahoma", 13.8F, FontStyle.Bold);
-            lblTitular.Location = new Point(3, 225);
+            lblTitular.Location = new Point(3, 302);
             lblTitular.Name = "lblTitular";
-            lblTitular.Size = new Size(190, 23);
+            lblTitular.Size = new Size(231, 28);
             lblTitular.TabIndex = 5;
             lblTitular.Text = "Nombre del Titular";
             // 
@@ -253,15 +247,14 @@
             txtEmail.BorderSize = 2;
             txtEmail.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.ForeColor = Color.DimGray;
-            txtEmail.Location = new Point(3, 85);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Location = new Point(3, 113);
             txtEmail.Multiline = false;
             txtEmail.Name = "txtEmail";
-            txtEmail.Padding = new Padding(6, 5, 6, 5);
+            txtEmail.Padding = new Padding(7);
             txtEmail.PasswordChar = false;
             txtEmail.PlaceholderColor = Color.DarkGray;
             txtEmail.PlaceholderText = "ejemplo@gmail.com";
-            txtEmail.Size = new Size(351, 30);
+            txtEmail.Size = new Size(401, 39);
             txtEmail.TabIndex = 6;
             txtEmail.Texts = "";
             txtEmail.UnderlinedStyle = false;
@@ -276,15 +269,14 @@
             txtTitular.Dock = DockStyle.Fill;
             txtTitular.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTitular.ForeColor = Color.DimGray;
-            txtTitular.Location = new Point(3, 250);
-            txtTitular.Margin = new Padding(3, 2, 3, 2);
+            txtTitular.Location = new Point(3, 333);
             txtTitular.Multiline = false;
             txtTitular.Name = "txtTitular";
-            txtTitular.Padding = new Padding(6, 5, 6, 5);
+            txtTitular.Padding = new Padding(7);
             txtTitular.PasswordChar = false;
             txtTitular.PlaceholderColor = Color.DarkGray;
             txtTitular.PlaceholderText = "Nombre de el Titular de la Tarjeta";
-            txtTitular.Size = new Size(473, 30);
+            txtTitular.Size = new Size(541, 39);
             txtTitular.TabIndex = 7;
             txtTitular.Texts = "";
             txtTitular.UnderlinedStyle = false;
@@ -294,20 +286,19 @@
             tableDatosTarjeta.ColumnCount = 3;
             tableDatosTarjeta.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 47.00315F));
             tableDatosTarjeta.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52.9968452F));
-            tableDatosTarjeta.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 119F));
+            tableDatosTarjeta.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
             tableDatosTarjeta.Controls.Add(txtFecha, 0, 1);
             tableDatosTarjeta.Controls.Add(txtNumeroTarjeta, 0, 0);
             tableDatosTarjeta.Controls.Add(txtCVC, 1, 1);
             tableDatosTarjeta.Controls.Add(panelTargetasimg, 2, 0);
             tableDatosTarjeta.Controls.Add(TarjetaPicture, 2, 1);
             tableDatosTarjeta.Dock = DockStyle.Fill;
-            tableDatosTarjeta.Location = new Point(3, 138);
-            tableDatosTarjeta.Margin = new Padding(3, 2, 3, 2);
+            tableDatosTarjeta.Location = new Point(3, 184);
             tableDatosTarjeta.Name = "tableDatosTarjeta";
             tableDatosTarjeta.RowCount = 2;
             tableDatosTarjeta.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableDatosTarjeta.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableDatosTarjeta.Size = new Size(473, 79);
+            tableDatosTarjeta.Size = new Size(541, 105);
             tableDatosTarjeta.TabIndex = 8;
             // 
             // txtFecha
@@ -320,15 +311,14 @@
             txtFecha.BorderSize = 2;
             txtFecha.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFecha.ForeColor = Color.DimGray;
-            txtFecha.Location = new Point(3, 47);
-            txtFecha.Margin = new Padding(3, 2, 3, 2);
+            txtFecha.Location = new Point(3, 63);
             txtFecha.Multiline = false;
             txtFecha.Name = "txtFecha";
-            txtFecha.Padding = new Padding(6, 5, 6, 5);
+            txtFecha.Padding = new Padding(7);
             txtFecha.PasswordChar = false;
             txtFecha.PlaceholderColor = Color.DarkGray;
             txtFecha.PlaceholderText = "MM/YY";
-            txtFecha.Size = new Size(132, 30);
+            txtFecha.Size = new Size(151, 39);
             txtFecha.TabIndex = 8;
             txtFecha.Texts = "";
             txtFecha.UnderlinedStyle = false;
@@ -344,15 +334,14 @@
             txtNumeroTarjeta.Dock = DockStyle.Fill;
             txtNumeroTarjeta.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNumeroTarjeta.ForeColor = Color.DimGray;
-            txtNumeroTarjeta.Location = new Point(3, 2);
-            txtNumeroTarjeta.Margin = new Padding(3, 2, 3, 2);
+            txtNumeroTarjeta.Location = new Point(3, 3);
             txtNumeroTarjeta.Multiline = false;
             txtNumeroTarjeta.Name = "txtNumeroTarjeta";
-            txtNumeroTarjeta.Padding = new Padding(6, 5, 6, 5);
+            txtNumeroTarjeta.Padding = new Padding(7);
             txtNumeroTarjeta.PasswordChar = false;
             txtNumeroTarjeta.PlaceholderColor = Color.DarkGray;
             txtNumeroTarjeta.PlaceholderText = "1234 1234 1234 1234 ";
-            txtNumeroTarjeta.Size = new Size(347, 30);
+            txtNumeroTarjeta.Size = new Size(397, 39);
             txtNumeroTarjeta.TabIndex = 7;
             txtNumeroTarjeta.Texts = "";
             txtNumeroTarjeta.UnderlinedStyle = false;
@@ -367,15 +356,14 @@
             txtCVC.BorderSize = 2;
             txtCVC.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCVC.ForeColor = Color.DimGray;
-            txtCVC.Location = new Point(169, 47);
-            txtCVC.Margin = new Padding(3, 2, 3, 2);
+            txtCVC.Location = new Point(192, 63);
             txtCVC.Multiline = false;
             txtCVC.Name = "txtCVC";
-            txtCVC.Padding = new Padding(6, 5, 6, 5);
+            txtCVC.Padding = new Padding(7);
             txtCVC.PasswordChar = false;
             txtCVC.PlaceholderColor = Color.DarkGray;
             txtCVC.PlaceholderText = "CVC";
-            txtCVC.Size = new Size(150, 30);
+            txtCVC.Size = new Size(171, 39);
             txtCVC.TabIndex = 9;
             txtCVC.Texts = "";
             txtCVC.UnderlinedStyle = false;
@@ -385,20 +373,18 @@
             panelTargetasimg.Controls.Add(MCPicture);
             panelTargetasimg.Controls.Add(VisaPicture);
             panelTargetasimg.Dock = DockStyle.Fill;
-            panelTargetasimg.Location = new Point(356, 2);
-            panelTargetasimg.Margin = new Padding(3, 2, 3, 2);
+            panelTargetasimg.Location = new Point(406, 3);
             panelTargetasimg.Name = "panelTargetasimg";
-            panelTargetasimg.Size = new Size(114, 35);
+            panelTargetasimg.Size = new Size(132, 46);
             panelTargetasimg.TabIndex = 10;
             // 
             // MCPicture
             // 
             MCPicture.Dock = DockStyle.Right;
             MCPicture.Image = IntroductionView.Properties.Resources.mastercard;
-            MCPicture.Location = new Point(61, 0);
-            MCPicture.Margin = new Padding(3, 2, 3, 2);
+            MCPicture.Location = new Point(71, 0);
             MCPicture.Name = "MCPicture";
-            MCPicture.Size = new Size(53, 35);
+            MCPicture.Size = new Size(61, 46);
             MCPicture.SizeMode = PictureBoxSizeMode.Zoom;
             MCPicture.TabIndex = 1;
             MCPicture.TabStop = false;
@@ -408,9 +394,8 @@
             VisaPicture.Dock = DockStyle.Left;
             VisaPicture.Image = IntroductionView.Properties.Resources.visa;
             VisaPicture.Location = new Point(0, 0);
-            VisaPicture.Margin = new Padding(3, 2, 3, 2);
             VisaPicture.Name = "VisaPicture";
-            VisaPicture.Size = new Size(55, 35);
+            VisaPicture.Size = new Size(63, 46);
             VisaPicture.SizeMode = PictureBoxSizeMode.Zoom;
             VisaPicture.TabIndex = 0;
             VisaPicture.TabStop = false;
@@ -419,10 +404,9 @@
             // 
             TarjetaPicture.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             TarjetaPicture.Image = IntroductionView.Properties.Resources.tarjeta;
-            TarjetaPicture.Location = new Point(356, 48);
-            TarjetaPicture.Margin = new Padding(3, 2, 3, 2);
+            TarjetaPicture.Location = new Point(406, 63);
             TarjetaPicture.Name = "TarjetaPicture";
-            TarjetaPicture.Size = new Size(109, 29);
+            TarjetaPicture.Size = new Size(125, 39);
             TarjetaPicture.SizeMode = PictureBoxSizeMode.Zoom;
             TarjetaPicture.TabIndex = 11;
             TarjetaPicture.TabStop = false;
@@ -434,12 +418,11 @@
             TableProducts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             TableProducts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90F));
             TableProducts.Dock = DockStyle.Fill;
-            TableProducts.Location = new Point(0, 59);
-            TableProducts.Margin = new Padding(3, 2, 3, 2);
+            TableProducts.Location = new Point(0, 79);
             TableProducts.Name = "TableProducts";
             TableProducts.RowCount = 1;
             TableProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TableProducts.Size = new Size(652, 417);
+            TableProducts.Size = new Size(746, 555);
             TableProducts.TabIndex = 3;
             // 
             // Timer
@@ -450,16 +433,15 @@
             // 
             // CartForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1131, 493);
+            ClientSize = new Size(1293, 657);
             Controls.Add(TableProducts);
             Controls.Add(TablePago);
             Controls.Add(FooterPanel);
             Controls.Add(HeaderTable);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "CartForm";
             Text = "KICK5";
             HeaderTable.ResumeLayout(false);

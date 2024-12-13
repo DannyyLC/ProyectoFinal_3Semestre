@@ -22,12 +22,14 @@ namespace ProyectoProgramacion.Utlis
         public List<string> Images { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        public int Novedad { get; set; }
+        public double Descuento { get; set; }
 
         // ----- * * * EVENTOS * * * ----- 
         public event EventHandler ProductClicked;
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public ProductForm(int id = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
+        public ProductForm(int id = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0, int novedad = 0, double descuento = 0)
         {
             InitializeComponent();
 
@@ -38,12 +40,14 @@ namespace ProyectoProgramacion.Utlis
             Brand = brand;
             Price = price;
             Stock = stock;
+            Novedad = novedad;
+            Descuento = descuento;
 
             this.MarcaLabel.Text = brand;
             this.ModeloLabel.Text = model;
             this.PrecioLabel.Text = $"${price:F2}";
-            this.StockLabel.Text = Convert.ToString(stock);
-            
+            this.StockLabel.Text = $"Stock {stock}";
+
             if (File.Exists(Images[0]))
             {
                 this.ProductPicture.Image = System.Drawing.Image.FromFile(Images[0]);

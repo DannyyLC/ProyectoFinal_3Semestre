@@ -115,7 +115,7 @@
             Controls.Add(ProductPicture);
             Cursor = Cursors.Hand;
             MaximumSize = new Size(450, 600);
-            MinimumSize = new Size(250, 400);
+            MinimumSize = new Size(450, 600);
             Name = "ProductForm";
             Size = new Size(450, 600);
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
