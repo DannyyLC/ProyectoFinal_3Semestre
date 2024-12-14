@@ -156,11 +156,12 @@ namespace ProyectoProgramacion.Views
             // LogoPicture
             // 
             LogoPicture.Cursor = Cursors.Hand;
-            LogoPicture.Image = IntroductionView.Properties.Resources.Kicks__Final__2024_11_23_20_56_34;
+            LogoPicture.Dock = DockStyle.Fill;
+            LogoPicture.Image = (Image)resources.GetObject("LogoPicture.Image");
             LogoPicture.Location = new Point(0, 0);
             LogoPicture.Margin = new Padding(0);
             LogoPicture.Name = "LogoPicture";
-            LogoPicture.Size = new Size(293, 95);
+            LogoPicture.Size = new Size(319, 104);
             LogoPicture.SizeMode = PictureBoxSizeMode.Zoom;
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
