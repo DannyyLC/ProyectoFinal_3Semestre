@@ -31,8 +31,15 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartForm));
             HeaderTable = new TableLayoutPanel();
-            LogoPicture = new PictureBox();
+            UserPanel = new Panel();
+            MenuPanel = new Panel();
+            lblNombre = new Label();
+            LogOutPanel = new Panel();
+            lblLogOut = new Label();
+            LogoutPicture = new PictureBox();
+            ExitPicture = new PictureBox();
             UserPicture = new PictureBox();
+            LogoPicture = new PictureBox();
             TitlelLabel = new Label();
             FooterPanel = new Panel();
             lblTime = new Label();
@@ -55,8 +62,13 @@
             TableProducts = new TableLayoutPanel();
             Timer = new System.Windows.Forms.Timer(components);
             HeaderTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
+            UserPanel.SuspendLayout();
+            MenuPanel.SuspendLayout();
+            LogOutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoutPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ExitPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UserPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).BeginInit();
             FooterPanel.SuspendLayout();
             TablePago.SuspendLayout();
             tableDatosTarjeta.SuspendLayout();
@@ -73,8 +85,8 @@
             HeaderTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.58314F));
             HeaderTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.3085861F));
             HeaderTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            HeaderTable.Controls.Add(UserPanel, 2, 0);
             HeaderTable.Controls.Add(LogoPicture, 0, 0);
-            HeaderTable.Controls.Add(UserPicture, 2, 0);
             HeaderTable.Controls.Add(TitlelLabel, 1, 0);
             HeaderTable.Dock = DockStyle.Top;
             HeaderTable.Location = new Point(0, 0);
@@ -83,6 +95,102 @@
             HeaderTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             HeaderTable.Size = new Size(1293, 113);
             HeaderTable.TabIndex = 0;
+            // 
+            // UserPanel
+            // 
+            UserPanel.BackColor = Color.Gainsboro;
+            UserPanel.Controls.Add(MenuPanel);
+            UserPanel.Controls.Add(UserPicture);
+            UserPanel.Dock = DockStyle.Fill;
+            UserPanel.Location = new Point(1036, 3);
+            UserPanel.Name = "UserPanel";
+            UserPanel.Size = new Size(254, 107);
+            UserPanel.TabIndex = 0;
+            // 
+            // MenuPanel
+            // 
+            MenuPanel.BackColor = Color.WhiteSmoke;
+            MenuPanel.Controls.Add(lblNombre);
+            MenuPanel.Controls.Add(LogOutPanel);
+            MenuPanel.Controls.Add(ExitPicture);
+            MenuPanel.Dock = DockStyle.Fill;
+            MenuPanel.Location = new Point(0, 0);
+            MenuPanel.Name = "MenuPanel";
+            MenuPanel.Size = new Size(254, 107);
+            MenuPanel.TabIndex = 3;
+            MenuPanel.Visible = false;
+            // 
+            // lblNombre
+            // 
+            lblNombre.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombre.Location = new Point(0, 33);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(203, 22);
+            lblNombre.TabIndex = 4;
+            lblNombre.Text = "Nombre de el usuario";
+            // 
+            // LogOutPanel
+            // 
+            LogOutPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            LogOutPanel.Controls.Add(lblLogOut);
+            LogOutPanel.Controls.Add(LogoutPicture);
+            LogOutPanel.Location = new Point(3, 61);
+            LogOutPanel.Name = "LogOutPanel";
+            LogOutPanel.Size = new Size(201, 43);
+            LogOutPanel.TabIndex = 3;
+            LogOutPanel.Click += LogOutPanel_Click;
+            // 
+            // lblLogOut
+            // 
+            lblLogOut.AutoSize = true;
+            lblLogOut.Cursor = Cursors.Hand;
+            lblLogOut.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogOut.Location = new Point(40, 5);
+            lblLogOut.Name = "lblLogOut";
+            lblLogOut.Size = new Size(103, 28);
+            lblLogOut.TabIndex = 1;
+            lblLogOut.Text = "Log Out";
+            lblLogOut.Click += lblLogOut_Click;
+            // 
+            // LogoutPicture
+            // 
+            LogoutPicture.Cursor = Cursors.Hand;
+            LogoutPicture.Dock = DockStyle.Left;
+            LogoutPicture.Image = IntroductionView.Properties.Resources.logout;
+            LogoutPicture.Location = new Point(0, 0);
+            LogoutPicture.Name = "LogoutPicture";
+            LogoutPicture.Size = new Size(34, 43);
+            LogoutPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            LogoutPicture.TabIndex = 0;
+            LogoutPicture.TabStop = false;
+            LogoutPicture.Click += LogoutPicture_Click;
+            // 
+            // ExitPicture
+            // 
+            ExitPicture.Cursor = Cursors.Hand;
+            ExitPicture.Image = IntroductionView.Properties.Resources.close;
+            ExitPicture.Location = new Point(3, 3);
+            ExitPicture.Name = "ExitPicture";
+            ExitPicture.Size = new Size(32, 27);
+            ExitPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            ExitPicture.TabIndex = 2;
+            ExitPicture.TabStop = false;
+            ExitPicture.Click += ExitPicture_Click;
+            // 
+            // UserPicture
+            // 
+            UserPicture.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            UserPicture.BackColor = Color.Transparent;
+            UserPicture.Image = IntroductionView.Properties.Resources.user1;
+            UserPicture.Location = new Point(93, 22);
+            UserPicture.Name = "UserPicture";
+            UserPicture.Size = new Size(72, 61);
+            UserPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            UserPicture.TabIndex = 1;
+            UserPicture.TabStop = false;
+            UserPicture.Click += UserPicture_Click;
             // 
             // LogoPicture
             // 
@@ -96,18 +204,6 @@
             LogoPicture.TabIndex = 0;
             LogoPicture.TabStop = false;
             LogoPicture.Click += LogoPicture_Click;
-            // 
-            // UserPicture
-            // 
-            UserPicture.Anchor = AnchorStyles.None;
-            UserPicture.BackColor = Color.Transparent;
-            UserPicture.Image = IntroductionView.Properties.Resources.user1;
-            UserPicture.Location = new Point(1122, 26);
-            UserPicture.Name = "UserPicture";
-            UserPicture.Size = new Size(82, 61);
-            UserPicture.SizeMode = PictureBoxSizeMode.Zoom;
-            UserPicture.TabIndex = 1;
-            UserPicture.TabStop = false;
             // 
             // TitlelLabel
             // 
@@ -446,8 +542,15 @@
             Text = "KICK5";
             HeaderTable.ResumeLayout(false);
             HeaderTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
+            UserPanel.ResumeLayout(false);
+            MenuPanel.ResumeLayout(false);
+            MenuPanel.PerformLayout();
+            LogOutPanel.ResumeLayout(false);
+            LogOutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoutPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ExitPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)UserPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogoPicture).EndInit();
             FooterPanel.ResumeLayout(false);
             FooterPanel.PerformLayout();
             TablePago.ResumeLayout(false);
@@ -486,5 +589,12 @@
         private TableLayoutPanel TableProducts;
         private Label lblTime;
         private System.Windows.Forms.Timer Timer;
+        private Panel UserPanel;
+        private Panel MenuPanel;
+        private Label lblNombre;
+        private Panel LogOutPanel;
+        private Label lblLogOut;
+        private PictureBox LogoutPicture;
+        private PictureBox ExitPicture;
     }
 }

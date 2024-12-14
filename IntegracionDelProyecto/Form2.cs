@@ -81,7 +81,7 @@ namespace IntroductionView
             }
             else
             {
-                UserMainForm userform = new UserMainForm(user);
+                UserMainForm userform = new UserMainForm(user, username);
                 userform.WindowState = FormWindowState.Maximized;
                 this.Hide();
 

@@ -25,9 +25,12 @@ namespace ProyectoProgramacion.Utlis
         public decimal Price { get; set; }
         public int Stock { get; set; }
         public int Index { get; set; }
+        public string Username { get; set; }
+
+        public Form Creator { get; set; }
 
         // CONSTRUCTOR
-        public MuestraProductos(int userid = 0, int productid = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
+        public MuestraProductos(Form creator, int userid = 0, string username = "", int productid = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
         {
             InitializeComponent();
 
@@ -39,6 +42,8 @@ namespace ProyectoProgramacion.Utlis
             Images = images ?? new List<string>();
             Price = price;
             Stock = stock;
+            Username = username;
+            Creator = creator;
             this.Index = 0;
 
             this.ProductMarca.Text = brand;
@@ -98,7 +103,7 @@ namespace ProyectoProgramacion.Utlis
             if (parentForm != null)
             {
                 // Crea una instancia de CartForm
-                CartForm cart = new CartForm(this.Userid)
+                CartForm cart = new CartForm(this.Userid, this.Username, this.Creator)
                 {
                     StartPosition = FormStartPosition.Manual,
                     Location = parentForm.Location,          

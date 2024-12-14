@@ -19,10 +19,11 @@ namespace ProyectoProgramacion.Views
         private List<Product> products;
         private MySqlConnection connection;
         public int Userid { get; set; }
+        public string Username { get; set; }
 
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public UserMainForm(int id)
+        public UserMainForm(int id, string nombre)
         {
             InitializeComponent();
             products = new List<Product>();
@@ -32,8 +33,9 @@ namespace ProyectoProgramacion.Views
             Query();
             LoadProducts();
             Userid = id;
+            Username = nombre;
+            this.MenuUser.Text = nombre;
         }
-
 
         // ----- * * * CLOCK Y MEJORA DE SEARCHBOX * * * -----
         private void UserMainForm_Layout(object sender, LayoutEventArgs e)
@@ -53,16 +55,13 @@ namespace ProyectoProgramacion.Views
         // Para ir al Carrito
         private void CartPicture_Click(object sender, EventArgs e)
         {
-            CartForm cart = new CartForm(this.Userid);
+            CartForm cart = new CartForm(this.Userid, this.Username, this);
 
             cart.StartPosition = FormStartPosition.Manual;
             cart.Location = this.Location;
             cart.Size = this.Bounds.Size;
 
-            cart.ShowDialog();
-
-            this.Dispose();
-            this.Close();
+            cart.ShowDialog();;
         }
         #endregion
 
@@ -293,7 +292,9 @@ namespace ProyectoProgramacion.Views
             {
                 // Crear una instancia del control de usuario con el constructor
                 var muestraProductos = new MuestraProductos(
+                    creator: this,
                     userid: this.Userid,
+                    username: this.Username,
                     productid: productForm.Id,
                     brand: productForm.Brand,
                     model: productForm.Model,

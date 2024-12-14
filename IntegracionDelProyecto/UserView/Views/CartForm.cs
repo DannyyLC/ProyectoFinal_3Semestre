@@ -17,19 +17,36 @@ namespace ProyectoProgramacion.Views
         private List<ProductCart> cartProducts;
         public int Id { get; set; }
         public decimal Total { get; set; }
+        public string Username { get; set; }
         private MySqlConnection connection;
         private Label totalLabel;
+        private Form _creatorForm;
 
         // ----- * * * CONSTRUCTOR * * * -----
-        public CartForm(int id)
+        public CartForm(int id, string nombre, Form creatorForm)
         {
             InitializeComponent();
             this.Id = id;
             cartProducts = new List<ProductCart>();
             lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             Timer.Start();
+            this.Total = 0;
+
+
+            this.totalLabel = new Label
+            {
+                Text = $"Total: ${this.Total:F2}",
+                Font = new Font("Tahoma", 18, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Fill,
+                Height = 60
+            };
+
             Query();
             AddCartProducts();
+            Username = nombre;
+            this.lblNombre.Text = nombre;
+            _creatorForm = creatorForm;
         }
 
         // ----- * * * BASE DE DATOS Y MOSTRAR PRODUCTOS * * * -----
@@ -219,14 +236,7 @@ namespace ProyectoProgramacion.Views
                     TableProducts.Controls.Add(product, 1, i);
                 }
 
-                Label totalLabel = new Label
-                {
-                    Text = $"Total: ${this.Total:F2}",
-                    Font = new Font("Tahoma", 18, FontStyle.Bold),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Dock = DockStyle.Fill,
-                    Height = 60
-                };
+                this.totalLabel.Text = $"Total: ${this.Total:F2}";
 
                 TableProducts.Controls.Add(totalLabel, 1, cartProducts.Count);
             }
@@ -367,30 +377,60 @@ namespace ProyectoProgramacion.Views
 
             MessageBox.Show("Compra realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            UserMainForm user = new UserMainForm(this.Id);
-
-            user.StartPosition = FormStartPosition.Manual;
-            user.Location = this.Location;
-            user.Size = this.Bounds.Size;
-
-            user.ShowDialog();
-
             this.Dispose();
             this.Close();
         }
         // Cierra el form de el carrito y volvemos al principal
         private void LogoPicture_Click(object sender, EventArgs e)
         {
-            UserMainForm user = new UserMainForm(this.Id);
-
-            user.StartPosition = FormStartPosition.Manual;
-            user.Location = this.Location;
-            user.Size = this.Bounds.Size;
-
-            user.ShowDialog();
-
             this.Dispose();
             this.Close();
+        }
+
+        private void UserPicture_Click(object sender, EventArgs e)
+        {
+            this.MenuPanel.Visible = true;
+        }
+
+        private void LogOutPanel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+
+            if (_creatorForm != null)
+            {
+                _creatorForm.Dispose();
+                _creatorForm.Close();
+            }
+        }
+
+        private void ExitPicture_Click(object sender, EventArgs e)
+        {
+            this.MenuPanel.Visible = false;
+        }
+
+        private void LogoutPicture_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+
+            if (_creatorForm != null)
+            {
+                _creatorForm.Dispose();
+                _creatorForm.Close();
+            }
+        }
+
+        private void lblLogOut_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+
+            if (_creatorForm != null)
+            {
+                _creatorForm.Dispose();
+                _creatorForm.Close();
+            }
         }
         #endregion Botones
 
@@ -434,12 +474,12 @@ namespace ProyectoProgramacion.Views
                 this.Disconnect();
             }
         }
-        
+
         // ----- * * * ACTUALIZAR LABEL DE PRECIO * * * -----
         private void Product_PriceChanged(object sender, decimal priceChange)
         {
             this.Total += priceChange;
             totalLabel.Text = $"Total: ${this.Total:F2}";
-        }
+        } 
     }
 }
