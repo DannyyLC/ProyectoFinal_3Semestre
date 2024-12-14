@@ -14,7 +14,10 @@ namespace ProyectoProgramacion.Views
 {
     public partial class CartProduct : UserControl
     {
-        // ATRIBUTOS
+        // * * * * * EVENTOS * * * * *
+        public event EventHandler<decimal> PriceChanged;
+
+        // * * * * * PROPIEDADES Y ATRIBUTOS * * * * *
         public string Imagen { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
@@ -25,6 +28,7 @@ namespace ProyectoProgramacion.Views
         public int UserId { get; set; }
         private MySqlConnection connection;
 
+        //  * * * * * CONSTRUCTOR * * * * * 
         public CartProduct(string image = "", string marca = "", string modelo = "", decimal precio = 0, int cantidad = 1, int stock = 100, int userid = 0, int productid = 0)
         {
             InitializeComponent();
@@ -54,6 +58,9 @@ namespace ProyectoProgramacion.Views
             }
         }
 
+        //  * * * * * BOTONES * * * * * 
+        #region Botones
+        //  * * * * * AUMENTAR LA CANTIDAD DE UN PRODUCTO * * * * * 
         private void PictureMore_Click(object sender, EventArgs e)
         {
             if (this.Cantidad >= this.Stock)
@@ -62,11 +69,17 @@ namespace ProyectoProgramacion.Views
             }
             else
             {
-                this.Cantidad++;
-                this.Cantidadlbl.Text = $"{this.Cantidad}";
+                if (UpdateQuantityInDatabase(this.Cantidad + 1))
+                {
+                    this.Cantidad++;
+                    this.Cantidadlbl.Text = $"{this.Cantidad}";
+                    // Notificar el cambio en el precio
+                    PriceChanged?.Invoke(this, this.Precio);
+                }
             }
         }
 
+        // * * * * *  DISMINUIR LA CANTIDAD DE UN PRODUCTO * * * * * 
         private void PictureLess_Click(object sender, EventArgs e)
         {
             if (this.Cantidad <= 1)
@@ -77,22 +90,72 @@ namespace ProyectoProgramacion.Views
                 {
                     if (DeleteProductFromDatabase())
                     {
+                        // Notificar que el precio debe reducirse a cero
+                        PriceChanged?.Invoke(this, -this.Precio * this.Cantidad);
                         var parent = this.Parent as TableLayoutPanel;
                         if (parent != null)
                         {
                             parent.Controls.Remove(this);
-                            this.Dispose(); 
+                            this.Dispose();
                         }
                     }
                 }
             }
             else
             {
-                this.Cantidad--;
-                this.Cantidadlbl.Text = $"{this.Cantidad}";
+                if (UpdateQuantityInDatabase(this.Cantidad - 1))
+                {
+                    this.Cantidad--;
+                    this.Cantidadlbl.Text = $"{this.Cantidad}";
+                    // Notificar el cambio en el precio
+                    PriceChanged?.Invoke(this, -this.Precio);
+                }
             }
         }
 
+        #endregion
+
+        //  * * * * * BASE DE DATOS * * * * * 
+        #region Base de Datos
+        // * * * * *  ACTUALIZAR LA BASE DE DATOS * * * * * 
+        private bool UpdateQuantityInDatabase(int newQuantity)
+        {
+            try
+            {
+                Connect();
+                if (this.connection.State != System.Data.ConnectionState.Open)
+                {
+                    MessageBox.Show("La conexión no está abierta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+                string query = "UPDATE carrito SET cantidad = @cantidad WHERE productid = @productid AND userid = @userid";
+                using (var command = new MySqlCommand(query, this.connection))
+                {
+                    command.Parameters.AddWithValue("@cantidad", newQuantity);
+                    command.Parameters.AddWithValue("@productid", this.ProductId);
+                    command.Parameters.AddWithValue("@userid", this.UserId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar la cantidad en el carrito.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar la cantidad: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        // * * * * *  ELIMINAR PRODUCTO DE LA BASE DE DATOS Y DE LA VISTA DE EL USUARIO * * * * * 
         private bool DeleteProductFromDatabase()
         {
             try
@@ -130,8 +193,7 @@ namespace ProyectoProgramacion.Views
                 return false;
             }
         }
-
-
+        //  * * * * * CONXION CON LA BASE DE DATOS * * * * * 
         public void Connect()
         {
             if (this.connection == null)
@@ -161,5 +223,6 @@ namespace ProyectoProgramacion.Views
                 MessageBox.Show($"Error al conectar con la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

@@ -82,7 +82,7 @@
             // 
             // ProductPicture
             // 
-            ProductPicture.BackColor = Color.Transparent;
+            ProductPicture.BackColor = Color.FromArgb(234, 238, 239);
             ProductPicture.Dock = DockStyle.Fill;
             ProductPicture.Location = new Point(3, 3);
             ProductPicture.Name = "ProductPicture";

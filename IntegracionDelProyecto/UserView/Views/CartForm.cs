@@ -13,11 +13,12 @@ namespace ProyectoProgramacion.Views
 {
     public partial class CartForm : Form
     {
-        // ----- * * * ATRIBUTOS * * * -----
+        // ----- * * * PROPIEDADES Y ATRIBUTOS * * * -----
         private List<ProductCart> cartProducts;
         public int Id { get; set; }
         public decimal Total { get; set; }
         private MySqlConnection connection;
+        private Label totalLabel;
 
         // ----- * * * CONSTRUCTOR * * * -----
         public CartForm(int id)
@@ -214,6 +215,7 @@ namespace ProyectoProgramacion.Views
                     this.Total += precio * cantidad;
 
                     CartProduct product = new CartProduct(imagen, marca, modelo, precio, cantidad, stock, userid, productid);
+                    product.PriceChanged += Product_PriceChanged;
                     TableProducts.Controls.Add(product, 1, i);
                 }
 
@@ -338,7 +340,7 @@ namespace ProyectoProgramacion.Views
         #endregion
 
         // ----- * * * BOTONES * * * -----
-        #region
+        #region Botones
         private void btnPagar_Click(object sender, EventArgs e)
         {
             this.txtCVC.Texts = "";
@@ -390,13 +392,15 @@ namespace ProyectoProgramacion.Views
             this.Dispose();
             this.Close();
         }
-        #endregion
+        #endregion Botones
 
+        // ----- * * * MUESTRA LA FECHA Y HORA ACTUAL * * * -----
         private void Timer_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
+        // ----- * * * REGISTRA EL PEDIDO * * * -----
         private void RegistrarPedido()
         {
             string modelo = "";
@@ -429,6 +433,13 @@ namespace ProyectoProgramacion.Views
                 MessageBox.Show(query + "\nError: " + ex.Message);
                 this.Disconnect();
             }
+        }
+        
+        // ----- * * * ACTUALIZAR LABEL DE PRECIO * * * -----
+        private void Product_PriceChanged(object sender, decimal priceChange)
+        {
+            this.Total += priceChange;
+            totalLabel.Text = $"Total: ${this.Total:F2}";
         }
     }
 }

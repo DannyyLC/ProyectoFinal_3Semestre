@@ -40,7 +40,7 @@
             // 
             // ProductPicture
             // 
-            ProductPicture.BackColor = Color.White;
+            ProductPicture.BackColor = Color.FromArgb(234, 238, 239);
             ProductPicture.Dock = DockStyle.Top;
             ProductPicture.Location = new Point(0, 0);
             ProductPicture.Name = "ProductPicture";

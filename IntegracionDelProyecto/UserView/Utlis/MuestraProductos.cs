@@ -124,26 +124,60 @@ namespace ProyectoProgramacion.Utlis
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO carrito (userid, productid, precio, imagen, marca, modelo, cantidad) VALUES (@userid, @productid, @precio, @imagen, @marca, @modelo, @cantidad)";
 
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    string checkQuery = "SELECT cantidad FROM carrito WHERE userid = @userid AND productid = @productid";
+
+                    using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection))
                     {
-                        command.Parameters.AddWithValue("@userid", this.Userid);
-                        command.Parameters.AddWithValue("@productid", this.Productid);
-                        command.Parameters.AddWithValue("@precio", this.Price);
-                        command.Parameters.AddWithValue("@imagen", this.Images[0]);
-                        command.Parameters.AddWithValue("@marca", this.Brand);
-                        command.Parameters.AddWithValue("@modelo", this.Model);
-                        command.Parameters.AddWithValue("@cantidad", 1);
+                        checkCommand.Parameters.AddWithValue("@userid", this.Userid);
+                        checkCommand.Parameters.AddWithValue("@productid", this.Productid);
 
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        object result = checkCommand.ExecuteScalar();
+
+                        if (result != null) 
                         {
-                            MessageBox.Show("Producto agregado al carrito con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string updateQuery = "UPDATE carrito SET cantidad = cantidad + 1 WHERE userid = @userid AND productid = @productid";
+
+                            using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection))
+                            {
+                                updateCommand.Parameters.AddWithValue("@userid", this.Userid);
+                                updateCommand.Parameters.AddWithValue("@productid", this.Productid);
+
+                                int rowsAffected = updateCommand.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Cantidad actualizada en el carrito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al actualizar la cantidad en el carrito.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
                         }
-                        else
+                        else 
                         {
-                            MessageBox.Show("Error al agregar el producto al carrito.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            string insertQuery = "INSERT INTO carrito (userid, productid, precio, imagen, marca, modelo, cantidad) VALUES (@userid, @productid, @precio, @imagen, @marca, @modelo, @cantidad)";
+
+                            using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@userid", this.Userid);
+                                insertCommand.Parameters.AddWithValue("@productid", this.Productid);
+                                insertCommand.Parameters.AddWithValue("@precio", this.Price);
+                                insertCommand.Parameters.AddWithValue("@imagen", this.Images[0]);
+                                insertCommand.Parameters.AddWithValue("@marca", this.Brand);
+                                insertCommand.Parameters.AddWithValue("@modelo", this.Model);
+                                insertCommand.Parameters.AddWithValue("@cantidad", 1);
+
+                                int rowsAffected = insertCommand.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Producto agregado al carrito con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al agregar el producto al carrito.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
                         }
                     }
                 }

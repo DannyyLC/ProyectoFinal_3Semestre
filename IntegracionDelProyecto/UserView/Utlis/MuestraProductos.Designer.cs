@@ -53,10 +53,9 @@
             // 
             PictureRegresar.Cursor = Cursors.Hand;
             PictureRegresar.Image = IntroductionView.Properties.Resources.volver;
-            PictureRegresar.Location = new Point(3, 2);
-            PictureRegresar.Margin = new Padding(3, 2, 3, 2);
+            PictureRegresar.Location = new Point(3, 3);
             PictureRegresar.Name = "PictureRegresar";
-            PictureRegresar.Size = new Size(34, 28);
+            PictureRegresar.Size = new Size(39, 37);
             PictureRegresar.SizeMode = PictureBoxSizeMode.Zoom;
             PictureRegresar.TabIndex = 1;
             PictureRegresar.TabStop = false;
@@ -64,13 +63,13 @@
             // 
             // ProductPicture
             // 
+            ProductPicture.BackColor = Color.FromArgb(234, 238, 239);
             tableLayoutProducts.SetColumnSpan(ProductPicture, 2);
             ProductPicture.Dock = DockStyle.Fill;
-            ProductPicture.Location = new Point(43, 2);
-            ProductPicture.Margin = new Padding(3, 2, 3, 2);
+            ProductPicture.Location = new Point(49, 3);
             ProductPicture.Name = "ProductPicture";
             tableLayoutProducts.SetRowSpan(ProductPicture, 2);
-            ProductPicture.Size = new Size(620, 427);
+            ProductPicture.Size = new Size(710, 568);
             ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
@@ -88,12 +87,11 @@
             btnComprarYa.FlatStyle = FlatStyle.Flat;
             btnComprarYa.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComprarYa.ForeColor = SystemColors.ControlLightLight;
-            btnComprarYa.Location = new Point(88, 458);
-            btnComprarYa.Margin = new Padding(3, 2, 3, 2);
-            btnComprarYa.MaximumSize = new Size(262, 52);
-            btnComprarYa.MinimumSize = new Size(242, 42);
+            btnComprarYa.Location = new Point(102, 610);
+            btnComprarYa.MaximumSize = new Size(299, 69);
+            btnComprarYa.MinimumSize = new Size(277, 56);
             btnComprarYa.Name = "btnComprarYa";
-            btnComprarYa.Size = new Size(262, 46);
+            btnComprarYa.Size = new Size(299, 61);
             btnComprarYa.TabIndex = 1;
             btnComprarYa.Text = "Comprar Ya";
             btnComprarYa.TextColor = SystemColors.ControlLightLight;
@@ -112,12 +110,11 @@
             btnAgregarCarrito.FlatStyle = FlatStyle.Flat;
             btnAgregarCarrito.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarCarrito.ForeColor = SystemColors.ControlLightLight;
-            btnAgregarCarrito.Location = new Point(356, 458);
-            btnAgregarCarrito.Margin = new Padding(3, 2, 3, 2);
-            btnAgregarCarrito.MaximumSize = new Size(262, 52);
-            btnAgregarCarrito.MinimumSize = new Size(242, 42);
+            btnAgregarCarrito.Location = new Point(407, 610);
+            btnAgregarCarrito.MaximumSize = new Size(299, 69);
+            btnAgregarCarrito.MinimumSize = new Size(277, 56);
             btnAgregarCarrito.Name = "btnAgregarCarrito";
-            btnAgregarCarrito.Size = new Size(252, 46);
+            btnAgregarCarrito.Size = new Size(288, 61);
             btnAgregarCarrito.TabIndex = 0;
             btnAgregarCarrito.Text = "Agregar al Carrito";
             btnAgregarCarrito.TextColor = SystemColors.ControlLightLight;
@@ -131,11 +128,10 @@
             ProductDescription.Dock = DockStyle.Fill;
             ProductDescription.Enabled = false;
             ProductDescription.Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProductDescription.Location = new Point(669, 230);
-            ProductDescription.Margin = new Padding(3, 2, 3, 2);
+            ProductDescription.Location = new Point(765, 307);
             ProductDescription.Name = "ProductDescription";
             tableLayoutProducts.SetRowSpan(ProductDescription, 3);
-            ProductDescription.Size = new Size(339, 276);
+            ProductDescription.Size = new Size(387, 367);
             ProductDescription.TabIndex = 0;
             ProductDescription.Text = "";
             // 
@@ -157,14 +153,13 @@
             tableLayoutProducts.Controls.Add(PictuteRight, 2, 2);
             tableLayoutProducts.Dock = DockStyle.Fill;
             tableLayoutProducts.Location = new Point(0, 0);
-            tableLayoutProducts.Margin = new Padding(3, 2, 3, 2);
             tableLayoutProducts.Name = "tableLayoutProducts";
             tableLayoutProducts.RowCount = 4;
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 45F));
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             tableLayoutProducts.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutProducts.Size = new Size(1011, 508);
+            tableLayoutProducts.Size = new Size(1155, 677);
             tableLayoutProducts.TabIndex = 11;
             // 
             // PanelProducto
@@ -174,19 +169,18 @@
             PanelProducto.Controls.Add(ProductModel);
             PanelProducto.Controls.Add(ProductMarca);
             PanelProducto.Dock = DockStyle.Fill;
-            PanelProducto.Location = new Point(669, 2);
-            PanelProducto.Margin = new Padding(3, 2, 3, 2);
+            PanelProducto.Location = new Point(765, 3);
             PanelProducto.Name = "PanelProducto";
-            PanelProducto.Size = new Size(339, 224);
+            PanelProducto.Size = new Size(387, 298);
             PanelProducto.TabIndex = 3;
             // 
             // lblStock
             // 
             lblStock.AutoSize = true;
             lblStock.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStock.Location = new Point(0, 122);
+            lblStock.Location = new Point(0, 163);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(80, 29);
+            lblStock.Size = new Size(99, 36);
             lblStock.TabIndex = 4;
             lblStock.Text = "Stock";
             // 
@@ -194,9 +188,9 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(0, 95);
+            lblPrecio.Location = new Point(0, 127);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(88, 29);
+            lblPrecio.Size = new Size(110, 36);
             lblPrecio.TabIndex = 3;
             lblPrecio.Text = "Precio";
             // 
@@ -204,9 +198,9 @@
             // 
             ProductModel.AutoSize = true;
             ProductModel.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProductModel.Location = new Point(0, 55);
+            ProductModel.Location = new Point(0, 73);
             ProductModel.Name = "ProductModel";
-            ProductModel.Size = new Size(234, 29);
+            ProductModel.Size = new Size(296, 36);
             ProductModel.TabIndex = 2;
             ProductModel.Text = "Modelo de el Tenis";
             // 
@@ -214,9 +208,9 @@
             // 
             ProductMarca.AutoSize = true;
             ProductMarca.Font = new Font("Tahoma", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProductMarca.Location = new Point(0, 21);
+            ProductMarca.Location = new Point(0, 28);
             ProductMarca.Name = "ProductMarca";
-            ProductMarca.Size = new Size(277, 36);
+            ProductMarca.Size = new Size(343, 45);
             ProductMarca.TabIndex = 1;
             ProductMarca.Text = "Marca de el Tenis";
             // 
@@ -225,10 +219,9 @@
             PictureLeft.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PictureLeft.Cursor = Cursors.Hand;
             PictureLeft.Image = IntroductionView.Properties.Resources.atras;
-            PictureLeft.Location = new Point(219, 433);
-            PictureLeft.Margin = new Padding(3, 2, 3, 2);
+            PictureLeft.Location = new Point(251, 577);
             PictureLeft.Name = "PictureLeft";
-            PictureLeft.Size = new Size(131, 20);
+            PictureLeft.Size = new Size(150, 27);
             PictureLeft.SizeMode = PictureBoxSizeMode.Zoom;
             PictureLeft.TabIndex = 4;
             PictureLeft.TabStop = false;
@@ -238,10 +231,9 @@
             // 
             PictuteRight.Cursor = Cursors.Hand;
             PictuteRight.Image = IntroductionView.Properties.Resources.Adelante;
-            PictuteRight.Location = new Point(356, 433);
-            PictuteRight.Margin = new Padding(3, 2, 3, 2);
+            PictuteRight.Location = new Point(407, 577);
             PictuteRight.Name = "PictuteRight";
-            PictuteRight.Size = new Size(131, 20);
+            PictuteRight.Size = new Size(150, 27);
             PictuteRight.SizeMode = PictureBoxSizeMode.Zoom;
             PictuteRight.TabIndex = 5;
             PictuteRight.TabStop = false;
@@ -249,12 +241,11 @@
             // 
             // MuestraProductos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutProducts);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "MuestraProductos";
-            Size = new Size(1011, 508);
+            Size = new Size(1155, 677);
             ((System.ComponentModel.ISupportInitialize)PictureRegresar).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).EndInit();
             tableLayoutProducts.ResumeLayout(false);
