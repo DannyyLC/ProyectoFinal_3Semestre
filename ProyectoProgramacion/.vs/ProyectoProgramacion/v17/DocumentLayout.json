@@ -1,33 +1,104 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "\\\\wsl$\\Ubuntu\\home\\dannylimon\\College\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\carlo\\onedrive\\documentos\\programacion2\\proyecto\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\carlo\\onedrive\\documentos\\programacion2\\proyecto\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\paymentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\carlo\\onedrive\\documentos\\programacion2\\proyecto\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\models\\productcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\models\\productcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\carlo\\onedrive\\documentos\\programacion2\\proyecto\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\paymentform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\paymentform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|c:\\users\\carlo\\onedrive\\documentos\\programacion2\\proyecto\\proyectofinal_3semestre\\proyectoprogramacion\\proyectoprogramacion\\views\\cartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ACF7125-0B44-4779-8FF1-DFE139C02AB4}|ProyectoProgramacion\\ProyectoProgramacion.csproj|solutionrelative:proyectoprogramacion\\views\\cartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 606,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.Designer.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\PaymentForm.Designer.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.Designer.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\PaymentForm.Designer.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAhwGsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T22:35:30.073Z",
+              "EditorCaption": ""
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaymentForm.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T21:54:08.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\PaymentForm.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\PaymentForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\PaymentForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T21:52:53.652Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartForm.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\CartForm.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Views\\CartForm.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Views\\CartForm.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Views\\CartForm.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAAAB0BAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T18:50:15.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductCart.cs",
+              "DocumentMoniker": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Models\\ProductCart.cs",
+              "RelativeDocumentMoniker": "ProyectoProgramacion\\Models\\ProductCart.cs",
+              "ToolTip": "C:\\Users\\carlo\\OneDrive\\Documentos\\Programacion2\\PROYECTO\\ProyectoFinal_3Semestre\\ProyectoProgramacion\\ProyectoProgramacion\\Models\\ProductCart.cs",
+              "RelativeToolTip": "ProyectoProgramacion\\Models\\ProductCart.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADwvyMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T18:52:04.037Z",
+              "EditorCaption": ""
             }
           ]
         }
