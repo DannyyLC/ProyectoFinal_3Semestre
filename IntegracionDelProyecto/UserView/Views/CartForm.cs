@@ -318,7 +318,7 @@ namespace ProyectoProgramacion.Views
             {
                 Connect();
 
-                foreach (var product in cartProducts)
+                foreach (var product in cartProducts) // Restar los productos necesarios
                 {
                     string query = "UPDATE productos SET stock = stock - 1 WHERE id = @productid AND stock > 0";
 
@@ -460,6 +460,7 @@ namespace ProyectoProgramacion.Views
 
             try
             {
+                Connect();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 // Eliminar el parámetro para id
                 cmd.Parameters.AddWithValue("@productos", modelo);
@@ -467,12 +468,14 @@ namespace ProyectoProgramacion.Views
                 cmd.Parameters.AddWithValue("@precio", precio);
                 cmd.Parameters.AddWithValue("@id_usuario", usuario);
                 cmd.ExecuteNonQuery();
+                Disconnect();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(query + "\nError: " + ex.Message);
                 this.Disconnect();
             }
+
         }
 
         // ----- * * * ACTUALIZAR LABEL DE PRECIO * * * -----
