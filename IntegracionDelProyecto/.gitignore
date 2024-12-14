@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.cache
+*.bin
+*.obj
+*.exe
+*.dll
+*.pdb
+*.nuget/
+*.AssemblyInfo.cs
+*.AssemblyInfoInputs.cache
+*.editorconfig
+*.sourcelink.json
+*.FileListAbsolute.txt
+*.GeneratedMSBuildEditorConfig.editorconfig
+
+# Excluir las carpetas bin y obj
+bin/
+obj/
