@@ -3,7 +3,6 @@
 *.cache
 *.bin
 *.obj
-*.exe
 *.dll
 *.pdb
 *.nuget/

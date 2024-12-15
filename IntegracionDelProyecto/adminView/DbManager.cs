@@ -76,10 +76,10 @@ namespace adminView
         }
 
         public void InsertProduct(int id, string modelo, string descripcion, string imagen1, string imagen2,
-            string imagen3, string imagen4, string imagen5, string marca, int precio, int stock)
+            string imagen3, string imagen4, string imagen5, string marca, int precio, int stock, int novedad, float descuento)
         {
-            string query = "INSERT INTO productos (id, modelo, descripcion, imagen1, imagen2,imagen3,imagen4,imagen5, marca, precio, stock) " +
-                           "VALUES (@id, @modelo, @descripcion, @imagen1, @imagen2, @imagen3, @imagen4, @imagen5, @marca, @precio, @stock)";
+            string query = "INSERT INTO productos (id, modelo, descripcion, imagen1, imagen2,imagen3,imagen4,imagen5, marca, precio, stock, novedad, descuento) " +
+                           "VALUES (@id, @modelo, @descripcion, @imagen1, @imagen2, @imagen3, @imagen4, @imagen5, @marca, @precio, @stock, @novedad, @descuento)";
 
             try
             {
@@ -96,6 +96,8 @@ namespace adminView
                 cmd.Parameters.AddWithValue("@marca", marca);
                 cmd.Parameters.AddWithValue("@precio", precio);
                 cmd.Parameters.AddWithValue("@stock", stock);
+                cmd.Parameters.AddWithValue("@novedad", novedad);
+                cmd.Parameters.AddWithValue("@descuento", descuento);
 
                 cmd.ExecuteNonQuery();
             }

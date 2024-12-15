@@ -92,12 +92,22 @@ namespace adminView
             string marca = this.textBoxMarca.Text;
             int precio = Convert.ToInt32(this.textBoxPrecio.Text);
             int stock = Convert.ToInt32(this.textBoxStock.Text);
+            int novedad;
+            if (checkBoxNovedad.Checked) 
+            {
+                novedad = 1;
+            }
+            else
+            {
+                novedad = 0;
+            }
+            float descuento = Convert.ToSingle(this.textBoxDescuento.Text);
 
             if (this.selectedFiles != null && this.selectedFiles.Length > 0)
             {
 
                 adminForm.dbManager.InsertProduct(id, nombre, descripcion, selectedFiles[0], selectedFiles[1], selectedFiles[2], 
-               selectedFiles[3], selectedFiles[4], marca, precio, stock);
+               selectedFiles[3], selectedFiles[4], marca, precio, stock, novedad, descuento);
 
                 this.textBoxID.Clear();
                 this.textBoxNombre.Clear();

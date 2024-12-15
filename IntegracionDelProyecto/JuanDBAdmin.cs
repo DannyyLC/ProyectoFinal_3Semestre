@@ -22,7 +22,7 @@ namespace IntroductionView
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string consulta = "SELECT id FROM users WHERE user = @username AND password = @password";
+                    string consulta = "SELECT id FROM users WHERE user_login = @username AND password = @password";
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@username", username);
@@ -46,6 +46,30 @@ namespace IntroductionView
             {
                 Console.WriteLine("Error al verificar en la base de datos: " + ex.Message);
                 return -1;
+            }
+        }
+
+        public string getName(int id)
+        {
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT user FROM users WHERE id = @id";
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@id", id);
+
+                        return comando.ExecuteScalar()?.ToString();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener el nombre: " + ex.Message);
+                return "-1";
             }
         }
     }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             tableLayoutPanel1 = new TableLayoutPanel();
+            textBoxDescuento = new TextBox();
+            labelNovedad = new Label();
             textBoxStock = new TextBox();
             labelStock = new Label();
             buttonGuardar = new Button();
@@ -47,6 +49,8 @@
             textBoxMarca = new TextBox();
             textBoxPrecio = new TextBox();
             buttonCargarImagen = new Button();
+            label1 = new Label();
+            checkBoxNovedad = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTitulo).BeginInit();
             SuspendLayout();
@@ -57,9 +61,11 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel1.Controls.Add(textBoxDescuento, 1, 10);
+            tableLayoutPanel1.Controls.Add(labelNovedad, 0, 9);
             tableLayoutPanel1.Controls.Add(textBoxStock, 1, 8);
             tableLayoutPanel1.Controls.Add(labelStock, 0, 8);
-            tableLayoutPanel1.Controls.Add(buttonGuardar, 0, 9);
+            tableLayoutPanel1.Controls.Add(buttonGuardar, 0, 11);
             tableLayoutPanel1.Controls.Add(pictureBoxTitulo, 0, 0);
             tableLayoutPanel1.Controls.Add(labelTitulo, 0, 1);
             tableLayoutPanel1.Controls.Add(labelID, 0, 2);
@@ -74,30 +80,54 @@
             tableLayoutPanel1.Controls.Add(textBoxMarca, 1, 6);
             tableLayoutPanel1.Controls.Add(textBoxPrecio, 1, 7);
             tableLayoutPanel1.Controls.Add(buttonCargarImagen, 1, 5);
+            tableLayoutPanel1.Controls.Add(label1, 0, 10);
+            tableLayoutPanel1.Controls.Add(checkBoxNovedad, 1, 9);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 10;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.9047623F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 9.523809F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 11.9047623F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowCount = 12;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(434, 631);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // textBoxDescuento
+            // 
+            textBoxDescuento.Anchor = AnchorStyles.Left;
+            textBoxDescuento.Font = new Font("Tahoma", 14.25F);
+            textBoxDescuento.Location = new Point(133, 535);
+            textBoxDescuento.Name = "textBoxDescuento";
+            textBoxDescuento.Size = new Size(289, 30);
+            textBoxDescuento.TabIndex = 30;
+            // 
+            // labelNovedad
+            // 
+            labelNovedad.Anchor = AnchorStyles.Right;
+            labelNovedad.AutoSize = true;
+            labelNovedad.Font = new Font("Tahoma", 14.25F);
+            labelNovedad.Location = new Point(21, 488);
+            labelNovedad.Name = "labelNovedad";
+            labelNovedad.Padding = new Padding(0, 0, 22, 0);
+            labelNovedad.Size = new Size(106, 23);
+            labelNovedad.TabIndex = 26;
+            labelNovedad.Text = "Novedad";
             // 
             // textBoxStock
             // 
             textBoxStock.Anchor = AnchorStyles.Left;
             textBoxStock.Font = new Font("Tahoma", 14.25F);
-            textBoxStock.Location = new Point(133, 510);
+            textBoxStock.Location = new Point(133, 435);
             textBoxStock.Name = "textBoxStock";
             textBoxStock.Size = new Size(289, 30);
             textBoxStock.TabIndex = 25;
@@ -107,7 +137,7 @@
             labelStock.Anchor = AnchorStyles.Right;
             labelStock.AutoSize = true;
             labelStock.Font = new Font("Tahoma", 14.25F);
-            labelStock.Location = new Point(22, 513);
+            labelStock.Location = new Point(22, 438);
             labelStock.Name = "labelStock";
             labelStock.Padding = new Padding(0, 0, 50, 0);
             labelStock.Size = new Size(105, 23);
@@ -119,7 +149,7 @@
             buttonGuardar.Anchor = AnchorStyles.None;
             tableLayoutPanel1.SetColumnSpan(buttonGuardar, 2);
             buttonGuardar.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonGuardar.Location = new Point(160, 575);
+            buttonGuardar.Location = new Point(160, 585);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(114, 36);
             buttonGuardar.TabIndex = 20;
@@ -145,7 +175,7 @@
             labelTitulo.AutoSize = true;
             tableLayoutPanel1.SetColumnSpan(labelTitulo, 2);
             labelTitulo.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTitulo.Location = new Point(128, 92);
+            labelTitulo.Location = new Point(128, 87);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(178, 25);
             labelTitulo.TabIndex = 1;
@@ -156,7 +186,7 @@
             labelID.Anchor = AnchorStyles.Right;
             labelID.AutoSize = true;
             labelID.Font = new Font("Tahoma", 14.25F);
-            labelID.Location = new Point(25, 153);
+            labelID.Location = new Point(25, 138);
             labelID.Name = "labelID";
             labelID.Padding = new Padding(0, 0, 72, 0);
             labelID.Size = new Size(102, 23);
@@ -168,10 +198,10 @@
             labelNombre.Anchor = AnchorStyles.Right;
             labelNombre.AutoSize = true;
             labelNombre.Font = new Font("Tahoma", 14.25F);
-            labelNombre.Location = new Point(29, 213);
+            labelNombre.Location = new Point(21, 188);
             labelNombre.Name = "labelNombre";
-            labelNombre.Padding = new Padding(0, 0, 28, 0);
-            labelNombre.Size = new Size(98, 23);
+            labelNombre.Padding = new Padding(0, 0, 36, 0);
+            labelNombre.Size = new Size(106, 23);
             labelNombre.TabIndex = 3;
             labelNombre.Text = "Modelo";
             // 
@@ -180,7 +210,7 @@
             labelDescripcion.Anchor = AnchorStyles.Right;
             labelDescripcion.AutoSize = true;
             labelDescripcion.Font = new Font("Tahoma", 14.25F);
-            labelDescripcion.Location = new Point(21, 273);
+            labelDescripcion.Location = new Point(21, 238);
             labelDescripcion.Name = "labelDescripcion";
             labelDescripcion.Size = new Size(106, 23);
             labelDescripcion.TabIndex = 4;
@@ -191,7 +221,7 @@
             labelImagen.Anchor = AnchorStyles.Right;
             labelImagen.AutoSize = true;
             labelImagen.Font = new Font("Tahoma", 14.25F);
-            labelImagen.Location = new Point(23, 333);
+            labelImagen.Location = new Point(23, 288);
             labelImagen.Name = "labelImagen";
             labelImagen.Padding = new Padding(0, 0, 29, 0);
             labelImagen.Size = new Size(104, 23);
@@ -203,7 +233,7 @@
             labelMarca.Anchor = AnchorStyles.Right;
             labelMarca.AutoSize = true;
             labelMarca.Font = new Font("Tahoma", 14.25F);
-            labelMarca.Location = new Point(20, 393);
+            labelMarca.Location = new Point(20, 338);
             labelMarca.Name = "labelMarca";
             labelMarca.Padding = new Padding(0, 0, 46, 0);
             labelMarca.Size = new Size(107, 23);
@@ -215,7 +245,7 @@
             labelPrecio.Anchor = AnchorStyles.Right;
             labelPrecio.AutoSize = true;
             labelPrecio.Font = new Font("Tahoma", 14.25F);
-            labelPrecio.Location = new Point(21, 453);
+            labelPrecio.Location = new Point(21, 388);
             labelPrecio.Name = "labelPrecio";
             labelPrecio.Padding = new Padding(0, 0, 46, 0);
             labelPrecio.Size = new Size(106, 23);
@@ -226,7 +256,7 @@
             // 
             textBoxID.Anchor = AnchorStyles.Left;
             textBoxID.Font = new Font("Tahoma", 14.25F);
-            textBoxID.Location = new Point(133, 150);
+            textBoxID.Location = new Point(133, 135);
             textBoxID.Name = "textBoxID";
             textBoxID.Size = new Size(289, 30);
             textBoxID.TabIndex = 10;
@@ -235,7 +265,7 @@
             // 
             textBoxNombre.Anchor = AnchorStyles.Left;
             textBoxNombre.Font = new Font("Tahoma", 14.25F);
-            textBoxNombre.Location = new Point(133, 210);
+            textBoxNombre.Location = new Point(133, 185);
             textBoxNombre.Name = "textBoxNombre";
             textBoxNombre.Size = new Size(289, 30);
             textBoxNombre.TabIndex = 11;
@@ -244,7 +274,7 @@
             // 
             textBoxDescripcion.Anchor = AnchorStyles.Left;
             textBoxDescripcion.Font = new Font("Tahoma", 14.25F);
-            textBoxDescripcion.Location = new Point(133, 270);
+            textBoxDescripcion.Location = new Point(133, 235);
             textBoxDescripcion.Name = "textBoxDescripcion";
             textBoxDescripcion.Size = new Size(289, 30);
             textBoxDescripcion.TabIndex = 12;
@@ -253,7 +283,7 @@
             // 
             textBoxMarca.Anchor = AnchorStyles.Left;
             textBoxMarca.Font = new Font("Tahoma", 14.25F);
-            textBoxMarca.Location = new Point(133, 390);
+            textBoxMarca.Location = new Point(133, 335);
             textBoxMarca.Name = "textBoxMarca";
             textBoxMarca.Size = new Size(289, 30);
             textBoxMarca.TabIndex = 14;
@@ -262,7 +292,7 @@
             // 
             textBoxPrecio.Anchor = AnchorStyles.Left;
             textBoxPrecio.Font = new Font("Tahoma", 14.25F);
-            textBoxPrecio.Location = new Point(133, 450);
+            textBoxPrecio.Location = new Point(133, 385);
             textBoxPrecio.Name = "textBoxPrecio";
             textBoxPrecio.Size = new Size(289, 30);
             textBoxPrecio.TabIndex = 16;
@@ -271,13 +301,38 @@
             // 
             buttonCargarImagen.Anchor = AnchorStyles.None;
             buttonCargarImagen.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonCargarImagen.Location = new Point(137, 328);
+            buttonCargarImagen.Location = new Point(137, 283);
             buttonCargarImagen.Name = "buttonCargarImagen";
             buttonCargarImagen.Size = new Size(289, 33);
             buttonCargarImagen.TabIndex = 19;
             buttonCargarImagen.Text = "Agregar imagen";
             buttonCargarImagen.UseVisualStyleBackColor = true;
             buttonCargarImagen.Click += buttonCargarImagen_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 14.25F);
+            label1.Location = new Point(20, 538);
+            label1.Name = "label1";
+            label1.Padding = new Padding(0, 0, 9, 0);
+            label1.Size = new Size(107, 23);
+            label1.TabIndex = 28;
+            label1.Text = "Descuento";
+            // 
+            // checkBoxNovedad
+            // 
+            checkBoxNovedad.Anchor = AnchorStyles.None;
+            checkBoxNovedad.AutoSize = true;
+            checkBoxNovedad.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBoxNovedad.Location = new Point(230, 486);
+            checkBoxNovedad.Name = "checkBoxNovedad";
+            checkBoxNovedad.RightToLeft = RightToLeft.No;
+            checkBoxNovedad.Size = new Size(103, 27);
+            checkBoxNovedad.TabIndex = 31;
+            checkBoxNovedad.Text = "Novedad";
+            checkBoxNovedad.UseVisualStyleBackColor = true;
             // 
             // AddProductForm
             // 
@@ -316,5 +371,9 @@
         private Label labelStock;
         private Label labelPrecio;
         private TextBox textBoxPrecio;
+        private Label label1;
+        private Label labelNovedad;
+        private TextBox textBoxDescuento;
+        private CheckBox checkBoxNovedad;
     }
 }

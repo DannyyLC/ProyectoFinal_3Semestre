@@ -37,16 +37,18 @@ namespace Interfaz
                     id = Convert.ToInt32(result);
                 }
 
-                query = "INSERT INTO users (id, user, password) " +
-                "VALUES (@id, @user, @password)";
+                query = "INSERT INTO users (id, user_login, user, password) " +
+                "VALUES (@id, @user_login, @user, @password)";
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 // Agregar parámetros
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@user_login", this.txtBoxUsuario.Text);
                 cmd.Parameters.AddWithValue("@user", this.txtBoxNombre.Text);
                 cmd.Parameters.AddWithValue("@password", this.txtBoxContra.Text);
 
                 cmd.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {

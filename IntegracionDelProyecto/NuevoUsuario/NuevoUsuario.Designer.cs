@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoUsuario));
-            txtBoxNombre = new TextBox();
+            txtBoxUsuario = new TextBox();
             txtBoxContra = new TextBox();
             btnGuardar = new Button();
+            txtBoxNombre = new TextBox();
             SuspendLayout();
             // 
-            // txtBoxNombre
+            // txtBoxUsuario
             // 
-            txtBoxNombre.Font = new Font("Segoe UI", 12F);
-            txtBoxNombre.Location = new Point(217, 317);
-            txtBoxNombre.Margin = new Padding(3, 2, 3, 2);
-            txtBoxNombre.Name = "txtBoxNombre";
-            txtBoxNombre.PlaceholderText = "Usuario";
-            txtBoxNombre.Size = new Size(162, 29);
-            txtBoxNombre.TabIndex = 0;
-            txtBoxNombre.TextAlign = HorizontalAlignment.Center;
+            txtBoxUsuario.Font = new Font("Segoe UI", 12F);
+            txtBoxUsuario.Location = new Point(215, 373);
+            txtBoxUsuario.Margin = new Padding(3, 2, 3, 2);
+            txtBoxUsuario.Name = "txtBoxUsuario";
+            txtBoxUsuario.PlaceholderText = "Usuario";
+            txtBoxUsuario.Size = new Size(162, 29);
+            txtBoxUsuario.TabIndex = 0;
+            txtBoxUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBoxContra
             // 
             txtBoxContra.Font = new Font("Segoe UI", 12F);
-            txtBoxContra.Location = new Point(217, 374);
+            txtBoxContra.Location = new Point(215, 437);
             txtBoxContra.Margin = new Padding(3, 2, 3, 2);
             txtBoxContra.Name = "txtBoxContra";
             txtBoxContra.PlaceholderText = "Contraseña";
@@ -62,7 +63,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(229, 432);
+            btnGuardar.Location = new Point(227, 483);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(137, 40);
@@ -71,15 +72,27 @@
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
+            // txtBoxNombre
+            // 
+            txtBoxNombre.Font = new Font("Segoe UI", 12F);
+            txtBoxNombre.Location = new Point(215, 318);
+            txtBoxNombre.Margin = new Padding(3, 2, 3, 2);
+            txtBoxNombre.Name = "txtBoxNombre";
+            txtBoxNombre.PlaceholderText = "Nombre";
+            txtBoxNombre.Size = new Size(162, 29);
+            txtBoxNombre.TabIndex = 3;
+            txtBoxNombre.TextAlign = HorizontalAlignment.Center;
+            // 
             // NuevoUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = IntroductionView.Properties.Resources.Background;
             ClientSize = new Size(595, 552);
+            Controls.Add(txtBoxNombre);
             Controls.Add(btnGuardar);
             Controls.Add(txtBoxContra);
-            Controls.Add(txtBoxNombre);
+            Controls.Add(txtBoxUsuario);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "NuevoUsuario";
@@ -92,8 +105,9 @@
 
         #endregion
 
-        private TextBox txtBoxNombre;
+        private TextBox txtBoxUsuario;
         private TextBox txtBoxContra;
         private Button btnGuardar;
+        private TextBox txtBoxNombre;
     }
 }
