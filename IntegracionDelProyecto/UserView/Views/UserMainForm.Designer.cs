@@ -309,10 +309,10 @@ namespace ProyectoProgramacion.Views
             // 
             // lblTime
             // 
-            lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblTime.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblTime.AutoSize = true;
             lblTime.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTime.Location = new Point(1195, 3);
+            lblTime.Location = new Point(615, 7);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(47, 22);
             lblTime.TabIndex = 0;
@@ -325,7 +325,7 @@ namespace ProyectoProgramacion.Views
             FlowLayoutProducts.BackColor = SystemColors.Window;
             FlowLayoutProducts.Location = new Point(162, 168);
             FlowLayoutProducts.Name = "FlowLayoutProducts";
-            FlowLayoutProducts.Size = new Size(943, 495);
+            FlowLayoutProducts.Size = new Size(943, 502);
             FlowLayoutProducts.TabIndex = 7;
             // 
             // Timer

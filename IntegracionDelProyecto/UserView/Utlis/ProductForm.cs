@@ -57,6 +57,11 @@ namespace ProyectoProgramacion.Utlis
             {
                 MessageBox.Show("Error al mostrar la imagen");
             }
+
+            if (this.Descuento > 0)
+                this.lblDescuento.Text = $"- %{this.Descuento}";
+            else
+                this.lblDescuento.Text = "";
         }
 
         // ----- * * * METODOS * * * -----

@@ -34,6 +34,7 @@
             PrecioLabel = new Label();
             LowPanel = new Panel();
             StockLabel = new Label();
+            lblDescuento = new Label();
             ((System.ComponentModel.ISupportInitialize)ProductPicture).BeginInit();
             LowPanel.SuspendLayout();
             SuspendLayout();
@@ -41,10 +42,10 @@
             // ProductPicture
             // 
             ProductPicture.BackColor = Color.FromArgb(234, 238, 239);
-            ProductPicture.Dock = DockStyle.Top;
+            ProductPicture.Dock = DockStyle.Fill;
             ProductPicture.Location = new Point(0, 0);
             ProductPicture.Name = "ProductPicture";
-            ProductPicture.Size = new Size(450, 503);
+            ProductPicture.Size = new Size(450, 600);
             ProductPicture.TabIndex = 0;
             ProductPicture.TabStop = false;
             ProductPicture.Click += ProductPicture_Click;
@@ -84,6 +85,7 @@
             // 
             // LowPanel
             // 
+            LowPanel.Controls.Add(lblDescuento);
             LowPanel.Controls.Add(StockLabel);
             LowPanel.Controls.Add(PrecioLabel);
             LowPanel.Controls.Add(MarcaLabel);
@@ -100,11 +102,22 @@
             StockLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             StockLabel.AutoSize = true;
             StockLabel.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            StockLabel.Location = new Point(373, 64);
+            StockLabel.Location = new Point(262, 64);
             StockLabel.Name = "StockLabel";
             StockLabel.Size = new Size(58, 24);
             StockLabel.TabIndex = 4;
             StockLabel.Text = "Stock";
+            // 
+            // lblDescuento
+            // 
+            lblDescuento.AutoSize = true;
+            lblDescuento.Font = new Font("Tahoma", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDescuento.ForeColor = Color.Green;
+            lblDescuento.Location = new Point(262, 17);
+            lblDescuento.Name = "lblDescuento";
+            lblDescuento.Size = new Size(164, 34);
+            lblDescuento.TabIndex = 5;
+            lblDescuento.Text = "Descuento";
             // 
             // ProductForm
             // 
@@ -132,5 +145,6 @@
         private Label PrecioLabel;
         private Panel LowPanel;
         private Label StockLabel;
+        private Label lblDescuento;
     }
 }

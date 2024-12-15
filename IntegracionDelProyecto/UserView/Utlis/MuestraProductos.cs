@@ -26,11 +26,12 @@ namespace ProyectoProgramacion.Utlis
         public int Stock { get; set; }
         public int Index { get; set; }
         public string Username { get; set; }
+        public double Descuento { get; set; }
 
         public Form Creator { get; set; }
 
         // CONSTRUCTOR
-        public MuestraProductos(Form creator, int userid = 0, string username = "", int productid = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0)
+        public MuestraProductos(Form creator, int userid = 0, string username = "", int productid = 0, string brand = "", string model = "", string description = "", List<string> images = null, decimal price = 0, int stock = 0, double descuento = 0)
         {
             InitializeComponent();
 
@@ -43,6 +44,7 @@ namespace ProyectoProgramacion.Utlis
             Price = price;
             Stock = stock;
             Username = username;
+            Descuento = descuento;
             Creator = creator;
             this.Index = 0;
 
@@ -61,6 +63,11 @@ namespace ProyectoProgramacion.Utlis
             {
                 MessageBox.Show("Error al mostrar la imagen");
             }
+
+            if (this.Descuento > 0)
+                this.lblDescuento.Text = $"- %{this.Descuento}";
+            else
+                this.lblDescuento.Text = "";
         }
 
         private void btnAgregarCarrito_Click(object sender, EventArgs e)

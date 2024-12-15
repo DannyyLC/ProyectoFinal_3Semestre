@@ -15,7 +15,7 @@ namespace ProyectoProgramacion.Views
 {
     public partial class UserMainForm : Form
     {
-        // ----- * * * ATRIBUTOS * * * -----
+        // ----- * * * ATRIBUTOS Y PROPIEDADES * * * -----
         private List<Product> products;
         private MySqlConnection connection;
         public int Userid { get; set; }
@@ -61,7 +61,13 @@ namespace ProyectoProgramacion.Views
             cart.Location = this.Location;
             cart.Size = this.Bounds.Size;
 
-            cart.ShowDialog();;
+            cart.FormClosed += (s, args) =>
+            {
+                Query();
+                LoadProducts();
+            };
+
+            cart.ShowDialog(); ;
         }
         #endregion
 
@@ -196,6 +202,8 @@ namespace ProyectoProgramacion.Views
         // Traer toda al informacion de la tabla de productos de la base de datos
         public void Query()
         {
+            products.Clear();
+
             Product item;
 
             int id;
@@ -244,6 +252,9 @@ namespace ProyectoProgramacion.Views
                     images.Add(img4);
                     images.Add(img5);
 
+                    if(descuento > 0)
+                        price = price - price * ((decimal)descuento / 100);
+
                     item = new Product(id, brand, model, description, images, price, stock, novedad, descuento);
                     products.Add(item);
                 }
@@ -278,8 +289,8 @@ namespace ProyectoProgramacion.Views
                 // Suscribe el evento de clic
                 productForm.ProductClicked += Product_ProductClicked;
 
-                productForm.Width = 450; 
-                productForm.Height = 600; 
+                productForm.Width = 450;
+                productForm.Height = 600;
 
                 // Agrega el formulario al FlowLayoutPanel
                 FlowLayoutProducts.Controls.Add(productForm);
@@ -301,7 +312,8 @@ namespace ProyectoProgramacion.Views
                     description: productForm.Description,
                     images: productForm.Images,
                     price: productForm.Price,
-                    stock: productForm.Stock
+                    stock: productForm.Stock,
+                    descuento: productForm.Descuento
                 );
 
                 // Agregar el control al formulario principal
@@ -454,5 +466,3 @@ namespace ProyectoProgramacion.Views
         #endregion
     }
 }
-
-

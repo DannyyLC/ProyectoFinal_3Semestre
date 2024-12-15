@@ -35,6 +35,7 @@
             ProductDescription = new RichTextBox();
             tableLayoutProducts = new TableLayoutPanel();
             PanelProducto = new Panel();
+            lblDescuento = new Label();
             lblStock = new Label();
             lblPrecio = new Label();
             ProductModel = new Label();
@@ -123,11 +124,12 @@
             // 
             // ProductDescription
             // 
-            ProductDescription.BackColor = Color.White;
+            ProductDescription.BackColor = SystemColors.Window;
             ProductDescription.BorderStyle = BorderStyle.None;
             ProductDescription.Dock = DockStyle.Fill;
             ProductDescription.Enabled = false;
             ProductDescription.Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProductDescription.ForeColor = SystemColors.ControlText;
             ProductDescription.Location = new Point(765, 307);
             ProductDescription.Name = "ProductDescription";
             tableLayoutProducts.SetRowSpan(ProductDescription, 3);
@@ -164,6 +166,7 @@
             // 
             // PanelProducto
             // 
+            PanelProducto.Controls.Add(lblDescuento);
             PanelProducto.Controls.Add(lblStock);
             PanelProducto.Controls.Add(lblPrecio);
             PanelProducto.Controls.Add(ProductModel);
@@ -173,6 +176,18 @@
             PanelProducto.Name = "PanelProducto";
             PanelProducto.Size = new Size(387, 298);
             PanelProducto.TabIndex = 3;
+            // 
+            // lblDescuento
+            // 
+            lblDescuento.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblDescuento.AutoSize = true;
+            lblDescuento.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDescuento.ForeColor = Color.Green;
+            lblDescuento.Location = new Point(122, 127);
+            lblDescuento.Name = "lblDescuento";
+            lblDescuento.Size = new Size(174, 36);
+            lblDescuento.TabIndex = 5;
+            lblDescuento.Text = "Descuento";
             // 
             // lblStock
             // 
@@ -270,5 +285,6 @@
         private PictureBox PictuteRight;
         private Label lblPrecio;
         private Label lblStock;
+        private Label lblDescuento;
     }
 }

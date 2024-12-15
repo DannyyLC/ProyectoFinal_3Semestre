@@ -317,36 +317,44 @@ namespace ProyectoProgramacion.Views
         {
             try
             {
-                Connect();
+                Connect(); // Conectar a la base de datos
 
-                foreach (var product in cartProducts) // Restar los productos necesarios
+                foreach (Control control in TableProducts.Controls)
                 {
-                    string query = "UPDATE productos SET stock = stock - 1 WHERE id = @productid AND stock > 0";
-
-                    using (MySqlCommand command = new MySqlCommand(query, this.connection))
+                    if (control is CartProduct cartProduct)
                     {
-                        command.Parameters.AddWithValue("@productid", product.ProductId);
+                        int cantidad = cartProduct.Cantidad;
+                        int productId = cartProduct.ProductId; 
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        string query = "UPDATE productos SET stock = stock - @cantidad WHERE id = @productid AND stock >= @cantidad";
 
-                        if (rowsAffected > 0)
+                        using (MySqlCommand command = new MySqlCommand(query, this.connection))
                         {
-                            Console.WriteLine($"Stock actualizado para el producto con ID: {product.ProductId}");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"No se pudo actualizar el stock para el producto con ID: {product.ProductId}. Puede que no haya suficiente stock.");
+                            command.Parameters.AddWithValue("@cantidad", cantidad);
+                            command.Parameters.AddWithValue("@productid", productId);
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"Stock actualizado para el producto con ID: {productId}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"No se pudo actualizar el stock para el producto con ID: {productId}. Puede que no haya suficiente stock.");
+                            }
                         }
                     }
                 }
 
-                Disconnect();
+                Disconnect(); // Desconectar de la base de datos
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al actualizar el stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         #endregion
 

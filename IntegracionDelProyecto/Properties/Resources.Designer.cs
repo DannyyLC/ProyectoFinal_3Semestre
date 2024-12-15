@@ -143,6 +143,16 @@ namespace IntroductionView.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap j11_1 {
+            get {
+                object obj = ResourceManager.GetObject("j11-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap juan {
             get {
                 object obj = ResourceManager.GetObject("juan", resourceCulture);
