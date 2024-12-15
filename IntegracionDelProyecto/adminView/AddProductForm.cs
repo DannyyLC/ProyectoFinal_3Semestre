@@ -30,21 +30,49 @@ namespace adminView
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                // Configuración del cuadro de diálogo
                 openFileDialog.Multiselect = true;
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); // Carpeta inicial
-                openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif"; // Solo imágenes
-                openFileDialog.FilterIndex = 1; // Selecciona el primer filtro
-                openFileDialog.Title = "Seleccione una imagen"; // Título del cuadro de diálogo
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.Title = "Seleccione una imagen";
 
-                // Mostrar el diálogo y verificar si se seleccionó un archivo
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Copiar solo los nombres de los archivos seleccionados al arreglo
+                    // Ruta relativa al directorio raíz del proyecto
+                    string projectFolder = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+                    string targetFolder = Path.Combine(projectFolder, "ProductPictures");
+
                     for (int i = 0; i < openFileDialog.FileNames.Length && i < 5; i++)
                     {
-                        selectedFiles[i] = Path.GetFileName(openFileDialog.FileNames[i]); // Obtiene el nombre del archivo
+                        selectedFiles[i] = "ProductPictures/" + Path.GetFileName(openFileDialog.FileNames[i]); // Obtiene el nombre del archivo
                     }
+
+                    if (!Directory.Exists(targetFolder))
+                    {
+                        Directory.CreateDirectory(targetFolder);
+                    }
+
+                    foreach (string sourceFile in openFileDialog.FileNames)
+                    {
+                        string targetFile = Path.Combine(targetFolder, Path.GetFileName(sourceFile));
+
+                        if (Path.GetFullPath(sourceFile).Equals(Path.GetFullPath(targetFile), StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show($"El archivo {Path.GetFileName(sourceFile)} ya está en la carpeta destino.");
+                            continue;
+                        }
+
+                        try
+                        {
+                            File.Copy(sourceFile, targetFile, true);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al copiar el archivo: {ex.Message}");
+                        }
+                    }
+
+                    MessageBox.Show("Archivos movidos a la carpeta ProductPictures.");
                 }
                 else
                 {
@@ -52,6 +80,8 @@ namespace adminView
                 }
             }
         }
+
+
 
 
         private void buttonGuardar_Click_1(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using ProyectoProgramacion.Models;
+using ProyectoProgramacion.Utlis;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -368,6 +369,11 @@ namespace ProyectoProgramacion.Views
             //Llamada a funcion que agrega la informacion del pedido a la tabla de pedidos en la db
             RegistrarPedido();
 
+            //Llamando el PaymentForm
+            PaymentForm paymentform = new PaymentForm(cartProducts, Total);
+            paymentform.StartPosition = FormStartPosition.CenterParent;
+            paymentform.ShowDialog(this);
+
             UpdateProductStock();
             DeleteCartItemsByUserId();
             cartProducts.Clear();
@@ -446,11 +452,20 @@ namespace ProyectoProgramacion.Views
             string modelo = "";
             string marcas = "";
             decimal precio = 0;
-            foreach (ProductCart product in cartProducts)
+            for (int i = 0; i < cartProducts.Count ; i++) 
             {
-                modelo += "\n" + product.Modelo;
-                marcas += "\n" + product.Marca;
-                precio += product.Precio;
+                if (i == 0)
+                {
+                    modelo += cartProducts[i].Modelo;
+                    marcas += cartProducts[i].Marca;
+                }
+                else
+                {
+                    modelo += "\n" + cartProducts[i].Modelo;
+                    marcas += "\n" + cartProducts[i].Marca;
+                }
+
+                precio += cartProducts[i].Precio;
             }
             int usuario = cartProducts[0].Userid;
 

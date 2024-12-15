@@ -13,10 +13,10 @@ namespace ProyectoProgramacion.Views
 {
     public partial class PaymentForm : Form
     {
-        private List<ProductCart> cartProducts;
+        public List<ProductCart> cartProducts;
         private decimal total;
 
-        private PaymentForm(List<ProductCart> cartProducts, decimal total)
+        public PaymentForm(List<ProductCart> cartProducts, decimal total)
         {
             InitializeComponent();
 
@@ -44,6 +44,7 @@ namespace ProyectoProgramacion.Views
         }
         private void btnDescargar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Iniciando generacion de factura");
             ProductCart.GenerarFactura(cartProducts, total);
         }
 
@@ -66,6 +67,9 @@ namespace ProyectoProgramacion.Views
 
         }
 
-        
+        private void btnDescargar_Click_1(object sender, EventArgs e)
+        {
+            ProductCart.GenerarFactura(cartProducts, total);
+        }
     }
 }

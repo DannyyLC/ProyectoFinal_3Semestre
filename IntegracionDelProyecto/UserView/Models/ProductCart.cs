@@ -12,7 +12,7 @@ using iTextSharp.text.pdf;
 
 namespace ProyectoProgramacion.Models
 {
-    internal class ProductCart
+    public class ProductCart
     {
         // ----- * * * PROPIEDADES * * * -----
         public int Userid { get; set; }
@@ -40,10 +40,9 @@ namespace ProyectoProgramacion.Models
         // ----- * * * METODO PARA GENERAR LA FACTURA * * * -----
         public static void GenerarFactura(List<ProductCart> carts, decimal total)
         {
-
-
-            string filePath = $"Ticket de Compra.pdf";
-            string imagePath = "kik5.png";
+            string projectFolder = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+            string filePath = Path.Combine(projectFolder, "Ticket de Compra.pdf");
+            string imagePath = Path.Combine(projectFolder, "Resources","Kicks (Final) 2024-11-23 20_56_34.png");
 
             iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4, 10, 10, 10, 10);
 
@@ -65,7 +64,7 @@ namespace ProyectoProgramacion.Models
                 }
                 else
                 {
-                    Console.WriteLine("La imagen no se encontro: " + imagePath);
+                    MessageBox.Show("La imagen no se encontro: " + imagePath);
                 }
 
                 //agregar el encabezado del pdf
@@ -73,7 +72,7 @@ namespace ProyectoProgramacion.Models
                 encabezado.Alignment = Element.ALIGN_CENTER;
                 document.Add(encabezado);
 
-                document.Add(new Paragraph("$Fecha: { DateTime.Now:dd/MM/yyyy HH:mm;ss }", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                document.Add(new Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm:ss}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
                 document.Add(new Paragraph(" "));
 
                 //Tabla de Productos
@@ -99,7 +98,7 @@ namespace ProyectoProgramacion.Models
 
             catch (Exception e)
             {
-                Console.WriteLine($"Error al generar el ticket: {e.Message}");
+                MessageBox.Show($"Error al generar el ticket: {e.Message}");
 
             }
 
@@ -109,8 +108,7 @@ namespace ProyectoProgramacion.Models
             }
 
             //abrir el archivo
-            Console.WriteLine($"Ticket generado con exito:{filePath}");
-            System.Diagnostics.Process.Start(filePath);
+            MessageBox.Show($"Ticket generado con exito:{filePath}");
         }
     }
 }

@@ -158,7 +158,14 @@ namespace adminView
                 string imagenPath = Path.Combine(projectRoot, "python", "grafica_barras.png"); // Imagen en el directorio base
                 if (File.Exists(imagenPath))
                 {
-                    pictureBoxGrafica.Image = Image.FromFile(imagenPath); // Cargar la imagen en el PictureBox
+                    using (var stream = new MemoryStream(File.ReadAllBytes(imagenPath)))
+                    {
+                        if (pictureBoxGrafica.Image != null)
+                        {
+                            pictureBoxGrafica.Image.Dispose(); // Liberar recursos de la imagen previa
+                        }
+                        pictureBoxGrafica.Image = Image.FromStream(stream); // Cargar la imagen en el PictureBox
+                    }
                 }
                 else
                 {
