@@ -43,10 +43,12 @@ namespace ProyectoProgramacion.Utlis
             Novedad = novedad;
             Descuento = descuento;
 
+            int tempo = Convert.ToInt32(this.Descuento * 100);
+
             this.MarcaLabel.Text = brand;
             this.ModeloLabel.Text = model;
             this.PrecioLabel.Text = $"${price:F2}";
-            this.StockLabel.Text = $"Stock {stock}";
+            this.StockLabel.Text = $"Stock {Stock}";
 
             if (File.Exists(Images[0]))
             {
@@ -59,7 +61,7 @@ namespace ProyectoProgramacion.Utlis
             }
 
             if (this.Descuento > 0)
-                this.lblDescuento.Text = $"- %{this.Descuento*100}";
+                this.lblDescuento.Text = $"- %{tempo}";
             else
                 this.lblDescuento.Text = "";
         }

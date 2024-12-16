@@ -48,6 +48,8 @@ namespace ProyectoProgramacion.Utlis
             Creator = creator;
             this.Index = 0;
 
+            int tempo = Convert.ToInt32(this.Descuento * 100);
+
             this.ProductMarca.Text = brand;
             this.ProductModel.Text = model;
             this.lblPrecio.Text = $"${price:F2}";
@@ -65,7 +67,7 @@ namespace ProyectoProgramacion.Utlis
             }
 
             if (this.Descuento > 0)
-                this.lblDescuento.Text = $"- %{this.Descuento}";
+                this.lblDescuento.Text = $"- %{tempo}";
             else
                 this.lblDescuento.Text = "";
         }

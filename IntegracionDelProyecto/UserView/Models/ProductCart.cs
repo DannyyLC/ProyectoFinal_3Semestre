@@ -109,7 +109,6 @@ namespace ProyectoProgramacion.Models
                 document.Add(new Paragraph($"Total: ${total:F2}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
                 document.Add(new Paragraph("Gracias por su compra!", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
             }
-
             catch (Exception e)
             {
                 MessageBox.Show($"Error al generar el ticket: {e.Message}");

@@ -243,6 +243,10 @@ namespace ProyectoProgramacion.Views
 
                     price = Convert.ToDecimal(reader["precio"]);
                     stock = Convert.ToInt32(reader["stock"]);
+
+                    if (stock <= 0)
+                        continue;
+
                     novedad = Convert.ToInt32(reader["novedad"]);
                     descuento = Convert.ToDouble(reader["descuento"]);
 
@@ -253,7 +257,7 @@ namespace ProyectoProgramacion.Views
                     images.Add(img5);
 
                     if(descuento > 0)
-                        price = price - price * ((decimal)descuento / 100);
+                        price = price - price * ((decimal)descuento);
 
                     item = new Product(id, brand, model, description, images, price, stock, novedad, descuento);
                     products.Add(item);
