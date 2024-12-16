@@ -232,7 +232,7 @@ namespace ProyectoProgramacion.Views
 
                     this.Total += precio * cantidad;
 
-                    CartProduct product = new CartProduct(imagen, marca, modelo, precio, cantidad, stock, userid, productid);
+                    CartProduct product = new CartProduct(imagen, marca, modelo, precio, cantidad, stock, userid, productid, cartProducts[i]);
                     product.PriceChanged += Product_PriceChanged;
                     TableProducts.Controls.Add(product, 1, i);
                 }
@@ -462,18 +462,21 @@ namespace ProyectoProgramacion.Views
             decimal precio = 0;
             for (int i = 0; i < cartProducts.Count ; i++) 
             {
-                if (i == 0)
+                for (int j = 0; j < cartProducts[i].Cantidad; j++)
                 {
-                    modelo += cartProducts[i].Modelo;
-                    marcas += cartProducts[i].Marca;
-                }
-                else
-                {
-                    modelo += "\n" + cartProducts[i].Modelo;
-                    marcas += "\n" + cartProducts[i].Marca;
-                }
+                    if (i == 0 && j == 0)
+                    {
+                        modelo += cartProducts[i].Modelo;
+                        marcas += cartProducts[i].Marca;
+                    }
+                    else
+                    {
+                        modelo += "\n" + cartProducts[i].Modelo;
+                        marcas += "\n" + cartProducts[i].Marca;
+                    }
 
-                precio += cartProducts[i].Precio;
+                    precio += cartProducts[i].Precio;
+                }
             }
             int usuario = cartProducts[0].Userid;
 

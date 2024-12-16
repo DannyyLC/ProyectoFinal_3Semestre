@@ -55,6 +55,7 @@ namespace adminView
                     foreach (string sourceFile in openFileDialog.FileNames)
                     {
                         string targetFile = Path.Combine(targetFolder, Path.GetFileName(sourceFile));
+                        string targetFile2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"ProductPictures", Path.GetFileName(sourceFile));
 
                         if (Path.GetFullPath(sourceFile).Equals(Path.GetFullPath(targetFile), StringComparison.OrdinalIgnoreCase))
                         {
@@ -65,6 +66,7 @@ namespace adminView
                         try
                         {
                             File.Copy(sourceFile, targetFile, true);
+                            File.Copy(sourceFile, targetFile2, true);
                         }
                         catch (Exception ex)
                         {

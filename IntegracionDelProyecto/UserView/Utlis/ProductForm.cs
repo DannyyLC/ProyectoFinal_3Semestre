@@ -55,11 +55,11 @@ namespace ProyectoProgramacion.Utlis
             }
             else
             {
-                MessageBox.Show("Error al mostrar la imagen");
+                MessageBox.Show($"La imagen {Images[0]} no se encontró");
             }
 
             if (this.Descuento > 0)
-                this.lblDescuento.Text = $"- %{this.Descuento}";
+                this.lblDescuento.Text = $"- %{this.Descuento*100}";
             else
                 this.lblDescuento.Text = "";
         }

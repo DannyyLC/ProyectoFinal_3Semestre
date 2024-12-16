@@ -95,6 +95,8 @@
             Controls.Add(txtBoxUsuario);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(611, 591);
+            MinimumSize = new Size(611, 591);
             Name = "NuevoUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo usuario";

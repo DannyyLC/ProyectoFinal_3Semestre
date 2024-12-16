@@ -96,7 +96,11 @@ namespace ProyectoProgramacion.Utlis
                 this.Index = 0;
             else
                 this.Index++;
-
+            
+            if (Images[this.Index] == "")
+            {
+                this.Index = 0;
+            }
             this.ProductPicture.Image = Image.FromFile(Images[this.Index]);
             this.ProductPicture.SizeMode = PictureBoxSizeMode.Zoom;
         }

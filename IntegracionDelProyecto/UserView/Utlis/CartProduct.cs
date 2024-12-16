@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProyectoProgramacion.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,10 +27,11 @@ namespace ProyectoProgramacion.Views
         public int Stock { get; set; }
         public int ProductId { get; set; }
         public int UserId { get; set; }
+        public ProductCart ProductCartObject { get; set; }
         private MySqlConnection connection;
 
         //  * * * * * CONSTRUCTOR * * * * * 
-        public CartProduct(string image = "", string marca = "", string modelo = "", decimal precio = 0, int cantidad = 1, int stock = 100, int userid = 0, int productid = 0)
+        public CartProduct(string image = "", string marca = "", string modelo = "", decimal precio = 0, int cantidad = 1, int stock = 100, int userid = 0, int productid = 0, ProductCart productObject = null)
         {
             InitializeComponent();
             this.Imagen = image;
@@ -40,12 +42,14 @@ namespace ProyectoProgramacion.Views
             this.Stock = stock;
             this.UserId = userid;
             this.ProductId = productid;
+            this.ProductCartObject = productObject;
+
 
             this.MarcaLabel.Text = marca;
             this.ModeloLabel.Text = modelo;
-            this.PrecioLabel.Text = $"${precio:F2}";
-            this.Cantidadlbl.Text = $"{this.Cantidad}";
-            this.Stocklbl.Text = $"{this.Stock}";
+            this.PrecioLabel.Text = $"Precio: ${precio:F2}";
+            this.Cantidadlbl.Text = $"Cantidad: {this.Cantidad}";
+            this.Stocklbl.Text = $"Stock disponible: {this.Stock}";
 
             if (File.Exists(Imagen))
             {
@@ -72,9 +76,11 @@ namespace ProyectoProgramacion.Views
                 if (UpdateQuantityInDatabase(this.Cantidad + 1))
                 {
                     this.Cantidad++;
-                    this.Cantidadlbl.Text = $"{this.Cantidad}";
+                    this.Cantidadlbl.Text = $"Cantidad: {this.Cantidad}";
                     // Notificar el cambio en el precio
                     PriceChanged?.Invoke(this, this.Precio);
+                    //Alterar la lista cartProducts
+                    this.ProductCartObject.Cantidad++;
                 }
             }
         }
@@ -92,6 +98,8 @@ namespace ProyectoProgramacion.Views
                     {
                         // Notificar que el precio debe reducirse a cero
                         PriceChanged?.Invoke(this, -this.Precio * this.Cantidad);
+                        //Alterar la lista cartProducts
+                        this.ProductCartObject.Cantidad--;
                         var parent = this.Parent as TableLayoutPanel;
                         if (parent != null)
                         {
@@ -106,7 +114,7 @@ namespace ProyectoProgramacion.Views
                 if (UpdateQuantityInDatabase(this.Cantidad - 1))
                 {
                     this.Cantidad--;
-                    this.Cantidadlbl.Text = $"{this.Cantidad}";
+                    this.Cantidadlbl.Text = $"Cantidad: {this.Cantidad}";
                     // Notificar el cambio en el precio
                     PriceChanged?.Invoke(this, -this.Precio);
                 }

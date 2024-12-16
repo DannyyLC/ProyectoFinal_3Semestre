@@ -31,15 +31,20 @@ namespace ProyectoProgramacion.Views
             dGVPago.Columns[4].Name = "Impuestos";
             dGVPago.Columns[5].Name = "Subtotal";
 
+            dGVPago.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, FontStyle.Bold);
+
+
             foreach (var product in cartProducts)
             {
                 decimal impuestos = product.Precio * 0.06m;
-                decimal subtotal = product.Precio *product.Cantidad;
-                dGVPago.Rows.Add(product.Marca, product.Modelo, $"${product.Precio:F2}", 1, $"${impuestos}", $"${subtotal:F2}");
+                decimal subtotal = product.Precio * product.Cantidad;
+                dGVPago.Rows.Add(product.Marca, product.Modelo, $"${product.Precio:F2}", product.Cantidad, $"${impuestos}", $"${subtotal:F2}");
 
             }
 
             lblTotal.Text = $"{total:F2}";
+
+            lblFechaHora.Text = $"Fecha y hora del pedido: \n{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
 
         }
         private void btnDescargar_Click(object sender, EventArgs e)
