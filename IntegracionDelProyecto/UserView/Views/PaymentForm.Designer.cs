@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             PanelPago = new Panel();
             lblTotal = new Label();
             lblFechaHora = new Label();
@@ -51,38 +52,34 @@
             PanelPago.Controls.Add(lblAgradecimiento);
             PanelPago.Controls.Add(dGVPago);
             PanelPago.Controls.Add(pictureBox1);
-            PanelPago.Location = new Point(1, -2);
-            PanelPago.Margin = new Padding(2, 2, 2, 2);
+            PanelPago.Location = new Point(1, -3);
             PanelPago.Name = "PanelPago";
-            PanelPago.Size = new Size(561, 272);
+            PanelPago.Size = new Size(801, 453);
             PanelPago.TabIndex = 0;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(412, 185);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(629, 395);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(38, 15);
+            lblTotal.Size = new Size(58, 25);
             lblTotal.TabIndex = 5;
             lblTotal.Text = "Total: ";
             // 
             // lblFechaHora
             // 
             lblFechaHora.AutoSize = true;
-            lblFechaHora.Location = new Point(18, 242);
-            lblFechaHora.Margin = new Padding(2, 0, 2, 0);
+            lblFechaHora.Location = new Point(26, 403);
             lblFechaHora.Name = "lblFechaHora";
-            lblFechaHora.Size = new Size(82, 15);
+            lblFechaHora.Size = new Size(124, 25);
             lblFechaHora.TabIndex = 4;
             lblFechaHora.Text = "Fecha y Hora: ";
             // 
             // btnDescargar
             // 
-            btnDescargar.Location = new Point(194, 213);
-            btnDescargar.Margin = new Padding(2, 2, 2, 2);
+            btnDescargar.Location = new Point(267, 395);
             btnDescargar.Name = "btnDescargar";
-            btnDescargar.Size = new Size(148, 20);
+            btnDescargar.Size = new Size(211, 33);
             btnDescargar.TabIndex = 3;
             btnDescargar.Text = "Descargar Ticket";
             btnDescargar.UseVisualStyleBackColor = true;
@@ -92,10 +89,9 @@
             // 
             lblAgradecimiento.AutoSize = true;
             lblAgradecimiento.Font = new Font("Segoe UI", 15F);
-            lblAgradecimiento.Location = new Point(144, 34);
-            lblAgradecimiento.Margin = new Padding(2, 0, 2, 0);
+            lblAgradecimiento.Location = new Point(206, 57);
             lblAgradecimiento.Name = "lblAgradecimiento";
-            lblAgradecimiento.Size = new Size(219, 28);
+            lblAgradecimiento.Size = new Size(332, 41);
             lblAgradecimiento.TabIndex = 2;
             lblAgradecimiento.Text = "Gracias por su compra!!";
             // 
@@ -103,20 +99,19 @@
             // 
             dGVPago.BackgroundColor = Color.White;
             dGVPago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVPago.Location = new Point(61, 90);
-            dGVPago.Margin = new Padding(2, 2, 2, 2);
+            dGVPago.Location = new Point(26, 150);
             dGVPago.Name = "dGVPago";
             dGVPago.RowHeadersWidth = 62;
-            dGVPago.Size = new Size(420, 80);
+            dGVPago.Size = new Size(713, 231);
             dGVPago.TabIndex = 1;
             dGVPago.CellContentClick += dGVPago_CellContentClick;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(412, 24);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(589, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 45);
+            pictureBox1.Size = new Size(150, 75);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -128,11 +123,10 @@
             // 
             // PaymentForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(800, 450);
             Controls.Add(PanelPago);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "PaymentForm";
             Text = "Form1";
             Load += PaymentForm_Load;

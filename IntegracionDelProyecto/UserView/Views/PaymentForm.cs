@@ -33,9 +33,9 @@ namespace ProyectoProgramacion.Views
 
             foreach (var product in cartProducts)
             {
-                decimal imouestos = product.Precio * 0.66m;
-                decimal subtotal = product.Precio;
-                dGVPago.Rows.Add(product.Marca, product.Modelo, $"${product.Precio:F2}", 1, $"${subtotal:F2}");
+                decimal impuestos = product.Precio * 0.06m;
+                decimal subtotal = product.Precio *product.Cantidad;
+                dGVPago.Rows.Add(product.Marca, product.Modelo, $"${product.Precio:F2}", 1, $"${impuestos}", $"${subtotal:F2}");
 
             }
 

@@ -76,22 +76,36 @@ namespace ProyectoProgramacion.Models
                 document.Add(new Paragraph(" "));
 
                 //Tabla de Productos
-                PdfPTable tabla = new PdfPTable(3);
+                PdfPTable tabla = new PdfPTable(5);
                 tabla.WidthPercentage = 100;
                 tabla.AddCell(new PdfPCell(new Phrase("Marca", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))));
                 tabla.AddCell(new PdfPCell(new Phrase("Modelo", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))));
+                tabla.AddCell(new PdfPCell(new Phrase("Cantidad", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))));
                 tabla.AddCell(new PdfPCell(new Phrase("Precio", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))));
+                tabla.AddCell(new PdfPCell(new Phrase("Subtotal", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))));
+
+                decimal subtotal = 0;
 
                 foreach (var product in carts)
                 {
                     tabla.AddCell(new PdfPCell(new Phrase(product.Marca, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD))));
                     tabla.AddCell(new PdfPCell(new Phrase(product.Modelo, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD))));
+                    tabla.AddCell(new PdfPCell(new Phrase(product.Cantidad.ToString(), FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD))));
                     tabla.AddCell(new PdfPCell(new Phrase($"${product.Precio:F2}", FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD))));
+
+                    decimal productSubtotal = product.Precio * product.Cantidad;
+                    subtotal += productSubtotal;
+                    tabla.AddCell(new PdfPCell(new Phrase($"${productSubtotal:F2}", FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD))));
+
                 }
 
                 document.Add(tabla);
 
+                decimal impuestos = subtotal * 0.06m;
+                total=subtotal+impuestos;
+
                 document.Add(new Paragraph(" "));
+                document.Add(new Paragraph($"Impuestos (%6): ${impuestos:F2}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
                 document.Add(new Paragraph($"Total: ${total:F2}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
                 document.Add(new Paragraph("Gracias por su compra!", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
             }
