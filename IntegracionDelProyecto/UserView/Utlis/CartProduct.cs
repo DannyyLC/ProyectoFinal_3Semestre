@@ -115,6 +115,8 @@ namespace ProyectoProgramacion.Views
                 {
                     this.Cantidad--;
                     this.Cantidadlbl.Text = $"Cantidad: {this.Cantidad}";
+                    //Alterar la lista cartProducts
+                    this.ProductCartObject.Cantidad--;
                     // Notificar el cambio en el precio
                     PriceChanged?.Invoke(this, -this.Precio);
                 }

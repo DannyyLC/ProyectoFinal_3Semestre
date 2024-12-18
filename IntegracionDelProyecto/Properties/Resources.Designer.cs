@@ -193,6 +193,16 @@ namespace IntroductionView.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Kicks_Login_2000 {
+            get {
+                object obj = ResourceManager.GetObject("Kicks Login 2000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kicks_Login_FS {
             get {
                 object obj = ResourceManager.GetObject("Kicks Login FS", resourceCulture);

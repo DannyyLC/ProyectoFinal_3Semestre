@@ -38,22 +38,22 @@
             // txtBoxUsuario
             // 
             txtBoxUsuario.Font = new Font("Segoe UI", 12F);
-            txtBoxUsuario.Location = new Point(215, 373);
+            txtBoxUsuario.Location = new Point(200, 419);
             txtBoxUsuario.Margin = new Padding(3, 2, 3, 2);
             txtBoxUsuario.Name = "txtBoxUsuario";
             txtBoxUsuario.PlaceholderText = "Usuario";
-            txtBoxUsuario.Size = new Size(162, 29);
+            txtBoxUsuario.Size = new Size(164, 29);
             txtBoxUsuario.TabIndex = 0;
             txtBoxUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBoxContra
             // 
             txtBoxContra.Font = new Font("Segoe UI", 12F);
-            txtBoxContra.Location = new Point(215, 437);
+            txtBoxContra.Location = new Point(200, 478);
             txtBoxContra.Margin = new Padding(3, 2, 3, 2);
             txtBoxContra.Name = "txtBoxContra";
             txtBoxContra.PlaceholderText = "Contraseña";
-            txtBoxContra.Size = new Size(162, 29);
+            txtBoxContra.Size = new Size(164, 29);
             txtBoxContra.TabIndex = 1;
             txtBoxContra.TextAlign = HorizontalAlignment.Center;
             // 
@@ -63,10 +63,10 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(227, 483);
+            btnGuardar.Location = new Point(215, 567);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(137, 40);
+            btnGuardar.Size = new Size(134, 39);
             btnGuardar.TabIndex = 2;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -75,11 +75,11 @@
             // txtBoxNombre
             // 
             txtBoxNombre.Font = new Font("Segoe UI", 12F);
-            txtBoxNombre.Location = new Point(215, 318);
+            txtBoxNombre.Location = new Point(200, 360);
             txtBoxNombre.Margin = new Padding(3, 2, 3, 2);
             txtBoxNombre.Name = "txtBoxNombre";
             txtBoxNombre.PlaceholderText = "Nombre";
-            txtBoxNombre.Size = new Size(162, 29);
+            txtBoxNombre.Size = new Size(164, 29);
             txtBoxNombre.TabIndex = 3;
             txtBoxNombre.TextAlign = HorizontalAlignment.Center;
             // 
@@ -88,18 +88,19 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = IntroductionView.Properties.Resources.Background;
-            ClientSize = new Size(595, 552);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(572, 791);
             Controls.Add(txtBoxNombre);
             Controls.Add(btnGuardar);
             Controls.Add(txtBoxContra);
             Controls.Add(txtBoxUsuario);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
-            MaximumSize = new Size(611, 591);
-            MinimumSize = new Size(611, 591);
+            MaximumSize = new Size(588, 830);
+            MinimumSize = new Size(588, 830);
             Name = "NuevoUsuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Nuevo usuario";
+            Text = "Regístrate";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -36,13 +36,14 @@ namespace ProyectoProgramacion.Views
 
             foreach (var product in cartProducts)
             {
-                decimal impuestos = product.Precio * 0.06m;
+                decimal impuestos = product.Precio * 0.06m * product.Cantidad;
                 decimal subtotal = product.Precio * product.Cantidad;
                 dGVPago.Rows.Add(product.Marca, product.Modelo, $"${product.Precio:F2}", product.Cantidad, $"${impuestos}", $"${subtotal:F2}");
 
+                this.total += impuestos;
             }
 
-            lblTotal.Text = $"{total:F2}";
+            lblTotal.Text = $"Total: {this.total:F2}";
 
             lblFechaHora.Text = $"Fecha y hora del pedido: \n{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
 

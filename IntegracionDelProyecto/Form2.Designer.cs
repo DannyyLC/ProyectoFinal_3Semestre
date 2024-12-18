@@ -117,9 +117,9 @@
             labelAcceso.Location = new Point(655, 116);
             labelAcceso.Name = "labelAcceso";
             labelAcceso.RightToLeft = RightToLeft.No;
-            labelAcceso.Size = new Size(213, 58);
+            labelAcceso.Size = new Size(362, 58);
             labelAcceso.TabIndex = 3;
-            labelAcceso.Text = "Sign in";
+            labelAcceso.Text = "¡Bienvenido!";
             // 
             // buttonIniciarSesion
             // 
@@ -168,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Kicks_Login_FS;
+            BackgroundImage = Properties.Resources.Kicks_Login_2000;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1307, 587);
             Controls.Add(tableLayoutPanelAcceso);

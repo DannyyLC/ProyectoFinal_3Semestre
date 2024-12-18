@@ -114,7 +114,7 @@ namespace adminView
             
             try
             {
-                string query = "SELECT * FROM productos ORDER BY stock DESC";
+                string query = "SELECT * FROM productos ORDER BY stock ASC";
                 MySqlCommand command = new MySqlCommand(query, this.connection);
 
                 // Ejecutar la consulta y leer los resultados

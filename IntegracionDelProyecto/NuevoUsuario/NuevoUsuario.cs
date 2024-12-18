@@ -27,22 +27,11 @@ namespace Interfaz
 
             try
             {
-                query = "SELECT COUNT(*) FROM users";
-                MySqlCommand command = new MySqlCommand(query, this.connection);
-
-                // Ejecutar la consulta y obtener el resultado
-                object result = command.ExecuteScalar();
-                if (result != DBNull.Value)
-                {
-                    id = Convert.ToInt32(result);
-                }
-
-                query = "INSERT INTO users (id, user_login, user, password) " +
-                "VALUES (@id, @user_login, @user, @password)";
+                query = "INSERT INTO users (user_login, user, password) " +
+                "VALUES (@user_login, @user, @password)";
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 // Agregar parámetros
-                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@user_login", this.txtBoxUsuario.Text);
                 cmd.Parameters.AddWithValue("@user", this.txtBoxNombre.Text);
                 cmd.Parameters.AddWithValue("@password", this.txtBoxContra.Text);

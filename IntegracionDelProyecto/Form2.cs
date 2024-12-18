@@ -69,7 +69,7 @@ namespace IntroductionView
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
                 this.ClearFields();
             }
-            else if (user == 0)
+            else if (user == 1)
             {
                 {
                     adminViewForm adminview = new adminViewForm();

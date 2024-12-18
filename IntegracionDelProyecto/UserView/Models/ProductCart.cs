@@ -42,7 +42,7 @@ namespace ProyectoProgramacion.Models
         {
             string projectFolder = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
             string filePath = Path.Combine(projectFolder, "Ticket de Compra.pdf");
-            string imagePath = Path.Combine(projectFolder, "Resources","Kicks (Final) 2024-11-23 20_56_34.png");
+            string imagePath = Path.Combine(projectFolder, "Resources","logo.jpg");
 
             iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4, 10, 10, 10, 10);
 
